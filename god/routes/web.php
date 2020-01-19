@@ -20,7 +20,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/no-permissions', 'PermissionController@noPermissions')->name('no-permissions');
 
     Route::group(['middleware' => ['admin']], function(){
-        Route::get('/admin', 'PermissionController@staff')->name('admin');
+        Route::get('/admin', 'AdminController@index')->name('admin');
+        Route::get('/admin/remove-admin/{ userId }', 'AdminController@removeAdmin');
+        Route::get('/admin/give-admin/{ userId }', 'AdminController@giveAdmin');
     });
 
     Route::group(['middleware' => ['staff']], function(){

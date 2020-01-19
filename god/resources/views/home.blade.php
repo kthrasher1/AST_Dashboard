@@ -15,10 +15,7 @@
                     @endif
 
                     You are logged in!
-
-                    @if (Route::has('admin'))
-                       <p>you are the best</p>
-                    @endif
+                    
                 </div>
             </div>
         </div>

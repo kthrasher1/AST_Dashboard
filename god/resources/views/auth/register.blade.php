@@ -61,25 +61,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                        <div class="col-md-6 offset-md-4">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="staff_or_student" id="student" value="student">
-
-                                <label class="form-check-label" for="staff_or_student">
-                                    {{ __('Student') }}
-                                </label>
-                                
-                            </div>
-
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="staff_or_student" id="staff" value="staff">
-
-                                <label class="form-check-label" for="staff_or_student">
-                                    {{ __('Staff') }}
-                                </label>
-                            </div>
-                        </div>
+                       
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Dashboard</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -49,7 +49,8 @@
             }
 
             .links > a {
-                color: #636b6f;
+                height: 100px;
+                color: black;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -61,6 +62,28 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            a > button {
+                background-color: #3490dc;
+                border-radius: 0.25rem;
+                width: 100px;
+                border: 0;
+                padding: 10px 0;
+                margin: 5px 0;
+                text-align: center;
+                color: #fff;
+                cursor: pointer;
+            }
+
+            a > button:hover{
+                background: #4bab78;
+            }
+
+            h1{
+                font-size: 70px;
+            }
+            
+            
         </style>
     </head>
     <body>
@@ -68,16 +91,26 @@
             
 
             <div class="content">
+                <h1> Welcome! </h1>
                 <div class="links">
                 @if (Route::has('login'))
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
 
+                        @if(Auth::user()->hasRole('admin'))
+                            <a class="button" href="{{ url('/admin') }}"><button>Home</button></a>
+                        @elseif(Auth::user()->hasRole('staff'))
+                            <a class="button" href="{{ url('/staff') }}"><button>Home</button></a>
+                        @elseif(Auth::user()->hasRole('student'))
+                            <a class="button" href="{{ url('/student') }}"><button>Home</button></a>
+                        @endif()
+
+                    @else
+                      
+                        <a class="button" href="{{ route('login') }}"><button>Login</button></a>
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                        <a class="button" href="{{ route('register') }}"><button>Register</button></a>
                         @endif
+                        
                     @endauth
                 </div>
             @endif
