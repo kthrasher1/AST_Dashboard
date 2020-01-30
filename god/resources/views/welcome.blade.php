@@ -7,6 +7,7 @@
         <title>Dashboard</title>
 
         <!-- Fonts -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
@@ -47,37 +48,11 @@
             .title {
                 font-size: 84px;
             }
-
-            .links > a {
-                height: 100px;
-                color: black;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
+            
             .m-b-md {
                 margin-bottom: 30px;
             }
 
-            a > button {
-                background-color: #3490dc;
-                border-radius: 0.25rem;
-                width: 100px;
-                border: 0;
-                padding: 10px 0;
-                margin: 5px 0;
-                text-align: center;
-                color: #fff;
-                cursor: pointer;
-            }
-
-            a > button:hover{
-                background: #4bab78;
-            }
 
             h1{
                 font-size: 70px;
@@ -97,18 +72,18 @@
                     @auth
 
                         @if(Auth::user()->hasRole('admin'))
-                            <a class="button" href="{{ url('/admin') }}"><button>Home</button></a>
+                            <a class="btn btn-primary" href="{{ url('/admin') }}">Home</a>
                         @elseif(Auth::user()->hasRole('staff'))
-                            <a class="button" href="{{ url('/staff') }}"><button>Home</button></a>
+                            <a class="btn btn-primary" href="{{ url('/staff') }}">Home</a>
                         @elseif(Auth::user()->hasRole('student'))
-                            <a class="button" href="{{ url('/student') }}"><button>Home</button></a>
+                            <a class="btn btn-primary" href="{{ url('/student') }}">Home</a>
                         @endif()
 
                     @else
                       
-                        <a class="button" href="{{ route('login') }}"><button>Login</button></a>
+                        <a class="btn btn-primary" href="{{ route('login') }}">Login</a>
                         @if (Route::has('register'))
-                        <a class="button" href="{{ route('register') }}"><button>Register</button></a>
+                        <a class="btn btn-primary" href="{{ route('register') }}">Register</a>
                         @endif
                         
                     @endauth

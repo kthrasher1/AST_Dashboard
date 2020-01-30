@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class=" justify-content-center">
+        <div class="">
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
@@ -14,39 +15,56 @@
                     </div>
                     @endif
 
-                    <h1 style=" text-align: center;">Welcome {{ Auth::user()->name }} </h1>
+                    <h1 class="welcome-text">Welcome {{ Auth::user()->name }} </h1>
                     <div class="row">
-                        <div class="col-xs-12">
+                      
                             <div class="table-responsive">
-                                <table class="table table-bordered table-hover">
+                                <table class="table table-bordered table-hover center">
                                     <thead>
                                         <tr>
                                             <th>Users</th>
                                             <th>Email</th>
+                                            <th>Status</th>
                                             <th>Privileges</th>
-                                            <th>Edit Privileges</th>
+                                            <th>Actions</th>
+                                        
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach($users as $user)
                                         @foreach($user->roles as $role)
                                         <tr>
-                                        @if($user->id !=Auth::user()->id)  
-                                            <td> {{ $user->name }} </td>    
+                                          
+                                            <td class="cap-first"> {{ $user->name }} </td>    
                                             <td> {{ $user->email }} </td>
-                                            <td> {{ $role->name }} </td>
                                             <td> 
-                                                @if($user->hasRole('admin'))
-                                                    <option href="/admin/remove-admin/{{ $user->id }}">Remove Admin</option>
-                                                @elseif($user->hasRole('staff'))
-                                                    <a href="/admin/make-admin/{{ $user->id }}">Make Admin</a>
-                                                    <a href="/admin/make-student/{{ $user->id }}">Make Student</a>
-                                                @elseif($user->hasRole('student'))
-                                                    <a href="/admin/make-admin/{{ $user->id }}">Make Admin</a>
-                                                    <a href="/admin/make-staff/{{ $user->id }}">Make Staff</a>
-                                                @endif
+                                            @if($user->isOnline())
+
+                                                <li class="text-success"> Online </li>
+                                            
+                                            @else
+
+                                                <li class="text-muted" style="list-style-type: circle;"> Offline </li>
+                                            
+                                            @endif
                                             </td>
-                                        @endif   
+                                            <td class="cap-first"> {{ $role->name }} </td>
+                                            <td> 
+                                            <a class="btn btn-primary" href="/admin/update/{{$user->id}}">Update</a>
+
+                                                @if($user->hasRole('admin') || ($user->hasRole('staff') || ($user->hasRole('student'))))
+                                                    <a class="btn btn-warning" href="/admin/remove-role/{{$user->id}}">Remove Privileges</a>
+
+                                                @elseif($user->hasRole('unassigned'))
+                                                    <a class="btn btn-primary" href="/admin/give-admin/{{$user->id}}">Make Admin</a>
+                                                    <a class="btn btn-secondary" href="/admin/make-staff/{{$user->id}}">Make Staff</a>
+                                                    <a class="btn btn-secondary" href="/admin/make-student/{{$user->id}}">Make Student</a>
+                                                @endif
+
+                                                <a class="btn btn-danger" href="/admin/delete/{{$user->id}}">Delete</a>
+                                                
+                                            </td>
+                                     
                                         </tr>
                                         @endforeach
                                         @endforeach

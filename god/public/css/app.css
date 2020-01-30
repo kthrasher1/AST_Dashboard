@@ -11356,3 +11356,15 @@ a.text-dark:focus {
   }
 }
 
+.welcome-text {
+  text-align: center;
+}
+
+table {
+  text-align: center;
+}
+
+.cap-first {
+  text-transform: capitalize;
+}
+

@@ -20,9 +20,14 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/no-permissions', 'PermissionController@noPermissions')->name('no-permissions');
 
     Route::group(['middleware' => ['admin']], function(){
+
         Route::get('/admin', 'AdminController@index')->name('admin');
-        Route::get('/admin/remove-admin/{ userId }', 'AdminController@removeAdmin');
-        Route::get('/admin/give-admin/{ userId }', 'AdminController@giveAdmin');
+        Route::get('/admin/give-admin/{userId}', 'AdminController@giveAdmin');
+        Route::get('/admin/make-student/{userId}', 'AdminController@makeStudent');
+        Route::get('/admin/make-staff/{userId}', 'AdminController@makeStaff');
+        Route::get('/admin/remove-role/{userId}', 'AdminController@removeRole');
+        Route::get('/admin/delete/{userId}', 'AdminController@deleteUser');
+
     });
 
     Route::group(['middleware' => ['staff']], function(){
