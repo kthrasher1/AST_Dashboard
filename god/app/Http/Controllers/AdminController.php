@@ -91,9 +91,12 @@ class AdminController extends Controller
 
     public function deleteUser($userId){
 
-        User::onDestroy($userId);
+        $user = User::findOrFail($userId);
+        $role = $users->roles()->detach();
 
-        return redirect('/admin')->with('success', 'User\'s role has been updated');
+        $user -> delete();
+
+        return redirect('/admin')->with('deleted', 'User has been deleted');
     }
 
 }

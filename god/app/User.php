@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Cache;
+use App\Events\UserCreated;
 
 
 class User extends Authenticatable
@@ -29,6 +30,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
 
     /**
      * The attributes that should be cast to native types.
@@ -37,6 +39,11 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+    ];
+
+    protected $dispatchesEvents = [
+        'saved' => UserCreated::class,
+        
     ];
 
 
@@ -60,4 +67,6 @@ class User extends Authenticatable
         return Cache::has('is-user-online-' . $this->id);
 
     }
+
+    
 }
