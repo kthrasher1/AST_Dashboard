@@ -32,16 +32,16 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::group(['middleware' => ['staff']], function(){
         Route::get('/staff', 'PermissionController@staff')->name('staff');
-        Route::get('/staff', 'StaffController@attendanceGraph');
-      
+        Route::get('/staff', 'StaffController@graphs');
+
     });
 
     Route::group(['middleware' => ['student']], function(){
         Route::get('/student', 'PermissionController@student')->name('student');
     });
 
-   
-    
+
+
 });
 
 

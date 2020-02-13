@@ -4,7 +4,7 @@ namespace App\Charts;
 
 use ConsoleTVs\Charts\Classes\Chartjs\Chart;
 
-class EngagementChart extends Chart
+class Graphs extends Chart
 {
     /**
      * Initializes the chart.
