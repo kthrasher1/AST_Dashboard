@@ -9,9 +9,8 @@ use Auth;
 
 class AdminController extends Controller
 {
-    public function index() {
+    public function index(){
         $users = User::with('roles')->get();
-
         return view('admin', ['users' => $users]);
     }
 

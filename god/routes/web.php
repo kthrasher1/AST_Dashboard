@@ -32,6 +32,8 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::group(['middleware' => ['staff']], function(){
         Route::get('/staff', 'PermissionController@staff')->name('staff');
+        Route::get('/staff', 'StaffController@attendanceGraph');
+      
     });
 
     Route::group(['middleware' => ['student']], function(){
