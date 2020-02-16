@@ -1,160 +1,150 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>AST-Dashboard</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <script src="{{ asset('js/app.js') }}" defer></script>
+    <title>AST-Dashboard</title>
 
-        <!-- Fonts -->
-        <link rel="dns-prefetch" href="//fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background: #EFE9F4;
-                color: #fff;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-                position: relative;
-                overflow: hidden;
-            }
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-            header{
-                position: relative;
-            }
+    <!-- Styles -->
+    <style>
 
-            .full-height {
-                height: 100vh;
-            }
+        html,
+        body {
+            background: #fff;
+            color: #3e396b;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+        }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+        header {
+            position: relative;
+        }
 
-            .position-ref {
-                position: relative;
-            }
+        .jumbotron-two .container{
+            height: 400px;
+            margin-top: 200px;
+        }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+        .jumbotron-two {
+            height: 70vh;
+        }
 
-            .container {
-                text-align: center;
+        .welcome-header {
+            font-size: 70px;
+            text-align: center
+        }
 
-            }
+        .navbar {
+            z-index: 1;
+            box-shadow: 0 9px 68px 0 rgba(62, 57, 107, .1);
+        }
 
-            .title {
-                font-size: 84px;
-            }
+        .navbar a {
+            color: inherit !important;
+        }
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
+        .bg-obj {
+            position: absolute;
+            background-image: linear-gradient(100deg, #7642FF, #3B60E4);
+        }
 
+       .shape {
+            top: -350px;
+            right: -110px;
+            border-radius: 30%;
+            width: 50%;
+            height: 800px;
+            transform: skew(3deg, 30deg);
+            opacity: 0.7;
+        }
 
-            h1{
-                font-size: 70px;
-            }
+        .big-circle {
+            top: -400px;
+            left: -350px;
+            border-radius: 100%;
+            width: 900px;
+            height: 900px;
+            opacity: 0.4;
+        }
 
-            .navbar {
+        .small-circle {
+            top: 250px;
+            left: 400px;
+            border-radius: 100%;
+            width: 100px;
+            height: 100px;
+            opacity: 0.8;
+        }
 
-                z-index: 1;
+        .btn-gradient {
+            background-image: linear-gradient(100deg, #7642FF, #3B60E4);
+            color: #fff !important;
+        }
 
-            }
+    </style>
+</head>
 
-
-
-            .bg-shape{
-                position: absolute;
-                background-image:  linear-gradient(100deg,#7642FF,#4259ff);
-                top: -350px;
-                right: -110px;
-                border-radius: 30%;
-                width: 50%;
-                height: 800px;
-                transform: skew(3deg, 30deg);
-                opacity: 0.7;
-            }
-
-            .bg-big-circle {
-                position: absolute;
-                background-image: linear-gradient(100deg,#7642FF,#4259ff);
-                top: -400px;
-                left: -350px;
-                border-radius: 100%;
-                width: 800px;
-                height: 800px;
-                opacity: 0.4;
-            }
-
-            .bg-small-circle {
-                position: absolute;
-                background-image: linear-gradient(100deg,#7642FF,#4259ff);
-                top: 150px;
-                left: 350px;
-                border-radius: 100%;
-                width: 100px;
-                height: 100px;
-                opacity: 0.8;
-            }
-
-
-        </style>
-    </head>
-    <body>
-
-
-
+<body>
 
     <header>
         @include('partials.nav')
 
-        <div class="bg-shape"></div>
-        <div class="bg-big-circle"></div>
-        <div class="bg-small-circle"></div>
-
-        <div class="row align-items-center">
-            <div class="col-12 col-md-5">
+        <div class="bg-obj shape"></div>
+        <div class="bg-obj big-circle"></div>
+        <div class="bg-obj small-circle"></div>
 
 
-                <h1> Welcome!  </h1>
-                <div class="links">
-                @if (Route::has('login'))
-                    @auth
+        <section class="jumbotron-two jumbotron-fluid">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-11 col-md-7 mb-3">
+                        <h1 class="welcome-header"> Welcome to Dashboard </h1>
+                        <p class="mb-3">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas aspernatur quam neque totam voluptates 
+                            facilis deserunt eaque distinctio! Voluptatem a eligendi 
+                            possimus iure sunt similique, amet illo voluptate error in.
+                        </p>
+                        <div class="links" style="text-align: center;">
+                            @if (Route::has('login'))
+                            @auth
 
-                        @if(Auth::user()->hasRole('admin'))
+                            @if(Auth::user()->hasRole('admin'))
                             <a class="btn btn-primary" href="{{ url('/admin') }}">Home</a>
-                        @elseif(Auth::user()->hasRole('staff'))
+                            @elseif(Auth::user()->hasRole('staff'))
                             <a class="btn btn-primary" href="{{ url('/staff') }}">Home</a>
-                        @elseif(Auth::user()->hasRole('student'))
+                            @elseif(Auth::user()->hasRole('student'))
                             <a class="btn btn-primary" href="{{ url('/student') }}">Home</a>
-                        @endif()
+                            @endif()
 
-                    @else
+                            @else
 
-                        <a class="btn btn-primary" href="{{ route('login') }}">Login</a>
-                        @if (Route::has('register'))
-                        <a class="btn btn-primary" href="{{ route('register') }}">Register</a>
+                            <a class="btn btn-gradient href="{{ route('login') }}">Login</a>
+                            @if (Route::has('register'))
+                            <a class="btn btn-gradient" href="{{ route('register') }}">Register</a>
+                            @endif
+
+                            @endauth
+                        </div>
                         @endif
-
-                    @endauth
-                </div>
-            @endif
+                    </div>
+                     </div>
+                   </div>
                 </div>
             </div>
-        </div>
+            </div>
+        </section>
     </header>
     <section>
 
@@ -162,5 +152,6 @@
     <section>
 
     </section>
-    </body>
+</body>
+
 </html>
