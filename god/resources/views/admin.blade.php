@@ -53,7 +53,7 @@
                                             <a class="btn btn-primary" href="/admin/update/{{$user->id}}">Update</a>
 
                                                 @if($user->hasRole('admin') || ($user->hasRole('staff') || ($user->hasRole('student'))))
-                                                    <a class="btn btn-warning" href="/admin/remove-role/{{$user->id}}">Remove Privileges</a>
+                                                    <a class="btn btn-secondary" href="/admin/remove-role/{{$user->id}}">Remove Privileges</a>
 
                                                 @elseif($user->hasRole('unassigned'))
                                                     <a class="btn btn-primary" href="/admin/give-admin/{{$user->id}}">Make Admin</a>
@@ -61,7 +61,7 @@
                                                     <a class="btn btn-secondary" href="/admin/make-student/{{$user->id}}">Make Student</a>
                                                 @endif
 
-                                                <a class="btn btn-danger" href="/admin/delete/{{$user->id}}">Delete</a>
+                                                <a class="btn btn-danger"  onclick="return confirm('Please Click OK to Confirm.')" href="/admin/delete/{{$user->id}}">Delete</a>
                                                 
                                             </td>
                                      
