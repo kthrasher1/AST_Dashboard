@@ -23,7 +23,7 @@
     <div id="app">
 
         @include('partials.nav')
-        <main class="py-4 container">
+        <main class="p-2">
             @include('partials.alerts')
             @yield('content')
         </main>

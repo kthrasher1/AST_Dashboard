@@ -1,23 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
     <div class="justify-content-center">
         <div class="card">
             <div class="card-header">Dashboard</div>
             <div class="card-body">
                 <h1 class="welcome-text">Welcome {{ Auth::user()->name }} </h1>
 
-                <div class="app">
+                <div class="barchart">
                     {{ $barchart->container() }}
                 </div>
-                <div class="graph">
+
+                <div class="piechart">
                     {{ $piechart->container() }}
                 </div>
-                <div class="graph">
+
+                <div class="linechart">
                     {{ $linechart->container() }}
                 </div>
-                <div class="graph">
+
+                <div class="linechart-users">
                     {{ $linechart_users->container() }}
                 </div>
 
@@ -29,7 +31,6 @@
                 </div>
         </div>
     </div>
-</div>
 
 </div>
 @endsection

@@ -7,14 +7,26 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.welcome-text { 
+body {
+    background: $body-bg !important;
+}
+
+.welcome-text {
     text-align: center;
+    color: blue !important;
 }
 
 table  {
     text-align: center;
 }
-.cap-first { 
+
+.cap-first {
     text-transform: capitalize;
 }
+
+.barchart canvas{
+  width: 100px;
+  height: 100px;
+}
+
 
