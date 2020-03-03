@@ -217,18 +217,18 @@
                             @auth
 
                             @if(Auth::user()->hasRole('admin'))
-                            <a class="btn btn-primary" href="{{ url('/admin') }}">Home</a>
+                                <a class="btn btn-primary" href="{{ url('/admin') }}">Home</a>
                             @elseif(Auth::user()->hasRole('staff'))
-                            <a class="btn btn-primary" href="{{ url('/staff') }}">Home</a>
+                                <a class="btn btn-primary" href="{{ url('/staff') }}">Home</a>
                             @elseif(Auth::user()->hasRole('student'))
-                            <a class="btn btn-primary" href="{{ url('/student') }}">Home</a>
-                            @endif()
+                                <a class="btn btn-primary" href="{{ url('/student') }}">Home</a>
+                            @endif
 
                             @else
 
-                            <a class="btn btn-bg" href="{{ route('login') }}">Login</a>
+                                <a class="btn btn-bg" href="{{ route('login') }}">Login</a>
                             @if (Route::has('register'))
-                            <a class="btn btn-bg" href="{{ route('register') }}">Register</a>
+                                <a class="btn btn-bg" href="{{ route('register') }}">Register</a>
                             @endif
 
                             @endauth
