@@ -177,8 +177,9 @@
             }
 
             .big-circle{
-                top: -700px;
-                left: -60%;
+                transform: translate(-50%, -115%);
+                top: 50%;
+                left: 50%;
                 opacity: 0.6;
             }
         }

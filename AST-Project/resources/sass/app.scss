@@ -1,5 +1,6 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700|Open+Sans&display=swap');
+
 
 // Variables
 @import 'variables';
@@ -13,7 +14,6 @@ body {
 
 .welcome-text {
     text-align: center;
-    
 }
 
 table  {
@@ -23,6 +23,7 @@ table  {
 .cap-first {
     text-transform: capitalize;
 }
+
 
 
 

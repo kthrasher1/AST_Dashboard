@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('student-page', function()
+{
+    return view('pages.student-page');
+});
+
 Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/no-permissions', 'PermissionController@noPermissions')->name('no-permissions');
