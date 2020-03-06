@@ -131,10 +131,44 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <img src="{{URL::asset('/img/very-happy-blink.svg')}}" height="150" width="150">
-                    <h1> Hi there! </h1>
-                    <h2> Tell me about your week. </h2>
-                    <a class="btn btn-primary" href="student-page">Start</a>
+                        <form method="POST" action="/student-page-selection" >
+                            @csrf
+                            @if($rangeSlider == 1)
+                                    <img src="{{URL::asset('/img/very-sad.svg')}}" alt="" >
+                                    <h1>Oh no! What made it bad? </h1>
+
+                                @elseif($rangeSlider == 2)
+                                    <img src="{{URL::asset('/img/kinda-sad.svg')}}" alt="" >
+                                    <h1>That's great </h1>
+                                @elseif($rangeSlider == 3)
+                                    <img src="{{URL::asset('/img/neutral.svg')}}" alt="" >
+                                    <h1>Okay! </h1>
+                                @elseif($rangeSlider == 4)
+                                    <img src="{{URL::asset('/img/kinda-happy.svg')}}" alt="" >
+                                    <h1>That's okay! </h1>
+                                @elseif($rangeSlider == 5)
+                                    <img src="{{URL::asset('/img/very-happy.svg')}}" alt="" >
+                                    <h1>That's great! </h1>
+                            @endif
+
+                            <label class="selection-label">
+                                <input type="checkbox" id="" name="" value="">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <h1></h1>
+                                <input type="hidden" name="_page-num" value="2">
+                            </label>
+
+                            <a class="btn btn-secondary" href="{{ url()->previous() }}"> Back </a>
+                            <button class="btn btn-primary" type="submit">Next</button>
+
+                        </form>
+
+
                 </div>
             </div>
 

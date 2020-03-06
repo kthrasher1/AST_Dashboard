@@ -48,7 +48,7 @@
 
         .bg-obj {
             position: absolute;
-            background-image: linear-gradient(100deg, #7642FF, #3B60E4);
+            background: #FA7C92;
         }
 
         .navbar {

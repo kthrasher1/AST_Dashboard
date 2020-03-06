@@ -17,7 +17,12 @@ Route::get('/', function () {
 
 Route::get('student-page', function()
 {
-    return view('pages.student-page');
+    return view('pages.student-page-range');
+});
+
+Route::get('student-page-home', function()
+{
+    return view('student');
 });
 
 Route::group(['middleware' => ['auth']], function() {
@@ -43,6 +48,7 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::group(['middleware' => ['student']], function(){
         Route::get('/student', 'PermissionController@student')->name('student');
+
     });
 
 
@@ -53,6 +59,9 @@ Route::group(['middleware' => ['auth']], function() {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/student-range-slider', 'StudentController@RangeSliderSubmit');
+Route::post('/student-selection', 'StudentController@SelectionSubmit');
 
 
 

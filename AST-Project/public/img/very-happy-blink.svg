@@ -3,24 +3,28 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 907.83 909.04" style="enable-background:new 0 0 907.83 909.04;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;stroke:#000000;stroke-width:29;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#000000;stroke-width:0.75;stroke-miterlimit:10;}
+	.st0{fill:none;stroke:#212529;stroke-width:29;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#212529;stroke-width:0.75;stroke-miterlimit:10;}
 
 	.st3, .st1{
 		animation-name: blink;
 		animation-timing-function: linear;
 		animation-duration: 3.5s;
-		animation-delay: 7s;
+        animation-delay: 3.5s;
 		animation-iteration-count: infinite;
-		
-		
+        opacity: 0;
+
+
+
 	}
 	.st2{
 		animation-name: blinktwo;
 		animation-timing-function: linear;
 		animation-duration: 3.5s;
+        animation-delay: 3.5s;
 		animation-iteration-count: infinite;
-		
+
+
 	}
 
 	@keyframes blink {
@@ -36,9 +40,9 @@
 		20% { opacity: 1; }
 		100% { opacity: 1; }
 	}
-	  
 
-	
+
+
 </style>
 <g>
 	<circle class="st0" cx="454.22" cy="454.52" r="438.5"/>

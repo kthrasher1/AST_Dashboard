@@ -1,33 +1,35 @@
 
 
-var slider = document.getElementById("slider");
-//var sliderVal = slider.value;
-var img = document.getElementById("emotion-icons");
-
-function between(x, min, max) {
-    return x >= min && x <= max;
-}
+let slider = document.getElementById("slider");
+let img = document.getElementById("emotion-icons");
+let text = document.getElementById("emotion-text");
 
 slider.oninput = function()
-{ 
+{
 
-    if(between(slider.value, 0, 2))
+    if(slider.value == 1)
     {
         img.src="img/very-sad.svg";
+        text.innerHTML = "Really Bad!";
+
     }
-    else if(between(slider.value, 3, 4))
+    else if(slider.value == 2)
     {
         img.src="img/kinda-sad.svg";
+        text.innerHTML = "Not Great";
     }
-    else if(between(slider.value,5,6)){
+    else if(slider.value == 3){
         img.src = "img/neutral.svg";
+        text.innerHTML = "Okay";
     }
-    else if(between(slider.value,7,8)){
-        
+    else if(slider.value == 4){
+
         img.src = "img/kinda-happy.svg";
+        text.innerHTML = "Pretty Okay";
     }
-    else if(between(slider.value, 9, 10)){
+    else if(slider.value == 5){
         img.src = "img/very-happy.svg";
+        text.innerHTML = "Amazing!";
     }
 }
 
