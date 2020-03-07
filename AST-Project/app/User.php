@@ -11,6 +11,7 @@ use App\Events\UserCreated;
 
 class User extends Authenticatable
 {
+    use Uuids;
     use Notifiable;
 
     /**
@@ -30,7 +31,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-    
+
+
 
     /**
      * The attributes that should be cast to native types.
@@ -43,13 +45,13 @@ class User extends Authenticatable
 
     protected $dispatchesEvents = [
         'saved' => UserCreated::class,
-        
+
     ];
 
 
     public function roles() {
         return $this -> belongsToMany('App\Role');
-  
+
     }
 
     public function hasRole($role){
@@ -58,15 +60,15 @@ class User extends Authenticatable
         if($role == 1) {
             return true;
         }
-        
+
         return false;
     }
 
-    public function isOnline(){ 
+    public function isOnline(){
 
         return Cache::has('is-user-online-' . $this->id);
 
     }
 
-    
+
 }

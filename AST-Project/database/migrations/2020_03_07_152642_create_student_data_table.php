@@ -14,8 +14,16 @@ class CreateStudentDataTable extends Migration
     public function up()
     {
         Schema::create('student_data', function (Blueprint $table) {
+
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('student_id')->unique();
+            $table->integer('emotional_range')->nullable();
+            $table->string('issue_selection')->nullable();
             $table->timestamps();
+            $table->integer('page_number')->nullable();
+
+            $table->foreign('student_id')->references('id')->on('users')->onCascade('delete');
+
         });
     }
 
