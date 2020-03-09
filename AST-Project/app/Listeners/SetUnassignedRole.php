@@ -29,5 +29,9 @@ class SetUnassignedRole
     {
         $role = Role::where('name', 'unassigned')->firstOrFail();
         $event -> user ->roles()->sync($role->id);
+
+        $Uuid = Uuid::generate()->string;
+
+
     }
 }
