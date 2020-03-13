@@ -29,6 +29,7 @@
     img{
         margin: 20px;
         margin-bottom: 30px;
+        max-width: 150px;
     }
 
 
@@ -91,6 +92,24 @@
         width: 100px;
     }
 
+    .checkbox-button {
+        display: inline-block;
+        margin: 0;
+        border-radius: 100%;
+        height: 50px;
+        width: 50px;
+    }
+
+    .checkbox-button input:checked {
+        background-color: coral !important;
+    }
+
+    .checkbox-button input {
+        opacity: 0;
+    }
+
+
+
 
 
 </style>
@@ -131,37 +150,69 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                        <form method="POST" action="/student-page-selection" >
+                        <form method="POST" action="/student-selection" >
                             @csrf
+
                             @if($rangeSlider == 1)
                                     <img src="{{URL::asset('/img/very-sad.svg')}}" alt="" >
-                                    <h1>Oh no! What made it bad? </h1>
-
+                                    <h1>Lorem ipsum dolor sit</h1>
                                 @elseif($rangeSlider == 2)
                                     <img src="{{URL::asset('/img/kinda-sad.svg')}}" alt="" >
-                                    <h1>That's great </h1>
+                                    <h1>Lorem ipsum dolor sit</h1>
                                 @elseif($rangeSlider == 3)
                                     <img src="{{URL::asset('/img/neutral.svg')}}" alt="" >
-                                    <h1>Okay! </h1>
+                                    <h1>Lorem ipsum dolor sit</h1>
                                 @elseif($rangeSlider == 4)
                                     <img src="{{URL::asset('/img/kinda-happy.svg')}}" alt="" >
-                                    <h1>That's okay! </h1>
+                                    <h1>Lorem ipsum dolor sit</h1>
                                 @elseif($rangeSlider == 5)
                                     <img src="{{URL::asset('/img/very-happy.svg')}}" alt="" >
-                                    <h1>That's great! </h1>
+                                    <h1>Lorem ipsum dolor sit</h1>
                             @endif
 
                             <label class="selection-label">
-                                <input type="checkbox" id="" name="" value="">
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+
+                                <div class="btn btn-primary checkbox-button">
+                                    <input type="checkbox" name="checkboxSelect" id="" value="1"><span> 1 </span>
+                                </div>
+                            
+                            </label>
+
+                            <label class="selection-label">
+
+                                <div class="btn btn-primary checkbox-button">
+                                    <input type="checkbox"  name="checkboxSelect1" id=""  value="2" ><span> 2 </span>
+                                </div>
+                            
+                            </label>
+
+                            <label class="selection-label">
+
+                                <div class="btn btn-primary checkbox-button">
+                                    <input type="checkbox"  name="checkboxSelect2" id="" value="3" ><span> 3 </span>
+                                </div>
+                            
+                            </label> 
+
+                            <label class="selection-label">
+
+                                <div class="btn btn-primary checkbox-button">
+                                    <input type="checkbox"  name="checkboxSelect3" id="" value="4" ><span> 4 </span>
+                                </div>
+                            
+                            </label>
+
+                            <label class="selection-label">
+
+                                <div class="btn btn-primary checkbox-button">
+                                    <input type="checkbox" name="checkboxSelect4" id="" value="5" ><span> 5 </span>
+                                </div>
+                            
+                            </label>
+
                                 <h1></h1>
                                 <input type="hidden" name="_page-num" value="2">
-                            </label>
+                           
 
                             <a class="btn btn-secondary" href="{{ url()->previous() }}"> Back </a>
                             <button class="btn btn-primary" type="submit">Next</button>

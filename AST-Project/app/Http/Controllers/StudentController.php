@@ -18,8 +18,10 @@ class StudentController extends Controller
 
     public function SelectionSubmit(Request $request){
 
-        $selectionInput = $request;
+        $selectionInput = $request->all();
 
-        return view('pages.student-page-unknown');
+        dd($selectionInput);
+
+        //return view('pages.student-page-unknown');
     }
 }

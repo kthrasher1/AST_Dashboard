@@ -143,8 +143,10 @@
 </div>
 
 @elsemobile
-
+<div class="card">
+    <div class="card-body"> 
     <h1> You need a mobile phone </h1>
-
+    </div>
+</div> 
 @endmobile
 @endsection
