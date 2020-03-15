@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('student-page', function()
 {
-    return view('pages.student-page-range');
+    return view('student-pages.student-page-range');
 });
 
 Route::get('student-page-home', function()
@@ -64,4 +64,6 @@ Route::post('/student-range-slider', 'StudentController@RangeSliderSubmit');
 Route::post('/student-selection', 'StudentController@SelectionSubmit');
 
 
-
+Route::get('/student-staff-chat', 'ChatController@index');
+Route::get('messages', 'ChatController@GetMessages');
+Route::post('messages','ChatController@PostMessages');

@@ -46,11 +46,16 @@ class User extends Authenticatable
 
     ];
 
-   
+
 
     public function roles() {
         return $this -> belongsToMany('App\Role');
-  
+
+    }
+
+    public function messages()
+    {
+    return $this->hasMany(UserMessage::class);
     }
 
     public function hasRole($role){
@@ -59,11 +64,11 @@ class User extends Authenticatable
         if($role == 1) {
             return true;
         }
-        
+
         return false;
     }
 
-    public function isOnline(){ 
+    public function isOnline(){
 
         return Cache::has('is-user-online-' . $this->id);
 
@@ -78,7 +83,7 @@ class User extends Authenticatable
     }
 
 
-    
+
 
 
 }
