@@ -12,6 +12,10 @@ window.Vue = require('vue');
 Vue.component('chat-messages', require('./components/chatMessage.vue').default);
 Vue.component('chat-form', require('./components/chatForm.vue').default);
 
+
+import VueChatScroll from 'vue-chat-scroll'
+Vue.use(VueChatScroll)
+
 const app = new Vue({
     el: '#app',
 

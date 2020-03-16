@@ -12,9 +12,9 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class MessageSent
+class MessageSent implements ShouldBroadcast
 {
-    use Dispatchable, InteractsWithSockets, SerializesModels, ShouldBroadcast;
+    use Dispatchable, InteractsWithSockets, SerializesModels;
     /**
      * User that sends the message, in this case a student
      * @var User
@@ -34,7 +34,7 @@ class MessageSent
      *
      * @return void
      */
-    public function __construct(User $user, Message $message)
+    public function __construct(User $user, UserMessage $message)
     {
         $this->user = $user;
         $this->message = $message;
