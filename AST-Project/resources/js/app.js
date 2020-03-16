@@ -9,17 +9,8 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-
-
-
-//Vue.forceUpdate();
-
 Vue.component('chat-messages', require('./components/chatMessage.vue').default);
 Vue.component('chat-form', require('./components/chatForm.vue').default);
-
-import VueChatScroll from 'vue-chat-scroll'
-Vue.use(VueChatScroll)
-
 
 const app = new Vue({
     el: '#app',
@@ -30,7 +21,6 @@ const app = new Vue({
 
     created() {
         this.GetMessages();
-        this.$forceUpdate();
 
         Echo.private('chat')
         .listen('MessageSent', (e) => {
@@ -45,13 +35,11 @@ const app = new Vue({
         GetMessages() {
             axios.get('/messages').then(response => {
                 this.messages = response.data;
-                
             });
         },
 
         PostMessage(message) {
             this.messages.push(message);
-           
 
             axios.post('/messages', message).then(response => {
               console.log(response.data);

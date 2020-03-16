@@ -12,7 +12,6 @@ class UserMessage extends Model
      * @var array
      */
     protected $fillable = ['message'];
-    
 
 
     public function user()
