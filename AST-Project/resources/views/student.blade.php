@@ -13,25 +13,19 @@
 
     main{
         display: flex;
+        height: calc(100vh - 6rem);
         align-items: center;
         justify-content: center;
-        height: calc(100vh - 6rem);
 
     }
 
 
     .card{
-        background: rgba(0, 0, 0, 0);
-        border: none;
         text-align: center;
+        margin-bottom: 15px;
+        margin-top: 15px;
+
     }
-
-    img{
-        margin: 20px;
-        margin-bottom: 30px;
-    }
-
-
 
     h1{
         /*font-size: 24px;*/
@@ -130,10 +124,47 @@
     <div class="row justify-content-center">
         <div class="col-sm-6">
             <div class="card">
+                <div class="card-header"> Your AST </div>
                 <div class="card-body">
-                    <img src="{{URL::asset('/img/very-happy-blink.svg')}}" height="150" width="150">
-                    <h1> Hi there! </h1>
-                    <h2> Tell me about your week. </h2>
+
+                    @foreach($students as $student )
+                        @foreach($student->student_users as $currentStudent)
+                            @if($currentStudent->id == Auth::user()->id)
+                                @foreach($staff as $ast_staff)
+                                    @foreach($ast_staff->students as $ast_student)
+                                        @if($currentStudent->pivot->student_id == $ast_student->pivot->student_id)
+                                            @foreach($users as $user )
+                                                @foreach($user->staff as $staffing)
+                                                    @if($ast_staff->id == $staffing->id)
+
+                                                        <p>{{$user->name}}</p>
+                                                        <p>{{$user->email}}</p>
+
+                                                    @endif
+                                                @endforeach
+                                            @endforeach
+                                        @endif
+                                    @endforeach
+                                @endforeach
+                            @endif
+                        @endforeach
+                    @endforeach
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"> Chat With Your AST</div>
+                <div class="card-body">
+                    <p class="card-text">Click the button to chat with your AST</p>
+                    <a class="btn btn-primary" href="chat">Chat</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"> How was your week? </div>
+                <div class="card-body">
+                    <p class="card-text">Tell us about your week! The good, bad and ugly. (We don't judge)</p>
                     <a class="btn btn-primary" href="student-page">Start</a>
                 </div>
             </div>
@@ -144,9 +175,9 @@
 
 @elsemobile
 <div class="card">
-    <div class="card-body"> 
+    <div class="card-body">
     <h1> You need a mobile phone </h1>
     </div>
-</div> 
+</div>
 @endmobile
 @endsection

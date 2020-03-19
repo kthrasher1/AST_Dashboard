@@ -46,10 +46,18 @@ class User extends Authenticatable
 
     ];
 
-
-
     public function roles() {
         return $this -> belongsToMany('App\Role');
+
+    }
+
+    public function student() {
+        return $this -> belongsToMany('App\Student');
+
+    }
+
+    public function staff() {
+        return $this -> belongsToMany('App\Staff');
 
     }
 

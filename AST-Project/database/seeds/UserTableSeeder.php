@@ -58,6 +58,16 @@ class UserTableSeeder extends Seeder
                 'password' => bcrypt('password'),
                 'created_at' => NOW(),
                 'updated_at' => NOW(),
+            ],
+
+            [
+                'id' => 5,
+                'user_id' => (string) Uuid::generate(4),
+                'name' => 'staff-other',
+                'email' => 'staff-other@gmail.com',
+                'password' => bcrypt('password'),
+                'created_at' => NOW(),
+                'updated_at' => NOW(),
             ]
 
         ];

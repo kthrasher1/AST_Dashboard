@@ -11,17 +11,23 @@ class StaffTableSeeder extends Seeder
      */
     public function run()
     {
-         //
-         $staffs = [
+        //
+         $staff =
             [
-            'staff_id' => 2,
-            'student_id' => 3,
-            ],
-        ];
 
-        foreach($staffs as $staff){
+                [
+                    'id' => 1,
+                ],
 
-            DB::table('staff')->insert($staff);
+                [
+                    'id' => 2,
+                ],
+
+            ];
+
+        foreach($staff as $staffs){
+
+            DB::table('staff')->insert($staffs);
         }
     }
 }

@@ -24,12 +24,12 @@ class AdminController extends Controller
 
             $user = User::where('id', $userId)->firstOrFail();
             $adminRole = Role::where('name', 'admin')->firstOrFail();
-    
+
             $user->roles()->sync($adminRole->id);
         }
-    
+
         return redirect('/admin')->with('success', 'User\'s role has been updated');
-  
+
     }
 
     public function removeRole($userId){
@@ -37,14 +37,14 @@ class AdminController extends Controller
         if(Auth::user()->id == $userId){
             return redirect('/admin') -> with('warning', 'you can\'t remove your own permissions, silly');
         }
-        else{ 
+        else{
 
             $user = User::where('id', $userId)->firstOrFail();
             $removeRole = Role::where('name','unassigned')->firstOrFail();
-    
+
             $user->roles()->sync($removeRole->id);
         }
-      
+
         return redirect('/admin')->with('success', 'User\'s role has been removed');
     }
 

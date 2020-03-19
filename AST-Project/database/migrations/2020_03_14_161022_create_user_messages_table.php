@@ -14,10 +14,12 @@ class CreateUserMessagesTable extends Migration
     public function up()
     {
         Schema::create('user_messages', function (Blueprint $table) {
+
             $table->increments('id');
             $table->unsignedBigInteger('user_id');
             $table->text('message');
             $table->timestamps();
+
         });
     }
 
