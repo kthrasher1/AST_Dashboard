@@ -15,8 +15,52 @@
                                         @if($ast_staff->id == $student->ast_id)
                                             @if($student->pivot->user_id == $user->id)
 
-                                                <p>{{ $user->name }}</p>
-                                                <p>{{ $user->email }}</p>
+
+
+
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered table-hover center">
+                                                        <thead>
+                                                            <tr>
+
+                                                                <th>Student</th>
+                                                                <th>Email</th>
+                                                                <th>Data</th>
+                                                                <th>Actions</th>
+                                                                <th>Status</th>
+
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+
+                                                                <td class="cap-first">  {{ $user->name }} </td>
+                                                                <td> {{ $user->email }} </td>
+
+                                                                <td>
+
+                                                                </td>
+
+                                                                <td>
+
+                                                                </td>
+
+                                                                <td>
+                                                                @if($user->isOnline())
+
+                                                                    <li class="text-success"> Online </li>
+
+                                                                @else
+
+                                                                <li class="text-muted" style="list-style-type: circle;"> Offline </li>
+
+                                                                @endif
+
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
 
                                             @endif
                                         @endif

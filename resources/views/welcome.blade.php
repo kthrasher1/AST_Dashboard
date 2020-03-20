@@ -72,7 +72,7 @@
 
         .shape {
             top: -250px;
-            right: -200px;
+            right: -275px;
             border-radius: 30%;
             width: 50%;
             height: 800px;
