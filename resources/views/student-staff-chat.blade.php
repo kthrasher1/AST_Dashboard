@@ -3,6 +3,25 @@
 @section('styling')
 
 <style>
+
+    main, body, html {
+            overflow: hidden;
+
+    }
+
+    main{
+        display: flex;
+        height: calc(100vh - 6rem);
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .row {
+      align-items: center;
+      justify-content: center;
+    }
+
     .chat {
       list-style: none;
       margin: 0;
@@ -39,6 +58,29 @@
       -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
       background-color: #555;
     }
+
+    @media only screen and (max-width : 450px) {
+      main{
+        height: auto;
+      }
+      .panel {
+        margin-top: 10px;
+        height: 60%;
+      }
+
+      .panel-body{
+          height: calc(100vh - 15rem);
+          
+      }
+
+      .btn{
+        height: calc(1.6em + 0.75rem + 2px);
+      }
+
+    
+
+      
+    }
 </style>
 
 @endsection
@@ -47,7 +89,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-heading">Chats</div>
 
