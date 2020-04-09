@@ -70,16 +70,16 @@
 
       .panel-body{
           height: calc(100vh - 15rem);
-          
+
       }
 
       .btn{
         height: calc(1.6em + 0.75rem + 2px);
       }
 
-    
 
-      
+
+
     }
 </style>
 

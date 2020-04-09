@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class StaffTableSeeder extends Seeder
 {
@@ -17,10 +18,17 @@ class StaffTableSeeder extends Seeder
 
                 [
                     'id' => 1,
+                    'staff_id' => 2,
+                    'created_at' => NOW(),
+                    'updated_at' => NOW()
+
                 ],
 
                 [
                     'id' => 2,
+                    'staff_id' => 5,
+                    'created_at' => NOW(),
+                    'updated_at' => NOW()
                 ],
 
             ];

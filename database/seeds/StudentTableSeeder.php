@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class StudentTableSeeder extends Seeder
 {
@@ -11,11 +12,20 @@ class StudentTableSeeder extends Seeder
         $students = [
 
             [
-                'id' => 1, 'ast_id' => 1,
+                'id' => 1,
+                'student_id' => 3,
+                'ast_id' => 1,
+                'created_at' => NOW(),
+                'updated_at' => NOW()
             ],
 
             [
-                'id' => 2, 'ast_id' => 2,
+                'id' => 2,
+                'student_id' => 4,
+                'ast_id' => 2,
+                'created_at' => NOW(),
+                'updated_at' => NOW()
+
             ],
 
         ];
@@ -27,7 +37,3 @@ class StudentTableSeeder extends Seeder
 
     }
 }
-
-
-
-

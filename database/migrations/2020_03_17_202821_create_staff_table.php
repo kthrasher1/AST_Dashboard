@@ -16,9 +16,10 @@ class CreateStaffTable extends Migration
         Schema::create('staff', function (Blueprint $table) {
 
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('staff_id');
             $table->timestamps();
 
-            
+            $table->foreign('staff_id')->references('id')->on('users')->onCascade('delete');
 
         });
     }

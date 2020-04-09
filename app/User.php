@@ -7,7 +7,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Cache;
 use App\Events\UserCreated;
-use Webpatser\Uuid\Uuid;
 
 
 class User extends Authenticatable
@@ -52,12 +51,12 @@ class User extends Authenticatable
     }
 
     public function student() {
-        return $this -> belongsToMany('App\Student');
+        return $this -> hasMany(Student::class, 'student_id');
 
     }
 
     public function staff() {
-        return $this -> belongsToMany('App\Staff');
+        return $this -> hasMany(Staff::class, 'staff_id');
 
     }
 
@@ -80,14 +79,6 @@ class User extends Authenticatable
 
         return Cache::has('is-user-online-' . $this->id);
 
-    }
-
-    public static function boot()
-    {
-        parent::boot();
-        self::creating(function ($model) {
-            $model->user_id = (string) Uuid::generate(4);
-        });
     }
 
 

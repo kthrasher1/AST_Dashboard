@@ -4,15 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Student extends Model
+class Student extends model
 {
-    //
-
-    public function staff(){
-        return $this->belongsToMany(Staff::class);
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'student_id');
     }
-
-    public function student_users(){
-        return $this->belongsToMany(User::class);
+    public function staff()
+    {
+        return $this->belongsTo(Staff::class, 'ast_id');
     }
 }

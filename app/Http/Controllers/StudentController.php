@@ -17,16 +17,15 @@ class StudentController extends Controller
     //     return view('student', [ 'users' => $users ]);
     // }
 
-    public function index(){
+    public function index(Request $request){
 
-        $students = Student::with('student_users')->get();
-        $users = User::with('staff')->get();
-        $staff = Staff::with('students')->get();
+        $studentUser = $request->user()->student;
 
-        return view('student',
-        [
-            'students' => $students,
-            'users' => $users,
+        $staff = User::whereHas('staff', function ($query) use ($studentUser) {
+            $query->whereIn('id', $studentUser->pluck('ast_id'));
+        })->get();
+
+        return view('student', [
             'staff' => $staff
         ]);
 

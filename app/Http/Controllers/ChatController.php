@@ -23,7 +23,7 @@ class ChatController extends Controller
      */
     public function index()
     {
-        return view('student-staff-chat');
+        return view('chat');
     }
 
     /**

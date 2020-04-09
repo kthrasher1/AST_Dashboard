@@ -1,10 +1,3 @@
-<script>
-    window.setTimeout(function() {
-    $(".alert").fadeTo(500, 0).slideUp(500, function(){
-        $(this).remove();
-    });
-}, 3000);
-</script>
 
 @if(session('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">

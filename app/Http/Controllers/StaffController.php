@@ -8,16 +8,25 @@ use App\Charts\EngagementChart;
 use App\User;
 use App\Student;
 use App\Staff;
+use Illuminate\Support\Facades\Auth;
 
 class StaffController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $staff = Staff::with('staff_users')->get();
-        $users = User::with('student')->get();
-        $students = Staff::with('students')->get();
+        $staff = $request->user()->staff;
 
-        return view('staff', ['staff' => $staff, 'users' => $users, 'students' => $students ]);
+        $students = User::whereHas('student', function ($query) use ($staff) {
+            $query->whereIn('ast_id', $staff->pluck('id'));
+        })->get();
+
+        $studentUsers = Student::get();
+
+        dd($studentUsers);
+
+        return view('staff', [
+            'student' => $students
+        ]);
     }
 
     // public function Graphs() {

@@ -2,7 +2,7 @@
 
 
 use Illuminate\Database\Seeder;
-use Webpatser\Uuid\Uuid;
+use Illuminate\Support\Facades\DB;
 
 class UserTableSeeder extends Seeder
 {
@@ -22,7 +22,6 @@ class UserTableSeeder extends Seeder
 
             [
                 'id' => 1,
-                'user_id' => (string) Uuid::generate(4),
                 'name' => 'admin',
                 'email' => 'admin@gmail.com',
                 'password' => bcrypt('password'),
@@ -32,7 +31,6 @@ class UserTableSeeder extends Seeder
 
             [
                 'id' => 2,
-                'user_id' => (string) Uuid::generate(4),
                 'name' => 'staff',
                 'email' => 'staff@gmail.com',
                 'password' => bcrypt('password'),
@@ -42,7 +40,6 @@ class UserTableSeeder extends Seeder
 
             [
                 'id' => 3,
-                'user_id' => (string) Uuid::generate(4),
                 'name' => 'student',
                 'email' => 'student@gmail.com',
                 'password' => bcrypt('password'),
@@ -52,7 +49,6 @@ class UserTableSeeder extends Seeder
 
             [
                 'id' => 4,
-                'user_id' => (string) Uuid::generate(4),
                 'name' => 'unassigned',
                 'email' => 'unassigned@gmail.com',
                 'password' => bcrypt('password'),
@@ -62,7 +58,6 @@ class UserTableSeeder extends Seeder
 
             [
                 'id' => 5,
-                'user_id' => (string) Uuid::generate(4),
                 'name' => 'staff-other',
                 'email' => 'staff-other@gmail.com',
                 'password' => bcrypt('password'),

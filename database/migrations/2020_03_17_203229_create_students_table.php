@@ -16,11 +16,13 @@ class CreateStudentsTable extends Migration
         Schema::create('students', function (Blueprint $table) {
 
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('student_id');
             $table->unsignedBigInteger('ast_id');
             $table->timestamps();
 
 
             $table->foreign('ast_id')->references('id')->on('staff')->onCascade('delete');
+            $table->foreign('student_id')->references('id')->on('users')->onCascade('delete');
 
         });
     }

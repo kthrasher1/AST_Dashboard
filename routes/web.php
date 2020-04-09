@@ -80,6 +80,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/student-range-slider', 'StudentController@RangeSliderSubmit');
 Route::post('/student-selection', 'StudentController@SelectionSubmit');
 
-Route::get('/student-staff-chat', 'ChatController@index');
+Route::get('/chat', 'ChatController@index');
 Route::get('messages', 'ChatController@GetMessages');
 Route::post('messages','ChatController@PostMessages');
