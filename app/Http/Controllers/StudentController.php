@@ -31,6 +31,12 @@ class StudentController extends Controller
 
     }
 
+    public function StudentPage(){
+
+        return view('student-pages.student-page');
+
+    }
+
     public function RangeSliderSubmit(Request $request){
 
 

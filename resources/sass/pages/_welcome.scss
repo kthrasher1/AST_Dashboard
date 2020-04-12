@@ -1,0 +1,39 @@
+
+.welcome-jumbotron{
+    height: 70vh;
+}
+
+.welcome-links .btn{
+    width: 100px;
+}
+
+.welcome-button{
+    background: $buttons !important;
+    color: $button-text;
+    border: none;
+        &:hover {
+        color: #fff;
+    }
+}
+
+
+@media only screen and (max-width : 450px) {
+
+    .welcome-header{
+        font-size: 3em;
+        text-align: center;
+    }
+
+    .welcome-text{
+        text-align: center;
+    }
+
+    .welcome-links{
+        text-align: center;
+    }
+
+    .welcome-jumbotron{
+        height: 100%;
+    }
+
+}

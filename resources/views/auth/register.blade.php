@@ -1,11 +1,18 @@
 @extends('layouts.app')
 
+@mobile
+
+@elsemobile
+    @include('partials.shapes')
+@endmobile
+
+
 @section('content')
-<div class="container">
+<div class="container" id="register">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header col-md-8">{{ __('Register') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -61,13 +68,17 @@
                             </div>
                         </div>
 
-                       
+
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+
+                                <div class="auth-links signup">
+                                    <p>Already registered? <a href="{{ route('login') }}" class="btn btn-link"> Sign in here</a></p>
+                                </div>
                             </div>
                         </div>
                     </form>

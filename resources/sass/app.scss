@@ -1,29 +1,27 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700|Open+Sans&display=swap');
 
 
-// Variables
-@import 'variables';
-
-// Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-body {
-    background: $body-bg !important;
-}
 
-.welcome-text {
-    text-align: center;
-}
+@import "defaults/normalize";
+@import "defaults/variables";
+@import "defaults/typography";
+@import "defaults/base";
 
-table  {
-    text-align: center;
-}
+@import "pages/auth";
 
-.cap-first {
-    text-transform: capitalize;
-}
+@import "pages/profile";
+@import "pages/welcome";
+@import "pages/student";
+@import "pages/staff";
+@import "pages/chat";
+
+@import "pages/student-pages/starting";
+@import "pages/student-pages/range";
+@import "pages/student-pages/selection";
 
 
-
-
+@import "componets/navbar";
+@import "componets/shapes";
+@import "componets/blob";
+@import "componets/tables";

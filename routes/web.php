@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Route::get('student-page-range', function()
 {
     return view('student-pages.student-page-range');
@@ -29,10 +31,6 @@ Route::get('student-page-home', function()
     return view('student');
 });
 
-Route::get('student-page', function()
-{
-    return view('student-pages.student-page');
-});
 
 
 
@@ -53,9 +51,10 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::group(['middleware' => ['staff']], function(){
 
-        Route::get('/staff', 'PermissionController@staff')->name('staff');
 
-        Route::get('/staff', 'StaffController@graphs');
+        Route::get('/chatlink','ChatController@staffChat')->name('chatlink');
+        Route::get('/staff', 'PermissionController@staff')->name('staff');
+        // Route::get('/staff', 'StaffController@graphs');
 
     });
 
@@ -63,23 +62,29 @@ Route::group(['middleware' => ['auth']], function() {
 
         Route::get('/student', 'PermissionController@student')->name('student');
         Route::get('/student', 'StudentController@index')->name('student');
+        Route::get('/student-page', 'StudentController@StudentPage');
+        Route::get('/studentChat', 'ChatController@studentChat')->name('studentChat');
 
     });
-
-
-
 
 });
 
 Auth::routes();
 
-Route::get('/staff', 'StaffController@index')->name('staff');
 
+
+Route::get('/staff', 'StaffController@index')->name('staff');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/student-range-slider', 'StudentController@RangeSliderSubmit');
 Route::post('/student-selection', 'StudentController@SelectionSubmit');
 
-Route::get('/chat', 'ChatController@index');
+
 Route::get('messages', 'ChatController@GetMessages');
 Route::post('messages','ChatController@PostMessages');
+
+
+
+Route::get('profile', 'UserController@profile')->name('profile');
+Route::post('/UpdatePassword','UserController@UpdatePassword')->name('UpdatePassword');
+Route::post('profile', 'UserController@image_update');

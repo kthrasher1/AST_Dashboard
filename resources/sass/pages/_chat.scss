@@ -1,0 +1,78 @@
+#chat{
+    margin-top: 10px;
+    height: 60%;
+
+    .row {
+        align-items: center;
+        justify-content: center;
+      }
+
+      .chat {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .card-header{
+          border: none;
+          text-transform: capitalize;
+          font-weight: 700;
+          .user-image{
+              box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
+              height: 30px;
+              border-radius: 100%;
+              margin-right: 10px;
+          }
+      }
+
+      .chat li {
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+      }
+
+      .chat li .chat-body p {
+        margin: 0;
+        color: #777777;
+      }
+
+    .scroll {
+        max-height: calc(100vh - 15rem);
+        min-height: calc(100vh - 15rem);
+        overflow-y: auto;
+    }
+
+    ::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+
+    ::-webkit-scrollbar
+    {
+        width: 12px;
+        background-color: #F5F5F5;
+    }
+
+    ::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: $paragraph;
+    }
+
+    #btn-input{
+        max-width: 70%;
+        margin-right: 10px;
+    }
+
+    .btn{
+        height: calc(1.6em + 0.75rem + 2px);
+        width: 100px;
+        background: $buttons;
+        color: $button-text;
+        border: none;
+      }
+
+
+}

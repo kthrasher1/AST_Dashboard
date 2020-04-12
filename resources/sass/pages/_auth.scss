@@ -1,0 +1,83 @@
+
+#login, #register {
+    margin-top: 20px;
+    color: inherit;
+    border-radius: 5px;
+    z-index: 1;
+
+    .card {
+        background-color: inherit;
+        border: none;
+        .card-header{
+            text-align: center;
+            background: inherit;
+            border: none;
+            font-weight: 700;
+            font-size: 2.5em;
+
+        }
+        form{
+            position: relative;
+            font-size: 1.1em;
+
+            button{
+                width: 100%;
+                height: 40px;
+                margin: 15px 0px 15px 0px;
+                font-size: 1.1em;
+                color: inherit;
+                background: $buttons;
+                border: none;
+
+                &:hover{
+                    color: white;
+                }
+            }
+
+            .auth-links{
+                text-align: center;
+                width: 100%;
+                .btn{
+                    padding: 0px !important;
+                }
+                a{
+                    padding: 0;
+                    padding-left: 0px;
+                    color: $buttons;
+                    font-size: 1.1em;
+
+                }
+            }
+
+
+
+        }
+    }
+
+}
+
+@media only screen and (min-width : 1024px) {
+    #login, #register{
+        margin-top: 100px;
+        background-color: whitesmoke;
+
+        .card{
+            .card-header{
+                text-align: right;
+            }
+            form{
+                .auth-links{
+                    width: auto;
+                    text-align: initial;
+                    a{
+
+                        text-decoration: underline;
+                    }
+                }
+                button{
+                    width: auto;
+                }
+            }
+        }
+    }
+}

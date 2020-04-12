@@ -16,16 +16,12 @@ class StaffController extends Controller
     {
         $staff = $request->user()->staff;
 
-        $students = User::whereHas('student', function ($query) use ($staff) {
+        $student = User::whereHas('student', function ($query) use ($staff) {
             $query->whereIn('ast_id', $staff->pluck('id'));
         })->get();
 
-        $studentUsers = Student::get();
-
-        dd($studentUsers);
-
         return view('staff', [
-            'student' => $students
+            'students' => $student
         ]);
     }
 

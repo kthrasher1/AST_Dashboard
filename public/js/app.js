@@ -1896,8 +1896,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['messages']
+  props: ['messages', 'user', 'user1', 'otheruser', 'otheruser1']
 });
 
 /***/ }),
@@ -46948,25 +46957,32 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "ul",
-    { staticClass: "chat" },
+    "div",
     _vm._l(_vm.messages, function(message) {
-      return _c("li", { key: message.id, staticClass: "left clearfix" }, [
-        _c("div", { staticClass: "chat-body clearfix" }, [
-          _c("div", { staticClass: "header" }, [
-            _c("strong", { staticClass: "primary-font" }, [
-              _vm._v(
-                "\n                    " +
-                  _vm._s(message.user.name) +
-                  "\n                "
-              )
+      return _c("div", { key: message.id }, [
+        _c("div", [
+          _c("ul", { staticClass: "chat" }, [
+            _c("li", { staticClass: "left clearfix" }, [
+              _c("div", { staticClass: "chat-body clearfix" }, [
+                _c("div", { staticClass: "header" }, [
+                  _c("strong", { staticClass: "primary-font" }, [
+                    _vm._v(
+                      "\n\n                                " +
+                        _vm._s(message.user.name) +
+                        "\n                            "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "\n                            " +
+                      _vm._s(message.message) +
+                      "\n                        "
+                  )
+                ])
+              ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "\n                " + _vm._s(message.message) + "\n            "
-            )
           ])
         ])
       ])
@@ -59215,6 +59231,12 @@ slider.oninput = function () {
     text.innerHTML = "Amazing!";
   }
 };
+
+window.setTimeout(function () {
+  $(".alert").fadeTo(500, 0).slideUp(500, function () {
+    $(this).remove();
+  });
+}, 3000);
 
 /***/ }),
 

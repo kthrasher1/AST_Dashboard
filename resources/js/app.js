@@ -52,7 +52,6 @@ const app = new Vue({
     }
 });
 
-
 let slider = document.getElementById("slider");
 let img = document.getElementById("emotion-icons");
 let text = document.getElementById("emotion-text");
@@ -85,3 +84,9 @@ slider.oninput = function()
         text.innerHTML = "Amazing!";
     }
 }
+
+window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove();
+    });
+}, 3000);

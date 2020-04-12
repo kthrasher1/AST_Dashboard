@@ -7,6 +7,9 @@ use App\Events\MessageSent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use App\User;
+use App\Student;
+
 class ChatController extends Controller
 {
     //
@@ -21,9 +24,25 @@ class ChatController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function staffChat(Request $request)
     {
-        return view('chat');
+
+        $currentUser = Auth::user()->id;
+        $students = User::where('id', $request->studentid)->get();
+
+        return view('staff-pages.staffChat', [
+           'studentid' => $students, 'currentUser' => $currentUser
+        ]);
+    }
+
+    public function studentChat (Request $request)
+    {
+        $currentUser = Auth::user()->id;
+        $staff = User::where('id', $request->staffid)->get();
+
+        return view('student-pages.StudentChat', [
+            'staff' => $staff, 'currentUser' => $currentUser
+         ]);
     }
 
     /**

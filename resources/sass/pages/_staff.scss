@@ -1,0 +1,19 @@
+#staff{
+    border: none;
+    width: 100vw;
+    .card-header{
+        border: none;
+    }
+    .card-body{
+        background-color: $card-color;
+        margin: 25px;
+        border-radius: 5px;
+    }
+
+    table{
+        border: none;
+        thead th {
+            border-bottom: none;
+        }
+    }
+}

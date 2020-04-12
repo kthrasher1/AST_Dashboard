@@ -1,0 +1,92 @@
+.student-name{
+    text-transform: capitalize;
+}
+
+#student-cards  {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    background-color: $card-color;
+    border: none;
+
+    .card-header{
+        border: none;
+    }
+
+    a{
+        width: 100px;
+        height: 40px;
+        background: $buttons;
+        border: none;
+        color: $button-text;
+
+        &:hover{
+            color: white;
+        }
+    }
+}
+
+.student-button {
+    margin: 30px;
+    width: 100px;
+}
+
+.student-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .student-header{
+        width: 100%;
+
+    }
+    .user-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
+    }
+    a{
+        color: $buttons;
+        text-decoration: underline;
+    }
+}
+
+#staff{
+    width: 100%;
+    display: flex;
+    .staff-info{
+        width: 65%;
+        display: flex;
+        border-right: 1px solid rgba(0, 0, 0, 0.09);
+
+            .staff-image{
+                box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
+                margin-top: 10px;
+                width: 50px;
+                height: 50px;
+                border-radius: 100%;
+                align-self: flex-start;
+                object-fit: contain;
+            }
+
+        .info{
+            flex: 1 1 auto;
+            display: inline-block;
+            margin-left: 10px;
+        }
+    }
+
+    .chat-container{
+        width: 35%;
+        height: auto;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+        a{
+            position: relative;
+            top: 50%;
+        }
+    }
+}

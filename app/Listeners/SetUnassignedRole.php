@@ -6,6 +6,7 @@ use App\Events\UserCreated;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use App\Role;
+use App\User;
 
 class SetUnassignedRole
 {
@@ -27,7 +28,11 @@ class SetUnassignedRole
      */
     public function handle(UserCreated $event)
     {
-        $role = Role::where('name', 'unassigned')->firstOrFail();
-        $event -> user ->roles()->sync($role->id);
+        $userRoles= $event -> user -> roles()->get();
+
+        if($userRoles->isEmpty()){
+            $role = Role::where('name', 'unassigned')->firstOrFail();
+            $event -> user ->roles()->sync($role->id);
+        }
     }
 }

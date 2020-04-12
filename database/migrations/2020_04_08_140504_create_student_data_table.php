@@ -18,20 +18,39 @@ class CreateStudentDataTable extends Migration
             $table->unsignedBigInteger('student_id');
             $table->integer('emotion_slider');
             $table->string('issue_selector');
+
             $table->integer('risk_level');
             $table->integer('total_attendance');
+
+            $table->string('module_1_name');
             $table->integer('module_1_grade');
             $table->integer('module_1_attendance');
+            $table->integer('module_1_semester');
+
+            $table->string('module_2_name');
             $table->integer('module_2_grade');
             $table->integer('module_2_attendance');
+            $table->integer('module_2_semester');
+
+            $table->string('module_3_name');
             $table->integer('module_3_grade');
             $table->integer('module_3_attendance');
+            $table->integer('module_3_semester');
+
+            $table->string('module_4_name');
             $table->integer('module_4_grade');
             $table->integer('module_4_attendance');
+            $table->integer('module_4_semester');
+
+            $table->string('module_5_name');
             $table->integer('module_5_grade');
             $table->integer('module_5_attendance');
+            $table->integer('module_5_semester');
+
+            $table->string('module_6_name');
             $table->integer('module_6_grade');
             $table->integer('module_6_attendance');
+            $table->integer('module_6_semester');
 
             $table->timestamps();
 

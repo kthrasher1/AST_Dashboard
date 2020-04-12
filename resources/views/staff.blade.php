@@ -1,20 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="justify-content-center">
-    <div class="card">
-        <div class="card-header">Dashboard</div>
+<div class="justify-content-center" >
+    <div class="card" id="staff">
         <div class="card-body">
             <div class="container">
 
+                <h1 class="staff-welcome">Welcome {{ Auth::user()->name }}</h1>
 
-
+                <h2>Your Students</h2>
                 <div class="table-responsive">
-                    <table class="table table-bordered table-hover center">
+                    <table class="table table-hover center">
                         <thead>
                             <tr>
 
-                                <th>Student</th>
+                                <th>Name</th>
                                 <th>Email</th>
                                 <th>Data</th>
                                 <th>Actions</th>
@@ -24,22 +24,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($student as $students )
+                            @foreach ($students as $student )
                             <tr>
 
-                                <td class="cap-first"> {{ $students->name}} </td>
-                                <td> {{ $students->email }} </td>
+                                <td class="cap-first"> {{ $student->name}} </td>
+                                <td> {{ $student->email }} </td>
+
 
                                 <td>
+                                    {{$student->id}}
+
+                                </td>
+                                <td>
+
+                                    <a class="btn btn-primary" href="{{ route('chatlink', ['studentid' => $student->id] ) }}" >Chat</a>
 
                                 </td>
 
                                 <td>
-
-                                </td>
-
-                                <td>
-                                    @if($students->isOnline())
+                                    @if($student->isOnline())
 
                                     <li class="text-success"> Online </li>
 
