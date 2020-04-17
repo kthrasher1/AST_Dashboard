@@ -30,42 +30,39 @@
             </div>
             <div class="card" id="student-cards">
                 <div class="card-header"> <h4>AST</h4> </div>
-                <div class="card-body" id="staff">
-
+                <div class="card-body" id="staff-info">
                     <div class="staff-info">
-                        @foreach($staff as $ast)
+                        <div class="staff-profile">
+                            @foreach($staff as $ast)
+                            <img class="staff-image" src="/uploads/avatars/{{ $ast->avatar }}" alt="" srcset="">
 
+                                <span class="info">
+                                    <p>{{$ast->name}}</p>
+                                    <p>{{$ast->email}}</p>
+                                </span>
 
-                        <img class="staff-image" src="/uploads/avatars/{{ $ast->avatar }}" alt="" srcset="">
-
-
-                        <span class="info">
-                            <p>{{$ast->name}}</p>
-                            <p>{{$ast->email}}</p>
-                        </span>
-
-                        @endforeach
-
-                    </div>
+                            @endforeach
+                        </div>
 
                     <div class="chat-container">
                         <div class="chat">
-                        <a class="btn btn-primary  student-btn" href="{{ route('studentChat', ['staffid' => $ast->id] ) }}" >Chat</a>
+                            <a class="btn btn-primary  student-btn" href="{{ route('studentChat', ['staffid' => $ast->id] ) }}" >Chat</a>
                         </div>
                     </div>
+
                 </div>
             </div>
-
+        </div>
 
             <div class="card" id="student-cards">
+
                 <div class="card-header"> <h4> How was your week? </h4> </div>
                 <div class="card-body">
                     <p class="card-text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed officiis eveniet odio dolorem</p>
                     <a class="btn btn-primary student-btn" href="student-page">Start</a>
                 </div>
-            </div>
 
-        </div>
+            </div>
     </div>
 </div>
 @endsection

@@ -5,11 +5,12 @@
 #student-cards  {
     margin-bottom: 15px;
     margin-top: 15px;
-    background-color: $card-color;
     border: none;
+    background-color: $card-color;
 
     .card-header{
         border: none;
+        background-color: darken($card-color, 5%);
     }
 
     a{
@@ -35,6 +36,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     .student-header{
         width: 100%;
 
@@ -51,14 +53,18 @@
     }
 }
 
-#staff{
+#staff-info{
     width: 100%;
     display: flex;
-    .staff-info{
-        width: 65%;
-        display: flex;
-        border-right: 1px solid rgba(0, 0, 0, 0.09);
+    margin-bottom: 10px;
 
+    .staff-info{
+        width: 100%;
+        display: flex;
+        .staff-profile{
+            width: 65%;
+            border-right: 1px solid rgba(0, 0, 0, 0.09);
+            display: flex;
             .staff-image{
                 box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
                 margin-top: 10px;
@@ -70,10 +76,14 @@
             }
 
         .info{
+            max-width: 150px;
             flex: 1 1 auto;
             display: inline-block;
             margin-left: 10px;
+            overflow-wrap: break-word;
+
         }
+    }
     }
 
     .chat-container{

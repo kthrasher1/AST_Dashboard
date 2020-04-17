@@ -1,19 +1,76 @@
-#staff{
+#staff-dashboard {
     border: none;
     width: 100vw;
-    .card-header{
+    overflow: visible;
+
+    .container{
+        margin: none;
+    }
+
+    .staff-welcome {
+        text-transform: capitalize;
+        margin-bottom: 10px;
+    }
+
+    .card-header {
         border: none;
     }
-    .card-body{
-        background-color: $card-color;
+
+    .card-body {
         margin: 25px;
         border-radius: 5px;
     }
 
-    table{
-        border: none;
-        thead th {
-            border-bottom: none;
+    #student-display {
+
+        width: 100%;
+
+
+        table {
+            border-collapse: collapse;
+
+            tr,
+            td {
+                border: none;
+                padding: 1em;
+                vertical-align: baseline;
+                margin: 1em;
+            }
+
+            tbody {
+                &:nth-child(odd) {
+                    background-color: $card-color;
+                }
+
+                &:nth-child(even) {
+                    background-color: white;
+                }
+            }
+
+            .chart {
+                max-height: 100px;
+            }
+
+        }
+
+        a {
+            background: $buttons;
+            border: none;
+            color: $button-text;
+
+            &:hover {
+                color: white;
+            }
+        }
+
+        .chat-btn{
+            width: 100px;
+            height: 40px;
+        }
+
+        .view-btn{
+            height: 40px;
+            width: auto;
         }
     }
 }

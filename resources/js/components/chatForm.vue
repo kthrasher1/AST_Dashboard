@@ -1,6 +1,7 @@
 <template>
     <div class="input-group">
-        <input id="btn-input" type="text" name="message" class="form-control input-sm" placeholder="Type your message here..." v-model="newMessage" @keyup.enter="PostMessage">
+        <input id="btn-input" type="text" name="message" class="form-control input-sm"
+            placeholder="Type your message here..." v-model="newMessage" @keyup.enter="PostMessage">
 
         <span class="input-group-btn">
             <button class="btn btn-primary btn-sm" id="btn-chat" @click="PostMessage">
@@ -31,4 +32,5 @@
             }
         }
     }
+
 </script>

@@ -10907,7 +10907,6 @@ h2 {
 h3 {
   font-family: "Nunito", sans-serif;
   color: #00214d;
-  font-size: 50px;
 }
 
 h4 {
@@ -11188,12 +11187,13 @@ header {
 #student-cards {
   margin-bottom: 15px;
   margin-top: 15px;
-  background-color: #f2f4f6;
   border: none;
+  background-color: #f2f4f6;
 }
 
 #student-cards .card-header {
   border: none;
+  background-color: #e3e7ec;
 }
 
 #student-cards a {
@@ -11236,18 +11236,24 @@ header {
   text-decoration: underline;
 }
 
-#staff {
+#staff-info {
+  width: 100%;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+#staff-info .staff-info {
   width: 100%;
   display: flex;
 }
 
-#staff .staff-info {
+#staff-info .staff-info .staff-profile {
   width: 65%;
-  display: flex;
   border-right: 1px solid rgba(0, 0, 0, 0.09);
+  display: flex;
 }
 
-#staff .staff-info .staff-image {
+#staff-info .staff-info .staff-profile .staff-image {
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
   margin-top: 10px;
   width: 50px;
@@ -11258,13 +11264,15 @@ header {
      object-fit: contain;
 }
 
-#staff .staff-info .info {
+#staff-info .staff-info .staff-profile .info {
+  max-width: 150px;
   flex: 1 1 auto;
   display: inline-block;
   margin-left: 10px;
+  overflow-wrap: break-word;
 }
 
-#staff .chat-container {
+#staff-info .chat-container {
   width: 35%;
   height: auto;
   margin-left: auto;
@@ -11274,32 +11282,81 @@ header {
   margin-left: 10px;
 }
 
-#staff .chat-container a {
+#staff-info .chat-container a {
   position: relative;
   top: 50%;
 }
 
-#staff {
+#staff-dashboard {
   border: none;
   width: 100vw;
+  overflow: visible;
 }
 
-#staff .card-header {
+#staff-dashboard .container {
+  margin: none;
+}
+
+#staff-dashboard .staff-welcome {
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+#staff-dashboard .card-header {
   border: none;
 }
 
-#staff .card-body {
-  background-color: #f2f4f6;
+#staff-dashboard .card-body {
   margin: 25px;
   border-radius: 5px;
 }
 
-#staff table {
-  border: none;
+#staff-dashboard #student-display {
+  width: 100%;
 }
 
-#staff table thead th {
-  border-bottom: none;
+#staff-dashboard #student-display table {
+  border-collapse: collapse;
+}
+
+#staff-dashboard #student-display table tr,
+#staff-dashboard #student-display table td {
+  border: none;
+  padding: 1em;
+  vertical-align: baseline;
+  margin: 1em;
+}
+
+#staff-dashboard #student-display table tbody:nth-child(odd) {
+  background-color: #f2f4f6;
+}
+
+#staff-dashboard #student-display table tbody:nth-child(even) {
+  background-color: white;
+}
+
+#staff-dashboard #student-display table .chart {
+  max-height: 100px;
+}
+
+#staff-dashboard #student-display a {
+  background: #00ebc7;
+  border: none;
+  color: #00214d;
+}
+
+#staff-dashboard #student-display a:hover {
+  color: white;
+}
+
+#staff-dashboard #student-display .chat-btn {
+  width: 100px;
+  height: 40px;
+}
+
+#staff-dashboard #student-display .view-btn {
+  height: 40px;
+  width: auto;
 }
 
 #chat {
@@ -11377,9 +11434,142 @@ header {
   border: none;
 }
 
+#student-start-page {
+  height: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#student-start-page .image-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#student-start-page .card {
+  border: none;
+  text-align: center;
+  height: 100%;
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+
 #student-start-page .logo {
   width: 150px;
   height: 150px;
+  margin: 20px;
+  margin-bottom: 35px;
+  align-self: center;
+  text-align: center;
+}
+
+#student-start-page h1 {
+  font-weight: 700;
+}
+
+#student-start-page h2 {
+  font-size: 18px;
+}
+
+#student-start-page a {
+  width: 100px;
+  height: 40px;
+  margin: 30px;
+  border: none;
+}
+
+#student-start-page a:hover {
+  color: white;
+}
+
+#student-start-page .back-button {
+  background: #ff5470;
+  color: white;
+}
+
+#student-start-page .next-button {
+  background-color: #00ebc7;
+  color: #00214d;
+}
+
+#student-profile {
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#student-profile > * {
+  flex: initial;
+}
+
+#student-profile .card {
+  background-color: #f2f4f6;
+  border: none;
+  margin: 15px;
+}
+
+#student-profile .card-header {
+  border: none;
+  background-color: #e3e7ec;
+}
+
+#student-profile i {
+  color: white;
+  float: right;
+}
+
+#student-profile #student-info-panel {
+  width: 20%;
+}
+
+#student-profile #student-info-panel .profile-picture {
+  margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+#student-profile #student-info-panel .student-name {
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+#student-profile #student-info-panel .student-email {
+  margin-bottom: 10px;
+}
+
+#student-profile #student-info-panel .chat-btn {
+  width: 100px;
+  height: 40px;
+  background: #00ebc7;
+  border: none;
+  color: #00214d;
+}
+
+#student-profile #student-info-panel .chat-btn:hover {
+  color: white;
+}
+
+#student-profile #module-info-panel {
+  width: 20%;
+}
+
+#student-profile #attendance-info-panel {
+  width: 55%;
+}
+
+#student-profile #unknown-info-panel {
+  width: 30%;
+}
+
+#student-profile #unknown1-info-panel {
+  width: 66%;
+}
+
+#student-profile #unknown2-info-panel {
+  width: 100%;
 }
 
 .navbar {

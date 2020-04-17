@@ -14,4 +14,8 @@ class Student extends model
     {
         return $this->belongsTo(Staff::class, 'ast_id');
     }
+
+    public function data(){
+        return $this->hasMany(StudentData::class, 'student_id');
+    }
 }

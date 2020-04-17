@@ -54,7 +54,8 @@ Route::group(['middleware' => ['auth']], function() {
 
         Route::get('/chatlink','ChatController@staffChat')->name('chatlink');
         Route::get('/staff', 'PermissionController@staff')->name('staff');
-        // Route::get('/staff', 'StaffController@graphs');
+        Route::get('/staff', 'StaffController@index')->name('staff');
+        Route::get('/student-profile', 'StaffController@studentProfile')->name('student-profile');
 
     });
 
@@ -73,7 +74,7 @@ Auth::routes();
 
 
 
-Route::get('/staff', 'StaffController@index')->name('staff');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/student-range-slider', 'StudentController@RangeSliderSubmit');
