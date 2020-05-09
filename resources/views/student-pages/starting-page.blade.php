@@ -25,7 +25,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="image-container">
-                <img class="logo" src="{{URL::asset('/img/very-happy-blink.svg')}}">
+                <img class="icon" src="{{URL::asset('/img/very-happy-blink.svg')}}">
             </div>
             <div class="card">
 
@@ -36,7 +36,7 @@
                     <h2> How has your week been? </h2>
 
                     <div class="links" >
-                        <a class="btn btn-secondary back-button" href="{{ url()->previous() }}"> Back </a>
+                        <a class="btn btn-secondary back-button" href="/student-page-home"> Back </a>
                         <a class="btn btn-primary next-button" href="student-page-range">Start</a>
                     </div>
                 </div>

@@ -58,7 +58,7 @@
 
                 <div class="card-header"> <h4> How was your week? </h4> </div>
                 <div class="card-body">
-                    <p class="card-text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed officiis eveniet odio dolorem</p>
+                    <p class="card-text"> Please complete this weeks check-in, tell us how you are doing!</p>
                     <a class="btn btn-primary student-btn" href="student-page">Start</a>
                 </div>
 

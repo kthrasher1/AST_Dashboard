@@ -10,7 +10,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,700;1,600&family=Open+Sans:ital,wght@0,600;1,300&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/16b588ee5b.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/38ded2fc52.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">

@@ -37,7 +37,7 @@
 
                 <div class="card-body scroll" v-chat-scroll>
 
-                <chat-messages :messages="messages" :user1="{{ $currentUser }}" :otheruser1="{{ $studentid }}"  ></chat-messages>
+                <chat-messages :messages="messages"></chat-messages>
 
                 </div>
                 <div class="card-footer">

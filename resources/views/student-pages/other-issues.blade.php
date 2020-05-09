@@ -195,69 +195,21 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="/student-selection">
+                    <form method="POST" action="/student-other-issues">
                         @csrf
-
-                        @if($rangeSlider == 1)
-                        <img src="{{URL::asset('/img/very-sad.svg')}}" alt="">
-                        <h1>Oh no - What made your week terrible</h1>
-                        @elseif($rangeSlider == 2)
-                        <img src="{{URL::asset('/img/kinda-sad.svg')}}" alt="">
-                        <h1>Oh no - What made your week bad?</h1>
-                        @elseif($rangeSlider == 3)
-                        <img src="{{URL::asset('/img/neutral.svg')}}" alt="">
-                        <h1>Okay - What made your day okay?</h1>
-                        @elseif($rangeSlider == 4)
-                        <img src="{{URL::asset('/img/kinda-happy.svg')}}" alt="">
-                        <h1>Awesome - What made your day good?</h1>
-                        @elseif($rangeSlider == 5)
-                        <img src="{{URL::asset('/img/very-happy.svg')}}" alt="">
-                        <h1>Great - What made your day AMAZING?</h1>
-                        @endif
-
-
-
                         <div class="checkbox-block">
                                 <label class="selection-label">
-                                    <input type="checkbox" name="checkboxSelect" id="" value="1" class="checkbox checkbox-round"><span> 1 </span>
+                                    <p> Any other issues, please use the box below </p>
+                                    <input type="imput" name="inputValue" class="">
                                 </label>
-
-
-
-                                <label class="selection-label">
-                                    <input type="checkbox" name="checkboxSelect1" id="" value="2" class="checkbox checkbox-round"><span> 2 </span>
-                                </label>
-
-
-
-                                <label class="selection-label">
-                                    <input type="checkbox" name="checkboxSelect2" id="" value="3" class="checkbox checkbox-round"><span> 3 </span>
-                                </label>
-
-
-
-                                <label class="selection-label">
-                                    <input type="checkbox" name="checkboxSelect3" id="" value="4" class="checkbox checkbox-round"><span> 4 </span>
-                                </label>
-
-
-
-                                <label class="selection-label">
-                                    <input type="checkbox" name="checkboxSelect4" id="" value="5" class="checkbox checkbox-round"><span> 5 </span>
-                                </label>
-
                         </div>
 
-                            <input type="hidden" name="_page-num" value="2">
-
-
+                        <input type="hidden" name="_page-num" value="6">
 
                         <a class="btn btn-secondary" href="{{ url()->previous() }}"> Back </a>
-                        <button class="btn btn-primary" type="submit">Next</button>
+                        <button class="btn btn-primary" type="submit">submit</button>
 
                     </form>
-
-
                 </div>
             </div>
 

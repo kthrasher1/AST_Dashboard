@@ -15,11 +15,14 @@ class StudentDataSeeder extends Seeder
 
             [
                 'id' => 1,
-                'student_id' => 1,
+                'student_id' => 3,
                 'emotion_slider' => 3,
                 'issue_selector' => 'relationship, university, homelife',
+
                 'risk_level' => 2,
-                'total_attendance' => 96,
+                'total_attendance' => 66,
+
+                'semester' => 1,
 
                 'module_1_name' => 'Data Mining',
                 'module_1_grade' => 74,
@@ -36,19 +39,19 @@ class StudentDataSeeder extends Seeder
                 'module_3_attendance' => 56,
                 'module_3_semester' => 1,
 
-                'module_4_name' => 'Databases',
-                'module_4_grade' => 64,
-                'module_4_attendance' => 68,
+                'module_4_name' => null,
+                'module_4_grade' => null,
+                'module_4_attendance' => null,
                 'module_4_semester' => 2,
 
-                'module_5_name' => 'Visulisation',
-                'module_5_grade' => 65,
-                'module_5_attendance' => 57,
+                'module_5_name' => null,
+                'module_5_grade' => null,
+                'module_5_attendance' => null,
                 'module_5_semester' => 2,
 
-                'module_6_name' => 'Virtual Environments',
-                'module_6_grade' => 65,
-                'module_6_attendance' => 54,
+                'module_6_name' => null,
+                'module_6_grade' => null,
+                'module_6_attendance' => null,
                 'module_6_semester' => 2,
 
                 'created_at' => NOW(),

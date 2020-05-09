@@ -59187,10 +59187,10 @@ var app = new Vue({
     var _this = this;
 
     this.GetMessages();
-    Echo["private"]('chat').listen('MessageSent', function (e) {
+    Echo["private"]('chat').listen('MessageSent', function (message) {
       _this.messages.push({
-        message: e.message.message,
-        user: e.user
+        message: message.message.message,
+        user: message.user
       });
     });
   },

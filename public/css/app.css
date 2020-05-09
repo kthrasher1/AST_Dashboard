@@ -11336,6 +11336,7 @@ header {
 }
 
 #staff-dashboard #student-display table .chart {
+  display: inline-block;
   max-height: 100px;
 }
 
@@ -11361,7 +11362,7 @@ header {
 
 #chat {
   margin-top: 10px;
-  height: 60%;
+  height: auto;
 }
 
 #chat .row {
@@ -11436,7 +11437,6 @@ header {
 
 #student-start-page {
   height: 100%;
-  margin-top: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11456,7 +11456,11 @@ header {
   border-radius: 5px;
 }
 
-#student-start-page .logo {
+#student-start-page .card .card-body {
+  padding: 3.25rem;
+}
+
+#student-start-page .icon {
   width: 150px;
   height: 150px;
   margin: 20px;
@@ -11476,7 +11480,7 @@ header {
 #student-start-page a {
   width: 100px;
   height: 40px;
-  margin: 30px;
+  margin: 10px;
   border: none;
 }
 
@@ -11492,6 +11496,522 @@ header {
 #student-start-page .next-button {
   background-color: #00ebc7;
   color: #00214d;
+}
+
+#student-range-page {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#student-range-page .image-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+#student-range-page .card {
+  border: none;
+  text-align: center;
+  position: relative;
+  height: 65%;
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+
+#student-range-page .emotion-icons {
+  width: 150px;
+  height: 150px;
+  align-self: center;
+  text-align: center;
+}
+
+#student-range-page h1 {
+  font-size: 2em;
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+#student-range-page h2 {
+  font-size: 18px;
+}
+
+#student-range-page .btn {
+  width: 100px;
+  height: 40px;
+  margin: 10px;
+  margin-top: 25px;
+  border: none;
+}
+
+#student-range-page .btn:hover {
+  color: white;
+}
+
+#student-range-page .back-button {
+  background: #ff5470;
+  color: white;
+}
+
+#student-range-page .next-button {
+  background-color: #00ebc7;
+  color: #00214d;
+  border: none;
+}
+
+#student-range-page .slider {
+  margin: 30px 0 30px 0;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 1;
+}
+
+#student-range-page .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #333;
+  cursor: pointer;
+}
+
+#student-range-page .slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #333;
+  cursor: pointer;
+}
+
+#student-selection-page {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*.checkbox {
+      -webkit-appearance: none;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+  }
+
+  .checkbox:before {
+      content: "";
+
+      height: 2.5em;
+      width: 2.5rem;
+
+      background:;
+  }
+
+  .checkbox:checked {
+      position: relative;
+  }
+
+  .checkbox:after {
+      content: "";
+
+      position: absolute;
+
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ff4081;
+  }
+
+  .checkbox:checked:after {
+
+      color: white;
+  }
+
+  .checkbox:focus {
+      outline: none;
+  }
+
+  .checkbox:checked:before {
+      background-color: #039be5;
+  }
+
+  .checkbox-round:before {
+      border-radius: 100%;
+  }*/
+}
+
+#student-selection-page .image-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+
+#student-selection-page .card {
+  border: none;
+  text-align: center;
+  height: 100%;
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+
+#student-selection-page .icon {
+  width: 150px;
+  height: 150px;
+  align-self: center;
+  text-align: center;
+}
+
+#student-selection-page h1 {
+  font-weight: 700;
+}
+
+#student-selection-page h2 {
+  font-size: 20px;
+  margin: 10px;
+  margin-bottom: 35px;
+}
+
+#student-selection-page .btn {
+  width: 100px;
+  height: 40px;
+  margin-top: 30px;
+  margin: 10px;
+  border: none;
+}
+
+#student-selection-page .btn:hover {
+  color: white;
+}
+
+#student-selection-page .links {
+  margin: 10px;
+}
+
+#student-selection-page .back-button {
+  background: #ff5470;
+  color: white;
+}
+
+#student-selection-page .next-button {
+  background-color: #00ebc7;
+  color: #00214d;
+  border: none;
+}
+
+#student-selection-page .checkbox-block {
+  display: grid;
+  grid-template-columns: 0fr repeat(3, 1fr) 0fr;
+  grid-template-rows: 0fr repeat(2, 1fr) repeat(2, 0fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+#student-selection-page .home {
+  grid-area: 2/2/3/3;
+}
+
+#student-selection-page .uni {
+  grid-area: 2/3/3/4;
+}
+
+#student-selection-page .friends {
+  grid-area: 2/4/3/5;
+}
+
+#student-selection-page .travel {
+  grid-area: 3/3/4/4;
+}
+
+#student-selection-page .rel {
+  grid-area: 3/2/4/3;
+}
+
+#student-selection-page .other {
+  grid-area: 3/4/4/5;
+}
+
+#student-selection-page .selection-label {
+  margin: 15px;
+  -webkit-appearance: none;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#student-selection-page .selection-label p {
+  display: block;
+}
+
+#student-selection-page input[type=checkbox] {
+  display: none;
+}
+
+#student-selection-page input[type=checkbox] + label {
+  background: #bdbdbd;
+  position: relative;
+  font-size: 20px;
+  height: 2em;
+  width: 2em;
+  display: inline-block;
+  padding: 0 0 0 0px;
+  border-radius: 100%;
+}
+
+#student-selection-page input[type=checkbox] + label i {
+  transform: translateY(30%);
+  font-size: 1em;
+}
+
+#student-selection-page input[type=checkbox]:checked + label {
+  background: #00ebc7;
+  height: 2em;
+  width: 2em;
+  display: inline-block;
+  padding: 0 0 0 0px;
+}
+
+#student-modules-page {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#student-modules-page .card {
+  border: none;
+  text-align: center;
+  position: relative;
+  height: 100%;
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+
+#student-modules-page h1 {
+  font-size: 1.5em;
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+#student-modules-page h2 {
+  font-size: 18px;
+}
+
+#student-modules-page .btn {
+  width: 100px;
+  height: 40px;
+  margin: 10px;
+  margin-top: 25px;
+  border: none;
+}
+
+#student-modules-page .btn:hover {
+  color: white;
+}
+
+#student-modules-page .back-button {
+  background: #ff5470;
+  color: white;
+}
+
+#student-modules-page .next-button {
+  background-color: #00ebc7;
+  color: #00214d;
+  border: none;
+}
+
+#student-modules-page label {
+  margin: 0;
+}
+
+#student-modules-page .selection-container {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: inline-block;
+}
+
+#student-modules-page .checkbox-block {
+  margin: 15px;
+  padding: 15px;
+}
+
+#student-modules-page .checkbox {
+  -webkit-appearance: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#student-modules-page input[type=radio] {
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  font-size: inherit;
+  width: 2.5em;
+  height: 2.5em;
+  margin: 0;
+  color: inherit;
+  outline: none;
+  font-family: "Font Awesome 5 Pro";
+  transition: 300ms ease-out;
+}
+
+#student-modules-page input[type=radio]::after {
+  content: "\F111";
+  display: inline-block;
+  text-align: center;
+  width: 1.5em;
+  font-size: 24px;
+}
+
+#student-modules-page input[type=radio]:checked::after {
+  font-weight: 900;
+}
+
+#student-modules-page input[type=radio]:active {
+  transform: scale(0.6);
+}
+
+#student-modules-page input[type=radio] + span {
+  margin-left: 0.35em;
+}
+
+#student-modules-page input[type=radio]:checked::after {
+  content: "\F192";
+}
+
+#student-module-selector {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#student-module-selector .image-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+
+#student-module-selector .card {
+  border: none;
+  text-align: center;
+  height: 100%;
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+
+#student-module-selector .icon {
+  width: 150px;
+  height: 150px;
+  align-self: center;
+  text-align: center;
+}
+
+#student-module-selector h1 {
+  font-weight: 700;
+}
+
+#student-module-selector h2 {
+  font-size: 20px;
+  margin: 10px;
+  margin-bottom: 35px;
+}
+
+#student-module-selector .links {
+  text-align: center;
+}
+
+#student-module-selector .btn {
+  width: 100px;
+  height: 40px;
+  margin-top: 30px;
+  margin: 10px;
+  border: none;
+}
+
+#student-module-selector .btn:hover {
+  color: white;
+}
+
+#student-module-selector .links {
+  margin: 10px;
+}
+
+#student-module-selector .back-button {
+  background: #ff5470;
+  color: white;
+}
+
+#student-module-selector .next-button {
+  background-color: #00ebc7;
+  color: #00214d;
+  border: none;
+}
+
+#student-module-selector .checkbox-block {
+  margin: 15px;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 0fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+#student-module-selector #mod_3 .checkbox {
+  -webkit-appearance: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#student-module-selector .checkbox:before {
+  content: "";
+  height: 2rem;
+  width: 2rem;
+  background: #bdbdbd;
+}
+
+#student-module-selector .checkbox:checked {
+  position: relative;
+}
+
+#student-module-selector .checkbox:after {
+  content: "";
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff4081;
+}
+
+#student-module-selector .checkbox:checked:after {
+  content: "\F00C";
+  font-size: 16px;
+  font-family: "FontAwesome";
+  color: white;
+}
+
+#student-module-selector .checkbox:focus {
+  outline: none;
+}
+
+#student-module-selector .checkbox:checked:before {
+  background-color: #039be5;
+}
+
+#student-module-selector .checkbox-round:before {
+  border-radius: 100%;
 }
 
 #student-profile {

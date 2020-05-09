@@ -22,6 +22,8 @@ class CreateStudentDataTable extends Migration
             $table->integer('risk_level');
             $table->integer('total_attendance');
 
+            $table->integer('semester');
+
             $table->string('module_1_name');
             $table->integer('module_1_grade');
             $table->integer('module_1_attendance');
@@ -37,24 +39,24 @@ class CreateStudentDataTable extends Migration
             $table->integer('module_3_attendance');
             $table->integer('module_3_semester');
 
-            $table->string('module_4_name');
-            $table->integer('module_4_grade');
-            $table->integer('module_4_attendance');
+            $table->string('module_4_name')->nullable();
+            $table->integer('module_4_grade')->nullable();
+            $table->integer('module_4_attendance')->nullable();
             $table->integer('module_4_semester');
 
-            $table->string('module_5_name');
-            $table->integer('module_5_grade');
-            $table->integer('module_5_attendance');
+            $table->string('module_5_name')->nullable();
+            $table->integer('module_5_grade')->nullable();
+            $table->integer('module_5_attendance')->nullable();
             $table->integer('module_5_semester');
 
-            $table->string('module_6_name');
-            $table->integer('module_6_grade');
-            $table->integer('module_6_attendance');
+            $table->string('module_6_name')->nullable();
+            $table->integer('module_6_grade')->nullable();
+            $table->integer('module_6_attendance')->nullable();
             $table->integer('module_6_semester');
 
             $table->timestamps();
 
-            $table->foreign('student_id')->references('id')->on('students')->onCascade('delete');
+            $table->foreign('student_id')->references('student_id')->on('students')->onCascade('delete');
 
         });
     }

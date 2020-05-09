@@ -1,0 +1,113 @@
+#student-modules-page{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .card{
+        border: none;
+        text-align: center;
+        position: relative;
+        height: 100%;
+        background-color: whitesmoke;
+        border-radius: 5px;
+    }
+
+    h1{
+        font-size: 1.5em;
+        margin-top: 20px;
+        font-weight: 700;
+    }
+
+    h2{
+        font-size: 18px;
+    }
+
+    .btn{
+        width: 100px;
+        height: 40px;
+        margin: 10px;
+        margin-top: 25px;
+        border: none;
+
+        &:hover{
+            color: white;
+        }
+    }
+
+    .back-button{
+        background: $secondary;
+        color: white;
+
+    }
+
+    .next-button{
+        background-color: $buttons;
+        color: $button-text;
+        border: none;
+
+
+    }
+
+
+
+
+    label {
+        margin: 0;
+    }
+
+    .selection-container{
+        margin-left: 20px;
+        margin-right: 20px;
+        display: inline-block;
+    }
+
+    .checkbox-block {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .checkbox {
+        -webkit-appearance: none;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+        input[type=radio] {
+          position: relative;
+          appearance: none;
+          font-size: inherit;
+          width: 2.5em;
+          height: 2.5em;
+          margin: 0;
+          color: inherit;
+          outline: none;
+          font-family: 'Font Awesome 5 Pro';
+          transition: 300ms ease-out;
+
+          &::after {
+            content: '\f111'; // circle
+            display: inline-block;
+            text-align: center;
+            width: 1.5em;
+            font-size: 24px;
+          }
+
+          &:checked::after {
+            font-weight: 900;
+          }
+          &:active {
+            transform: scale(.6);
+          }
+          + span {
+            margin-left: .35em;
+          }
+        }
+        input[type=radio]:checked::after {
+          content: '\f192'; // dot-circle
+        }
+
+
+}

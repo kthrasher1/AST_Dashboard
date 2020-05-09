@@ -10,7 +10,7 @@
 
     main {
         margin-top: 10px;
-        height: calc(100vh - 6rem);
+        height: auto;
         align-items: center;
         justify-content: center;
 
@@ -88,13 +88,7 @@
                             <a class="btn btn-secondary" href="{{ url()->previous() }}"> Back </a>
                         </div>
                     </div>
-
-
                 </form>
-
-
-
-
             </div>
         </div>
     </div>
