@@ -1,0 +1,67 @@
+
+#student-issues{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    textarea {
+        padding: 1em;
+        border-radius: 8px;
+        display: block;
+        width: 100%;
+        resize: none;
+    }
+
+    .card {
+        border: none;
+        text-align: center;
+        height: 100%;
+        background-color: whitesmoke;
+        border-radius: 5px;
+    }
+
+    h1 {
+        font-weight: 400;
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin: 10px;
+        margin-bottom: 35px;
+    }
+
+    .links {
+        text-align: center;
+    }
+
+    .btn {
+        width: 100px;
+        height: 40px;
+        margin-top: 30px;
+        margin: 10px;
+        border: none;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    .links {
+        margin: 10px;
+    }
+
+    .back-button {
+        background: $secondary;
+        color: white;
+
+    }
+
+    .next-button {
+        background-color: $buttons;
+        color: $button-text;
+        border: none;
+
+    }
+}

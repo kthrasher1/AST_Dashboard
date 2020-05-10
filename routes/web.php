@@ -69,6 +69,7 @@ Route::group(['middleware' => ['auth']], function() {
         Route::post('/student-modules', 'StudentController@ModulesSubmit');
         Route::post('/module-selection', 'StudentController@ModulesSelectionSubmit');
         Route::post('/module-issues', 'StudentController@ModulesIssueSubmit');
+        Route::post('/module-issues-detail', 'StudentController@ModulesIssueDetailSubmit');
         Route::post('/student-other-issues', 'StudentController@OtherIssuesSubmit');
 
         Route::get('/studentChat', 'ChatController@studentChat')->name('studentChat');

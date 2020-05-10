@@ -17,9 +17,7 @@
         height: calc(100vh - 6rem);
 
     }
-
-
-    
+ 
 
 </style>
 @endsection
@@ -29,24 +27,24 @@
 @mobile
 
 <div class="container" id="student-issues">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" id="student-modules-page">
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="/student-other-issues">
+                    <h1> What issues are you having? </h1>
+                    <form method="POST" action="/module-issues-detail">
                         @csrf
-                        <h1> Are you having any other issues? </h1>
                         <div class="checkbox-block">
-                            <label class="selection-label">
+                                <label class="selection-label">
                                     
-                                <textarea id="issues" name="issues" placeholder="Write something.." style="height:300px"></textarea>
-                            </label>
+                                    <textarea id="issues" name="issues" placeholder="Write something.." style="height:300px"></textarea>
+                                </label>
                         </div>
 
                         <input type="hidden" name="_page-num" value="6">
 
                         <a class="btn btn-secondary back-button" href="{{ url()->previous() }}"> Back </a>
-                        <button class="btn btn-primary next-button" type="submit">Submit</button>
+                        <button class="btn btn-primary next-button" type="submit">Next</button>
 
                     </form>
                 </div>

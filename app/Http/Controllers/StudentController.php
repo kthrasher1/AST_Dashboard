@@ -84,7 +84,21 @@ class StudentController extends Controller
     }
 
     public function ModulesIssueSubmit(Request $request){
+
+        $userRadioSelection = $request->radioSelect;
+
+        if($userRadioSelection == "2" ){
+            return view('student-pages.module-issues-detail');
+        }
+        else{
+            return view('student-pages.other-issues');
+        }
+    }
+
+    public function ModulesIssueDetailSubmit(Request $request){
+
         return view("student-pages.other-issues");
+       
     }
 
     public function OtherIssuesSubmit(Request $request){

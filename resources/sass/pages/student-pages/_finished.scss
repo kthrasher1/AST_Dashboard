@@ -1,0 +1,66 @@
+#student-finish-page{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .image-container{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .card{
+        border: none;
+        text-align: center;
+        height: 100%;
+        background-color: whitesmoke;
+        border-radius: 5px;
+        .card-body{
+            padding: 1.25rem;
+        }
+
+    }
+
+    .icon{
+        width: 75px;
+        height: 75px;
+        margin-bottom: 15px;
+        align-self: center;
+        text-align: center;
+    }
+
+    .uni{
+        width: 200px;
+    }
+
+    h1{
+        font-size: 1.5em;
+        font-weight: 700;
+    }
+
+    h2{
+        font-size: 18px;
+    }
+
+    a{
+        width: 150px;
+        height: 40px;
+        margin: 10px;
+        border: none;
+
+        &:hover{
+            color: white;
+        }
+    }
+
+    .next-button{
+        background-color: $buttons;
+        color: $button-text;
+        margin-top: 20px;
+
+    }
+
+
+
+}

@@ -11797,7 +11797,7 @@ header {
 #student-modules-page h1 {
   font-size: 1.5em;
   margin-top: 20px;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 #student-modules-page h2 {
@@ -11919,11 +11919,12 @@ header {
 }
 
 #student-module-selector h1 {
-  font-weight: 700;
+  font-weight: 400;
+  font-size: 24px;
 }
 
 #student-module-selector h2 {
-  font-size: 20px;
+  font-size: 24px;
   margin: 10px;
   margin-bottom: 35px;
 }
@@ -11959,17 +11960,31 @@ header {
   border: none;
 }
 
+#student-module-selector .selection-label {
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+#student-module-selector .selection-label #mod {
+  grid-area: 1/1/2/2;
+}
+
+#student-module-selector .selection-label #mod .mod-p {
+  grid-area: 2/2/3/3;
+}
+
 #student-module-selector .checkbox-block {
   margin: 15px;
   padding: 15px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr) 0fr;
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
 }
 
-#student-module-selector #mod_3 .checkbox {
+#student-module-selector .checkbox {
   -webkit-appearance: none;
   display: inline-flex;
   justify-content: center;
@@ -12012,6 +12027,134 @@ header {
 
 #student-module-selector .checkbox-round:before {
   border-radius: 100%;
+}
+
+#student-issues {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#student-issues textarea {
+  padding: 1em;
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+  resize: none;
+}
+
+#student-issues .card {
+  border: none;
+  text-align: center;
+  height: 100%;
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+
+#student-issues h1 {
+  font-weight: 400;
+  font-size: 24px;
+}
+
+#student-issues h2 {
+  font-size: 24px;
+  margin: 10px;
+  margin-bottom: 35px;
+}
+
+#student-issues .links {
+  text-align: center;
+}
+
+#student-issues .btn {
+  width: 100px;
+  height: 40px;
+  margin-top: 30px;
+  margin: 10px;
+  border: none;
+}
+
+#student-issues .btn:hover {
+  color: white;
+}
+
+#student-issues .links {
+  margin: 10px;
+}
+
+#student-issues .back-button {
+  background: #ff5470;
+  color: white;
+}
+
+#student-issues .next-button {
+  background-color: #00ebc7;
+  color: #00214d;
+  border: none;
+}
+
+#student-finish-page {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#student-finish-page .image-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#student-finish-page .card {
+  border: none;
+  text-align: center;
+  height: 100%;
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+
+#student-finish-page .card .card-body {
+  padding: 1.25rem;
+}
+
+#student-finish-page .icon {
+  width: 75px;
+  height: 75px;
+  margin-bottom: 15px;
+  align-self: center;
+  text-align: center;
+}
+
+#student-finish-page .uni {
+  width: 200px;
+}
+
+#student-finish-page h1 {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+#student-finish-page h2 {
+  font-size: 18px;
+}
+
+#student-finish-page a {
+  width: 150px;
+  height: 40px;
+  margin: 10px;
+  border: none;
+}
+
+#student-finish-page a:hover {
+  color: white;
+}
+
+#student-finish-page .next-button {
+  background-color: #00ebc7;
+  color: #00214d;
+  margin-top: 20px;
 }
 
 #student-profile {

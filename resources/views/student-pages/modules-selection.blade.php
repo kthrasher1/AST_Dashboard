@@ -18,8 +18,6 @@
 
     }
 
-
-
 </style>
 @endsection
 
@@ -34,49 +32,57 @@
                 <div class="card-body">
                     <form method="POST" action="/module-selection">
                         @csrf
-                        <p> Which modules are you having issues with? </p>
+                        <h1> Which modules are you having issues with? </h1>
                         <div class="checkbox-block">
                             @foreach($studentData as $student)
 
                             @if($student->semester == 1)
-                            <label class="selection-label">
-                                <input type="checkbox" name="checkboxSelect" id="mod_1" value="{{$student->module_1_name}}"
-                                    class="checkbox checkbox-round"><span> {{$student->module_1_name}}  </span>
-                            </label>
+                            <div class="selection-label">
+                                <input type="checkbox" name="checkboxSelect" id="mod"
+                                    value="{{$student->module_1_name}}" class="checkbox checkbox-round">
+                                <label class="mod-p"> {{$student->module_1_name}} </label>
+                            </div>
 
 
 
-                            <label class="selection-label">
-                                <input type="checkbox" name="checkboxSelect1" id="mod_2" value="{{$student->module_2_name}}"
-                                    class="checkbox checkbox-round"><span> {{$student->module_2_name}} </span>
-                            </label>
+                            <div class="selection-label">
+                                <input type="checkbox" name="checkboxSelect1" id="mod"
+                                    value="{{$student->module_2_name}}" class="checkbox checkbox-round">
+                                <label class="mod-p"> {{$student->module_2_name}} </label>
+                            </div>
 
 
 
-                            <label class="selection-label">
-                                <input type="checkbox" name="checkboxSelect2" id="mod_3" value="{{$student->module_3_name}}"
-                                    class="checkbox checkbox-round"><span> {{$student->module_3_name}} </span>
-                            </label>
+                            <div class="selection-label">
+
+                                <input type="checkbox" name="checkboxSelect2" id="mod"
+                                    value="{{$student->module_3_name}}" class="checkbox checkbox-round">
+
+                                <label class="mod-p"> {{$student->module_3_name}} </label >
+                            </div>
 
                             @elseif($student->semester == 2)
 
-                            <label class="selection-label">
-                                <input type="checkbox" name="checkboxSelect3" id="mod_1" value="{{$student->module_4_name}}"
-                                    class="checkbox checkbox-round"><span> {{$student->module_4_name}} </span>
-                            </label>
+                            <div class="selection-label">
+                                <input type="checkbox" name="checkboxSelect3" id="mod"
+                                    value="{{$student->module_4_name}}" class="checkbox checkbox-round">
+                                    <label class="mod-p">{{$student->module_4_name}} </label>
+                            </div>
 
 
 
-                            <label class="selection-label">
-                                <input type="checkbox" name="checkboxSelect4" id="mod_2" value="{{$student->module_5_name}}"
-                                    class="checkbox checkbox-round"><span> {{$student->module_5_name}} </span>
-                            </label>
+                            <div class="selection-label">
+                                <input type="checkbox" name="checkboxSelect4" id="mod"
+                                    value="{{$student->module_5_name}}" class="checkbox checkbox-round">
+                                    <label class="mod-p">{{$student->module_5_name}} </label>
+                            </div>
 
 
-                            <label class="selection-label">
-                                <input type="checkbox" name="checkboxSelect" id="mod_3" value="{{$student->module_6_name}}"
-                                    class="checkbox checkbox-round"><span> {{$student->module_6_name}} </span>
-                            </label>
+                            <div class="selection-label">
+                                <input type="checkbox" name="checkboxSelect" id="mod"
+                                    value="{{$student->module_6_name}}" class="checkbox checkbox-round">
+                                <label class="mod-p"> {{$student->module_6_name}} </label>
+                            </div>
 
                             @endif
 

@@ -17,19 +17,20 @@
 </style>
 @endsection
 
-@include('partials.shapes')
-
 @section('content')
 @mobile
-<div class="container" id="student-start-page">
+<div class="container" id="student-finish-page">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <div class="image-container">
-                <img class="logo" src="{{URL::asset('/img/very-happy-blink.svg')}}">
-            </div>
+            
             <div class="card">
 
                 <div class="card-body">
+
+                    <div class="image-container">
+                        <img class="icon" src="{{URL::asset('/img/very-happy-blink.svg')}}">
+                    </div>
+
                     @foreach($staff as $ast)
 
                         <h1> Congrats {{Auth::user()->name}}! </h1>
@@ -39,10 +40,9 @@
                         <a class="btn btn-primary  student-btn" href="{{ route('studentChat', ['staffid' => $ast->id] ) }}" >Chat</a>
 
                         <p> Remember that the university offers mental health services and services to help your studies, you are not alone. click this link to find out more </p>
-                        <a class="btn btn-primary  student-btn" href="" >University Services</a>
+                        <a class="btn btn-primary student-btn uni" href="" >University Services</a>
 
                         <div class="links">
-                            <a class="btn btn-secondary back-button" href="{{ url()->previous() }}"> Back to the check-in</a>
                             <a class="btn btn-primary next-button" href="student-page-completed">Back Home</a>
                         </div>
 
