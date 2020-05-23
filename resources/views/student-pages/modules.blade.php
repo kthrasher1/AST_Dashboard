@@ -33,7 +33,7 @@
                 <div class="card-body">
                     <form method="POST" action="/student-modules">
                         @csrf
-                        <h1> Are you having any issues with your modules? </h1>
+                        <h1> Are you having any issues with your modules?  </h1>
                         <div class="checkbox-block">
 
                                 <div class="selection-container">
