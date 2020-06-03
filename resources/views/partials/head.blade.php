@@ -7,6 +7,9 @@
 
     <title>{{ config('app.name', 'Dashboard') }}</title>
 
+    <!-- Libraries  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,700;1,600&family=Open+Sans:ital,wght@0,600;1,300&display=swap" rel="stylesheet">

@@ -18,4 +18,8 @@ class Student extends model
     public function data(){
         return $this->hasMany(StudentData::class, 'student_id');
     }
+
+    public function module(){
+        return $this->hasMany(ModuleData::class, 'student_id');
+    }
 }

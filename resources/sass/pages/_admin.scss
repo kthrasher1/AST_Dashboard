@@ -1,4 +1,4 @@
-#staff-dashboard {
+#admin-dashboard {
     border: none;
     overflow-y: auto;
     overflow-x: hidden;
@@ -6,11 +6,6 @@
 
     .container {
         margin: none;
-    }
-
-    .staff-welcome {
-        text-transform: capitalize;
-        margin-bottom: 10px;
     }
 
     .card-header {
@@ -22,7 +17,7 @@
         font-size: 2em !important;
     }
 
-    #staff-body {
+    #admin-body {
         margin: 50px;
         background-color: lighten($card-color, $amount: 2%);
         border-radius: 5px;
@@ -44,15 +39,13 @@
     .student-content {
         display: flex;
 
-        #student-display {
+        #user-display {
             width: 80%;
 
             .card-body{
                 overflow-y: auto;
                 max-height: 300px;
             }
-
-
 
             table {
 
@@ -74,11 +67,6 @@
 
                 }
 
-                .chart {
-                    display: inline-block;
-                    max-height: 100px;
-                }
-
             }
 
             a {
@@ -89,11 +77,6 @@
                 &:hover {
                     color: white;
                 }
-            }
-
-            .chat-btn {
-                width: 100px;
-                height: 40px;
             }
 
             .view-btn {
@@ -123,21 +106,5 @@
 
 
     }
-
-    .graphs{
-        margin-top: 30px;
-        width: 100%;
-        min-height: 400px;
-
-        #chart{
-            max-width: 400px;
-
-            .card-body{
-                max-width: 400px;
-            }
-        }
-    }
-
-
 
 }

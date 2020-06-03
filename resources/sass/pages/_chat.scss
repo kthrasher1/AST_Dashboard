@@ -75,4 +75,29 @@
       }
 
 
+      .link{
+          margin-top: 5px;
+          text-align: center;
+        .back-button {
+            background: $secondary;
+            color: white;
+
+        }
+      }
+
+
+
+}
+
+@media only screen and (min-width: 1400px){
+    #chat{
+        .scroll{
+            min-height: 800px;
+        }
+        .col-md-8{
+            background-color: whitesmoke;
+            padding:30px;
+            border-radius: 5px;
+        }
+    }
 }

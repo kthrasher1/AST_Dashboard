@@ -86,7 +86,7 @@
 
             .mod-p {
                 grid-area: 2 / 2 / 3 / 3;
-                
+
 
             }
         }
@@ -142,7 +142,7 @@
     }
 
     .checkbox:checked:before {
-        background-color: #039be5;
+        background-color: $buttons;
     }
 
     .checkbox-round:before {

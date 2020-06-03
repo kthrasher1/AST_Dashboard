@@ -11180,6 +11180,108 @@ header {
   }
 }
 
+#admin-dashboard {
+  border: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+}
+
+#admin-dashboard .container {
+  margin: none;
+}
+
+#admin-dashboard .card-header {
+  border: none;
+  background: #f2f4f6;
+}
+
+#admin-dashboard h1 {
+  font-size: 2em !important;
+}
+
+#admin-dashboard #admin-body {
+  margin: 50px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+#admin-dashboard .dashboard-message {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#admin-dashboard .profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+#admin-dashboard .student-content {
+  display: flex;
+}
+
+#admin-dashboard .student-content #user-display {
+  width: 80%;
+}
+
+#admin-dashboard .student-content #user-display .card-body {
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+#admin-dashboard .student-content #user-display table {
+  border-collapse: collapse;
+}
+
+#admin-dashboard .student-content #user-display table tr,
+#admin-dashboard .student-content #user-display table td {
+  border: 1px solid #e3e7ec;
+  padding: 1em;
+  vertical-align: baseline;
+  margin: 1em;
+}
+
+#admin-dashboard .student-content #user-display table tbody {
+  background-color: #f2f4f6;
+}
+
+#admin-dashboard .student-content #user-display a {
+  background: #00ebc7;
+  border: none;
+  color: #00214d;
+}
+
+#admin-dashboard .student-content #user-display a:hover {
+  color: white;
+}
+
+#admin-dashboard .student-content #user-display .view-btn {
+  height: 40px;
+  width: auto;
+}
+
+#admin-dashboard .student-content #notice-board {
+  margin-left: 30px;
+  width: 20%;
+}
+
+#admin-dashboard .student-content #notice-board .card-body {
+  max-height: 500px;
+  min-height: 500px;
+  overflow-y: auto;
+}
+
+#admin-dashboard .student-content #notice-board .notifications {
+  text-decoration: none;
+  background: #f2f4f6;
+  list-style-type: none;
+  padding: 15px;
+  border-radius: 5px;
+}
+
 .student-name {
   text-transform: capitalize;
 }
@@ -11289,8 +11391,9 @@ header {
 
 #staff-dashboard {
   border: none;
-  width: 100vw;
-  overflow: visible;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
 }
 
 #staff-dashboard .container {
@@ -11304,60 +11407,117 @@ header {
 
 #staff-dashboard .card-header {
   border: none;
+  background: #f2f4f6;
 }
 
-#staff-dashboard .card-body {
-  margin: 25px;
+#staff-dashboard h1 {
+  font-size: 2em !important;
+}
+
+#staff-dashboard #staff-body {
+  margin: 50px;
+  background-color: #f8f9fa;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
-#staff-dashboard #student-display {
-  width: 100%;
+#staff-dashboard .dashboard-message {
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
-#staff-dashboard #student-display table {
+#staff-dashboard .profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+#staff-dashboard .student-content {
+  display: flex;
+}
+
+#staff-dashboard .student-content #student-display {
+  width: 80%;
+}
+
+#staff-dashboard .student-content #student-display .card-body {
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+#staff-dashboard .student-content #student-display table {
   border-collapse: collapse;
 }
 
-#staff-dashboard #student-display table tr,
-#staff-dashboard #student-display table td {
-  border: none;
+#staff-dashboard .student-content #student-display table tr,
+#staff-dashboard .student-content #student-display table td {
+  border: 1px solid #e3e7ec;
   padding: 1em;
   vertical-align: baseline;
   margin: 1em;
 }
 
-#staff-dashboard #student-display table tbody:nth-child(odd) {
+#staff-dashboard .student-content #student-display table tbody {
   background-color: #f2f4f6;
 }
 
-#staff-dashboard #student-display table tbody:nth-child(even) {
-  background-color: white;
-}
-
-#staff-dashboard #student-display table .chart {
+#staff-dashboard .student-content #student-display table .chart {
   display: inline-block;
   max-height: 100px;
 }
 
-#staff-dashboard #student-display a {
+#staff-dashboard .student-content #student-display a {
   background: #00ebc7;
   border: none;
   color: #00214d;
 }
 
-#staff-dashboard #student-display a:hover {
+#staff-dashboard .student-content #student-display a:hover {
   color: white;
 }
 
-#staff-dashboard #student-display .chat-btn {
+#staff-dashboard .student-content #student-display .chat-btn {
   width: 100px;
   height: 40px;
 }
 
-#staff-dashboard #student-display .view-btn {
+#staff-dashboard .student-content #student-display .view-btn {
   height: 40px;
   width: auto;
+}
+
+#staff-dashboard .student-content #notice-board {
+  margin-left: 30px;
+  width: 20%;
+}
+
+#staff-dashboard .student-content #notice-board .card-body {
+  max-height: 500px;
+  min-height: 500px;
+  overflow-y: auto;
+}
+
+#staff-dashboard .student-content #notice-board .notifications {
+  text-decoration: none;
+  background: #f2f4f6;
+  list-style-type: none;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+#staff-dashboard .graphs {
+  margin-top: 30px;
+  width: 100%;
+  min-height: 400px;
+}
+
+#staff-dashboard .graphs #chart {
+  max-width: 400px;
+}
+
+#staff-dashboard .graphs #chart .card-body {
+  max-width: 400px;
 }
 
 #chat {
@@ -11433,6 +11593,28 @@ header {
   background: #00ebc7;
   color: #00214d;
   border: none;
+}
+
+#chat .link {
+  margin-top: 5px;
+  text-align: center;
+}
+
+#chat .link .back-button {
+  background: #ff5470;
+  color: white;
+}
+
+@media only screen and (min-width: 1400px) {
+  #chat .scroll {
+    min-height: 800px;
+  }
+
+  #chat .col-md-8 {
+    background-color: whitesmoke;
+    padding: 30px;
+    border-radius: 5px;
+  }
 }
 
 #student-start-page {
@@ -12022,7 +12204,7 @@ header {
 }
 
 #student-module-selector .checkbox:checked:before {
-  background-color: #039be5;
+  background-color: #00ebc7;
 }
 
 #student-module-selector .checkbox-round:before {
@@ -12145,6 +12327,8 @@ header {
   height: 40px;
   margin: 10px;
   border: none;
+  background-color: #00ebc7;
+  color: #00214d;
 }
 
 #student-finish-page a:hover {
@@ -12174,11 +12358,23 @@ header {
 }
 
 #student-profile .card-header {
+  display: grid;
+  grid-template-columns: 1fr 0.25fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
   border: none;
   background-color: #e3e7ec;
 }
 
-#student-profile i {
+#student-profile .card-header h1 {
+  font-size: 1.75em;
+  margin: none;
+  grid-area: 1/1/2/2;
+}
+
+#student-profile .card-header i {
+  grid-area: 1/2/2/3;
   color: white;
   float: right;
 }
@@ -12219,6 +12415,37 @@ header {
   width: 20%;
 }
 
+#student-profile #module-info-panel .card-header {
+  display: grid;
+  grid-template-columns: 1fr 0.25fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+#student-profile #module-info-panel .card-header .module-header {
+  font-size: 1.75em;
+  margin: none;
+  grid-area: 1/1/2/2;
+}
+
+#student-profile #module-info-panel .card-header i {
+  grid-area: 1/2/2/3;
+}
+
+#student-profile #module-info-panel .modules {
+  background: white;
+  margin: 5px;
+  list-style-type: none;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+#student-profile #module-info-panel .modules h1 {
+  font-size: 1.25em;
+}
+
 #student-profile #attendance-info-panel {
   width: 55%;
 }
@@ -12252,6 +12479,10 @@ header {
 
 .navbar .nav-link:hover {
   text-decoration: underline;
+}
+
+.home {
+  margin-right: 1px;
 }
 
 .bg-obj {

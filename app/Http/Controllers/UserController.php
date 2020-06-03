@@ -17,7 +17,7 @@ class UserController extends Controller
         return view('profile', array('user' => Auth::user()) );
     }
 
-    public function image_update(Request $request){
+    public function ImageUpdate(Request $request){
 
 
         if($request->hasFile('avatar')){

@@ -56,6 +56,10 @@
 
                 @endforeach
             </div>
+            <div class="link">
+                <a class="btn btn-secondary back-button" href="{{ url()->previous() }}"> Back </a>
+            </div>
+
         </div>
     </div>
     @endsection

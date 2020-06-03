@@ -22,12 +22,11 @@ class StudentTableSeeder extends Seeder
             [
                 'id' => 2,
                 'student_id' => 4,
-                'ast_id' => 2,
+                'ast_id' => 1,
                 'created_at' => NOW(),
                 'updated_at' => NOW()
 
             ],
-
         ];
 
         foreach($students as $student){

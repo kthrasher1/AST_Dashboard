@@ -36,7 +36,7 @@
                         <div class="checkbox-block">
 
                             <div class="selection-container">
-                                <input type="radio" name="radioSelect" id="no" value="1" class="radio-btn">
+                                <input type="radio" name="radioSelect" id="no" value="0" class="radio-btn">
                                 <br>
                                 <p> No </p>
                             </div>
@@ -44,7 +44,7 @@
 
 
                             <div class="selection-container">
-                                <input type="radio" name="radioSelect" id="yes" value="2" class="radio-btn">
+                                <input type="radio" name="radioSelect" id="yes" value="1" class="radio-btn">
                                 <br>
                                 <p> Yes </p>
                             </div>
@@ -55,7 +55,7 @@
 
 
                         <div class="links">
-                            <a class="btn btn-secondary back-button" href="{{ url()->previous() }}"> Back </a>
+                            <a class="btn btn-secondary back-button" href="/student-back/5"> Back </a>
                             <button class="btn btn-primary next-button" type="submit">Next</button>
                         </div>
 

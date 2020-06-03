@@ -41,13 +41,15 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('/admin/make-staff/{user}', 'AdminController@makeStaff');
         Route::get('/admin/remove-role/{user}', 'AdminController@removeRole');
         Route::get('/admin/delete/{user}', 'AdminController@deleteUser');
+        Route::get('/markAsRead', 'AdminController@markedAsRead')->name('markAsRead');
+
 
     });
 
     Route::group(['middleware' => ['staff']], function(){
 
 
-        Route::get('/chatlink','ChatController@staffChat')->name('chatlink');
+        Route::get('/staffchat','ChatController@staffChat')->name('staffchat');
         Route::get('/staff', 'PermissionController@staff')->name('staff');
         Route::get('/staff', 'StaffController@index')->name('staff');
         Route::get('/student-profile', 'StaffController@studentProfile')->name('student-profile');
@@ -62,15 +64,19 @@ Route::group(['middleware' => ['auth']], function() {
 
         Route::get('/student-page', 'StudentController@StudentPage');
         Route::get('/student-page-range', 'StudentController@StudentPageRange');
-        Route::get('/student-page-home','StudentController@StudentPageHome');
+        Route::get('/student-page-home','StudentController@index');
 
         Route::post('/student-range-slider', 'StudentController@RangeSliderSubmit');
         Route::post('/student-selection', 'StudentController@SelectionSubmit');
+        Route::post('/student-other-selection', 'StudentController@SelectionOtherSubmit');
         Route::post('/student-modules', 'StudentController@ModulesSubmit');
         Route::post('/module-selection', 'StudentController@ModulesSelectionSubmit');
         Route::post('/module-issues', 'StudentController@ModulesIssueSubmit');
         Route::post('/module-issues-detail', 'StudentController@ModulesIssueDetailSubmit');
         Route::post('/student-other-issues', 'StudentController@OtherIssuesSubmit');
+        Route::get('/student-page-completed', 'StudentController@index');
+
+        Route::get('/student-back/{pageid}','StudentController@PreviousPage');
 
         Route::get('/studentChat', 'ChatController@studentChat')->name('studentChat');
 
@@ -90,4 +96,4 @@ Route::post('messages','ChatController@PostMessages');
 
 Route::get('profile', 'UserController@profile')->name('profile');
 Route::post('/UpdatePassword','UserController@UpdatePassword')->name('UpdatePassword');
-Route::post('profile', 'UserController@image_update');
+Route::post('profile', 'UserController@ImageUpdate');

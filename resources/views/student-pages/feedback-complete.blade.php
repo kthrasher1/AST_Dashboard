@@ -22,7 +22,7 @@
 <div class="container" id="student-finish-page">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            
+
             <div class="card">
 
                 <div class="card-body">
@@ -37,7 +37,7 @@
                         <h2> You've completed this weeks check-in </h2>
 
                         <p> If you need any further assistance remember you can contact your AST at anytime using the chat window, here's a link if you want to talk now</p>
-                        <a class="btn btn-primary  student-btn" href="{{ route('studentChat', ['staffid' => $ast->id] ) }}" >Chat</a>
+                        <a class="btn btn-primary  student-btn chat" href="{{ route('studentChat', ['staffid' => $ast->id] ) }}" >Chat</a>
 
                         <p> Remember that the university offers mental health services and services to help your studies, you are not alone. click this link to find out more </p>
                         <a class="btn btn-primary student-btn uni" href="" >University Services</a>

@@ -38,7 +38,7 @@
 
                             @if($student->semester == 1)
                             <div class="selection-label">
-                                <input type="checkbox" name="checkboxSelect" id="mod"
+                                <input type="checkbox" name="modSelect1" id="mod"
                                     value="{{$student->module_1_name}}" class="checkbox checkbox-round">
                                 <label class="mod-p"> {{$student->module_1_name}} </label>
                             </div>
@@ -46,7 +46,7 @@
 
 
                             <div class="selection-label">
-                                <input type="checkbox" name="checkboxSelect1" id="mod"
+                                <input type="checkbox" name="modSelect2" id="mod"
                                     value="{{$student->module_2_name}}" class="checkbox checkbox-round">
                                 <label class="mod-p"> {{$student->module_2_name}} </label>
                             </div>
@@ -55,7 +55,7 @@
 
                             <div class="selection-label">
 
-                                <input type="checkbox" name="checkboxSelect2" id="mod"
+                                <input type="checkbox" name="modSelect3" id="mod"
                                     value="{{$student->module_3_name}}" class="checkbox checkbox-round">
 
                                 <label class="mod-p"> {{$student->module_3_name}} </label >
@@ -64,7 +64,7 @@
                             @elseif($student->semester == 2)
 
                             <div class="selection-label">
-                                <input type="checkbox" name="checkboxSelect3" id="mod"
+                                <input type="checkbox" name="modSelect4" id="mod"
                                     value="{{$student->module_4_name}}" class="checkbox checkbox-round">
                                     <label class="mod-p">{{$student->module_4_name}} </label>
                             </div>
@@ -72,14 +72,14 @@
 
 
                             <div class="selection-label">
-                                <input type="checkbox" name="checkboxSelect4" id="mod"
+                                <input type="checkbox" name="modSelect5" id="mod"
                                     value="{{$student->module_5_name}}" class="checkbox checkbox-round">
                                     <label class="mod-p">{{$student->module_5_name}} </label>
                             </div>
 
 
                             <div class="selection-label">
-                                <input type="checkbox" name="checkboxSelect" id="mod"
+                                <input type="checkbox" name="modSelect6" id="mod"
                                     value="{{$student->module_6_name}}" class="checkbox checkbox-round">
                                 <label class="mod-p"> {{$student->module_6_name}} </label>
                             </div>
@@ -94,7 +94,7 @@
 
 
                         <div class="links">
-                            <a class="btn btn-secondary back-button" href="{{ url()->previous() }}"> Back </a>
+                            <a class="btn btn-secondary back-button" href="/student-back/4"> Back </a>
                             <button class="btn btn-primary next-button" type="submit">Next</button>
                         </div>
 

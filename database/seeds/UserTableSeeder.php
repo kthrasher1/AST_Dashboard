@@ -49,7 +49,7 @@ class UserTableSeeder extends Seeder
 
             [
                 'id' => 4,
-                'name' => 'unassigned',
+                'name' => 'Student 2',
                 'email' => 'unassigned@gmail.com',
                 'password' => bcrypt('password'),
                 'created_at' => NOW(),

@@ -19,7 +19,7 @@
     }
 
 
-    
+
 
 </style>
 @endsection
@@ -38,14 +38,14 @@
                         <h1> Are you having any other issues? </h1>
                         <div class="checkbox-block">
                             <label class="selection-label">
-                                    
+
                                 <textarea id="issues" name="issues" placeholder="Write something.." style="height:300px"></textarea>
                             </label>
                         </div>
 
-                        <input type="hidden" name="_page-num" value="6">
+                        <input type="hidden" name="_page-num" value="7">
 
-                        <a class="btn btn-secondary back-button" href="{{ url()->previous() }}"> Back </a>
+                        <a class="btn btn-secondary back-button" href="/student-back/7"> Back </a>
                         <button class="btn btn-primary next-button" type="submit">Submit</button>
 
                     </form>

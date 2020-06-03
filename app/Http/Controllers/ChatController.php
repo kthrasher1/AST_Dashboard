@@ -31,7 +31,7 @@ class ChatController extends Controller
         $students = User::where('id', $request->studentid)->get();
 
         return view('staff-pages.staffChat', [
-           'studentid' => $students, 'currentUser' => $currentUser
+           'students' => $students, 'currentUser' => $currentUser
         ]);
     }
 

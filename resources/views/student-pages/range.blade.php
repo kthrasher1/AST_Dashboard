@@ -39,7 +39,7 @@
                             <input type="hidden" name="_page-num" value="1">
                         </label>
 
-                        <a class="btn btn-secondary back-button" href="{{ url()->previous() }}"> Back </a>
+                        <a class="btn btn-secondary back-button" href="/student-back/1"> Back </a>
                         <button class="btn btn-primary next-button" type="submit">Next</button>
 
                     </form>

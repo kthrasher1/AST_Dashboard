@@ -18,7 +18,6 @@
 
     }
 
-
 </style>
 @endsection
 
@@ -27,23 +26,24 @@
 @mobile
 
 <div class="container" id="student-issues">
-    <div class="row justify-content-center" id="student-modules-page">
+    <div class="row justify-content-center">
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <h1> What issues are you having? </h1>
-                    <form method="POST" action="/module-issues-detail">
+                    <form method="POST" action="/student-other-selection">
                         @csrf
+                        <h1> Here you can enter the other contributers to your day </h1>
                         <div class="checkbox-block">
-                                <label class="selection-label">
+                            <label class="selection-label">
 
-                                    <textarea id="issues" name="moduleIssues" placeholder="Write something..." style="height:300px"></textarea>
-                                </label>
+                            <textarea id="issues" name="otherIssues" placeholder="Write something.."
+                                    style="height:300px"></textarea>
+                            </label>
                         </div>
 
-                        <input type="hidden" name="_page-num" value="6">
+                        <input type="hidden" name="_page-num" value="8">
 
-                        <a class="btn btn-secondary back-button" href="/student-back/6"> Back </a>
+                        <a class="btn btn-secondary back-button" href="/student-back/8"> Back </a>
                         <button class="btn btn-primary next-button" type="submit">Next</button>
 
                     </form>

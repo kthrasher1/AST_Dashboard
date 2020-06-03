@@ -18,6 +18,9 @@ class CreateStudentsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('student_id');
             $table->unsignedBigInteger('ast_id');
+
+
+
             $table->timestamps();
 
 

@@ -7,18 +7,37 @@ use \app\User;
 use \app\Role;
 use Illuminate\Support\Facades\Auth;
 
+
 class AdminController extends Controller
 {
 
-    public function index()
+   public function index()
     {
         $users = User::with('roles')->get();
-        return view('admin', ['users' => $users]);
+        $notif = auth()->user()->unreadNotifications;
+
+        return view('admin', [
+            'users' => $users,
+            'notify' => $notif,
+        ]);
     }
+
+    public function markedAsRead(Request $request)
+    {
+        auth()->user()
+            ->unreadNotifications
+            ->when($request->input('id'), function ($query) use ($request) {
+                return $query->where('id', $request->input('id'));
+            }) ->markAsRead();
+
+        return redirect('/admin');
+    }
+
+
 
     public function giveAdmin(User $user)
     {
-        if (Auth::id() == $user) {
+        if (Auth::id() == $user->id) {
             return redirect('/admin') -> with('warning', 'you are already admin, silly');
         }
 
@@ -30,7 +49,7 @@ class AdminController extends Controller
 
     public function removeRole(User $user)
     {
-        if (Auth::id() == $user) {
+        if (Auth::id() == $user->id) {
             return redirect('/admin')->with('warning', 'you can\'t remove your own permissions, silly');
         }
 
@@ -42,7 +61,7 @@ class AdminController extends Controller
 
     public function makeStudent(User $user)
     {
-        if (Auth::id() == $user) {
+        if (Auth::id() ==$user->id) {
             return redirect('/admin')->with('warning', 'you can\'t update your own permissions, silly');
         }
             $studentRole = Role::where('name', 'student')->firstOrFail();
@@ -53,7 +72,7 @@ class AdminController extends Controller
 
     public function makeStaff(User $user)
     {
-        if (Auth::id()== $user) {
+        if (Auth::id()== $user->id) {
             return redirect('/admin')->with('warning', 'you can\'t update your own permissions, silly');
         }
 
@@ -63,20 +82,10 @@ class AdminController extends Controller
         return redirect('/admin')->with('success', 'User\'s role has been updated');
     }
 
-    public function update(User $user)
-    {
-        $user = User::findOrFail($user);
-
-        if ($user) {
-        }
-    }
-
     public function deleteUser(User $user)
     {
         $user = User::findOrFail($user);
-        $role = $user->roles()->detach();
-
-        $user -> delete();
+        $user->delete();
 
         return redirect('/admin')->with('deleted', 'User has been deleted');
     }

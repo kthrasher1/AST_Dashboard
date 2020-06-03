@@ -49,9 +49,31 @@
                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                 </li>
                 @endif
+
+
+
+
                 @else
+                @auth
+
+                @if(Auth::user()->hasRole('admin'))
+                <li class="nav-item">
+                    <a class="nav-link home" href="{{ url('/admin') }}">Home</a>
+                </li>
+                @elseif(Auth::user()->hasRole('staff'))
+                <li class="nav-item">
+                    <a class="nav-link home" href="{{ url('/staff') }}">Home</a>
+                </li>
+                @elseif(Auth::user()->hasRole('student'))
+                <li class="nav-item">
+                    <a class="nav-link home" href="{{ url('/student') }}">Home</a>
+                </li>
+                @endif
+
+                @endauth
+
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" style="text-transform: capitalize;"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>

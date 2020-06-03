@@ -68,7 +68,7 @@
 
                         <div class="checkbox-block">
                                 <div class="home">
-                                    <input type="checkbox" name="checkboxSelect" id="home" value="Home" class="checkbox checkbox-round">
+                                    <input type="checkbox" name="checkboxSelect1" id="home" value="homelife" class="checkbox checkbox-round">
                                     <label for="home"><i class="fas fa-home"></i></label>
                                     <p> Home Life</p>
                                 </div>
@@ -77,7 +77,7 @@
 
 
                                 <div class="uni">
-                                    <input type="checkbox" name="checkboxSelect1" id="uni" value="University" class="checkbox checkbox-round">
+                                    <input type="checkbox" name="checkboxSelect2" id="uni" value="university" class="checkbox checkbox-round">
                                     <label for="uni"><i class="fas fa-university"></i></label>
                                     <p> University </p>
                                 </div>
@@ -85,7 +85,7 @@
 
 
                                 <div class="rel">
-                                    <input type="checkbox" name="checkboxSelect2" id="rel" value="Relationship" class="checkbox checkbox-round">
+                                    <input type="checkbox" name="checkboxSelect3" id="rel" value="relationship" class="checkbox checkbox-round">
                                     <label for="rel"><i class="fas fa-heart"></i></label>
                                     <p> Relationship </p>
                                 </div>
@@ -93,7 +93,7 @@
 
 
                                 <div class="friends">
-                                    <input type="checkbox" name="checkboxSelect3" id="friends" value="Friends" class="checkbox checkbox-round">
+                                    <input type="checkbox" name="checkboxSelect4" id="friends" value="friends" class="checkbox checkbox-round">
                                     <label for="friends"><i class="fas fa-user-friends"></i></label>
                                     <p> Friends </p>
                                 </div>
@@ -101,13 +101,13 @@
 
 
                                 <div class="travel">
-                                    <input type="checkbox" name="checkboxSelect4" id="travel" value="Travel" class="checkbox checkbox-round">
+                                    <input type="checkbox" name="checkboxSelect5" id="travel" value="travel" class="checkbox checkbox-round">
                                     <label for="travel"><i class="fas fa-route"></i></label>
                                     <p> Travel </p>
                                 </div>
 
                                 <label class="other">
-                                    <input type="checkbox" name="checkboxSelect5" id="other" value="other" class="checkbox checkbox-round">
+                                    <input type="checkbox" name="checkboxSelect6" id="other" value="other" class="checkbox checkbox-round">
                                     <label for="other"><i class="fas fa-plus"></i></label>
                                     <p> Other </p>
                                 </label>
@@ -118,7 +118,7 @@
 
 
                     <div class="links" >
-                        <a class="btn btn-secondary back-button" href="{{ url()->previous() }}"> Back </a>
+                        <a class="btn btn-secondary back-button" href="/student-back/2"> Back </a>
                         <button class="btn btn-primary next-button" type="submit">Next</button>
                     </div>
 

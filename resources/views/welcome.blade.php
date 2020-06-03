@@ -20,7 +20,7 @@
             <div class="container">
                 <div class="row justify-content-center ">
                     <div class="content col-md-7">
-                        <h1 class="welcome-header">Welcome to Dashboard</h1>
+                        <h1 class="welcome-header">Welcome to Check-in</h1>
                         <p class="mb-4 pb-1 welcome-text">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas aspernatur quam neque totam
                             voluptates
