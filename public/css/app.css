@@ -11219,62 +11219,61 @@ header {
   border-radius: 100%;
 }
 
-#admin-dashboard .student-content {
+#admin-dashboard .user-content {
   display: flex;
 }
 
-#admin-dashboard .student-content #user-display {
+#admin-dashboard .user-content #user-display {
   width: 80%;
 }
 
-#admin-dashboard .student-content #user-display .card-body {
+#admin-dashboard .user-content #user-display .card-body {
   overflow-y: auto;
-  max-height: 300px;
 }
 
-#admin-dashboard .student-content #user-display table {
+#admin-dashboard .user-content #user-display table {
   border-collapse: collapse;
 }
 
-#admin-dashboard .student-content #user-display table tr,
-#admin-dashboard .student-content #user-display table td {
+#admin-dashboard .user-content #user-display table tr,
+#admin-dashboard .user-content #user-display table td {
   border: 1px solid #e3e7ec;
   padding: 1em;
   vertical-align: baseline;
   margin: 1em;
 }
 
-#admin-dashboard .student-content #user-display table tbody {
+#admin-dashboard .user-content #user-display table tbody {
   background-color: #f2f4f6;
 }
 
-#admin-dashboard .student-content #user-display a {
+#admin-dashboard .user-content #user-display a {
   background: #00ebc7;
   border: none;
   color: #00214d;
 }
 
-#admin-dashboard .student-content #user-display a:hover {
+#admin-dashboard .user-content #user-display a:hover {
   color: white;
 }
 
-#admin-dashboard .student-content #user-display .view-btn {
+#admin-dashboard .user-content #user-display .view-btn {
   height: 40px;
   width: auto;
 }
 
-#admin-dashboard .student-content #notice-board {
+#admin-dashboard .user-content #notice-board {
   margin-left: 30px;
   width: 20%;
 }
 
-#admin-dashboard .student-content #notice-board .card-body {
-  max-height: 500px;
-  min-height: 500px;
+#admin-dashboard .user-content #notice-board .card-body {
+  max-height: auto;
+  min-height: 550px;
   overflow-y: auto;
 }
 
-#admin-dashboard .student-content #notice-board .notifications {
+#admin-dashboard .user-content #notice-board .notifications {
   text-decoration: none;
   background: #f2f4f6;
   list-style-type: none;

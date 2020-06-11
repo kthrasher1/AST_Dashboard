@@ -5,7 +5,6 @@
     <div id="app">
 
         @include('partials.nav')
-        @include('partials.alerts')
         <main class="">
 
             @yield('content')

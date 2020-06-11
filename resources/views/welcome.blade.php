@@ -21,15 +21,19 @@
                 <div class="row justify-content-center ">
                     <div class="content col-md-7">
                         <h1 class="welcome-header">Welcome to Check-in</h1>
-                        <p class="mb-4 pb-1 welcome-text">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas aspernatur quam neque totam
-                            voluptates
-                            facilis deserunt eaque distinctio! Voluptatem a eligendi possimus iure sunt similique, amet
-                            illo voluptate error in.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed officiis eveniet odio dolorem
-                            nisi sequi atque temporibus
+                        <div class="welcome-text">
+                            <img src="https://via.placeholder.com/700x400" alt="Placeholder Image">
+                            <p class="mb-4 pb-1 welcome-text">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas aspernatur quam neque totam
+                                voluptates
+                                facilis deserunt eaque distinctio! Voluptatem a eligendi possimus iure sunt similique, amet
+                                illo voluptate error in.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed officiis eveniet odio dolorem
+                                nisi sequi atque temporibus
 
-                        </p>
+                            </p>
+                        </div>
+
                         <div class="welcome-links">
                             @if (Route::has('login'))
                             @auth
@@ -52,6 +56,8 @@
                             @endauth
                         </div>
                         @endif
+
+
                     </div>
                 </div>
         </section>

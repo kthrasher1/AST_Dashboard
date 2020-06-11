@@ -43,7 +43,6 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('/admin/delete/{user}', 'AdminController@deleteUser');
         Route::get('/markAsRead', 'AdminController@markedAsRead')->name('markAsRead');
 
-
     });
 
     Route::group(['middleware' => ['staff']], function(){
