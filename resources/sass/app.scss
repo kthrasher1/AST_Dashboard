@@ -9,9 +9,8 @@
 @import "defaults/base";
 
 @import "pages/auth";
-
-@import "pages/profile";
 @import "pages/welcome";
+@import "pages/profile";
 @import "pages/admin";
 @import "pages/student";
 @import "pages/staff";
@@ -27,9 +26,11 @@
 
 
 @import "pages/staff-pages/student_profile";
+@import "pages/staff-pages/quick_view";
 
 
 @import "componets/navbar";
 @import "componets/shapes";
 @import "componets/blob";
 @import "componets/tables";
+@import "componets/footer";

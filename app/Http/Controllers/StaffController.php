@@ -10,16 +10,40 @@ use App\User;
 use App\Student;
 use App\Staff;
 use App\StudentData;
+use App\Message;
 use Illuminate\Support\Facades\Auth;
+
+
 
 class StaffController extends Controller
 {
     public function index()
     {
+        //Getting the students
         $staff = Auth::user()->staff;
         $studentUser = User::whereHas('student', function ($query) use ($staff) {
             $query->whereIn('ast_id', $staff->pluck('id'));
         })->get();
+
+
+        //unread Messages
+        $unreadID = Message::select(\DB::raw('`from` as sender_id, count(`from`) as messages_count'))
+        ->where('to', auth()->id())
+        ->where('read', false)
+        ->groupBy('from')
+        ->get();
+
+        $studentUser = $studentUser->map(function($query) use ($unreadID){
+            $UnreadMessage = $unreadID->where('sender_id', $query->id)->first();
+            $query->unread = $UnreadMessage ? $UnreadMessage->messages_count : 0;
+            return $query;
+        });
+
+        //notfications
+
+        $notif = auth()->user()->unreadNotifications;
+
+        // Data stuff
 
         $moduleData = ModuleData::whereIn("student_id", $studentUser->pluck("id"))->get();
         $attendance = $moduleData->pluck("total_attendance")->all();
@@ -37,7 +61,8 @@ class StaffController extends Controller
 
         return view('staff', [
             'students' => $studentUser,
-            'linechart' => $attendanceGraph
+            'linechart' => $attendanceGraph,
+            'notify' => $notif
         ]);
     }
 
@@ -66,6 +91,22 @@ class StaffController extends Controller
             'module_data' => $moduleData,
             'graph' => $attendanceGraph
 
+        ]);
+    }
+
+
+    public function QuickView(Request $request){
+
+        $id = $request->checkup_id;
+        $studentData = StudentData::where('id', $id)->first();
+        $student = User::where('id', $studentData->student_id)->get();
+        $module = ModuleData::where('student_id', $studentData->student_id)->latest()->first();
+
+
+        return view('staff-pages.quickview', [
+            'studentData' => $studentData,
+            'student' => $student,
+            'moduleData' => $module,
         ]);
     }
 }

@@ -11,16 +11,6 @@ use App\User;
 class SetUnassignedRole
 {
     /**
-     * Create the event listener.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
-
-    /**
      * Handle the event.
      *
      * @param  UserCreated  $event
@@ -28,7 +18,7 @@ class SetUnassignedRole
      */
     public function handle(UserCreated $event)
     {
-        $userRoles= $event -> user -> roles()->get();
+        $userRoles= $event->user->roles()->get();
 
         if($userRoles->isEmpty()){
             $role = Role::where('name', 'unassigned')->firstOrFail();

@@ -68,7 +68,7 @@
 
             }
 
-            a {
+            .admin-btn {
                 background: $buttons;
                 border: none;
                 color: $button-text;
@@ -81,6 +81,16 @@
             .view-btn {
                 height: 40px;
                 width: auto;
+            }
+
+            .page-item{
+                .page-link{
+                    color: inherit;
+                }
+                .active{
+                    background-color: green !important;
+                }
+
             }
         }
 

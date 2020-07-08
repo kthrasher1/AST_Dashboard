@@ -35,58 +35,63 @@
                                         </thead>
                                         <tbody>
                                             @foreach($users as $user)
-                                            @foreach($user->roles as $role)
-                                            <tr>
+                                                @foreach($user->roles as $role)
+                                                <tr>
 
-                                                <td class="cap-first"> {{ $user->name }} </td>
-                                                <td> {{ $user->email }} </td>
-                                                <td>
-                                                    @if($user->isOnline())
+                                                    <td class="cap-first"> {{ $user->name }} </td>
+                                                    <td> {{ $user->email }} </td>
+                                                    <td>
+                                                        @if($user->isOnline())
 
-                                                    <li class="text-success"> Online </li>
+                                                        <li class="text-success"> Online </li>
 
-                                                    @else
+                                                        @else
 
-                                                    <li class="text-muted" style="list-style-type: circle;"> Offline
-                                                    </li>
+                                                        <li class="text-muted" style="list-style-type: circle;"> Offline
+                                                        </li>
 
-                                                    @endif
-                                                </td>
-                                                <td class="cap-first"> {{ $role->name }} </td>
-                                                <td>
-                                                    <a class="btn btn-primary"
-                                                        href="/admin/update/{{$user->id}}">Update</a>
+                                                        @endif
+                                                    </td>
+                                                    <td class="cap-first"> {{ $role->name }} </td>
+                                                    <td>
+                                                        <a class="btn btn-primary admin-btn"
+                                                            href="/admin/update/{{$user->id}}">Update</a>
 
-                                                    @if($user->hasRole('admin') || ($user->hasRole('staff') ||
-                                                    ($user->hasRole('student'))))
-                                                    <a class="btn btn-secondary"
-                                                        href="/admin/remove-role/{{$user->id}}">Remove
-                                                        Privileges</a>
+                                                        @if($user->hasRole('admin') || ($user->hasRole('staff') ||
+                                                        ($user->hasRole('student'))))
+                                                        <a class="btn btn-secondary admin-btn"
+                                                            href="/admin/remove-role/{{$user->id}}">Remove
+                                                            Privileges</a>
 
-                                                    @elseif($user->hasRole('unassigned'))
-                                                    <a class="btn btn-primary"
-                                                        href="/admin/give-admin/{{$user->id}}">Make
-                                                        Admin</a>
-                                                    <a class="btn btn-secondary"
-                                                        href="/admin/make-staff/{{$user->id}}">Make
-                                                        Staff</a>
-                                                    <a class="btn btn-secondary"
-                                                        href="/admin/make-student/{{$user->id}}">Make
-                                                        Student</a>
-                                                    @endif
+                                                        @elseif($user->hasRole('unassigned'))
+                                                        <a class="btn btn-primary admin-btn"
+                                                            href="/admin/give-admin/{{$user->id}}">Make
+                                                            Admin</a>
+                                                        <a class="btn btn-secondary admin-btn"
+                                                            href="/admin/make-staff/{{$user->id}}">Make
+                                                            Staff</a>
+                                                        <a class="btn btn-secondary admin-btn"
+                                                            href="/admin/make-student/{{$user->id}}">Make
+                                                            Student</a>
+                                                        @endif
 
-                                                    <a class="btn btn-danger"
-                                                        onclick="return confirm('Please Click OK to Confirm.')"
-                                                        href="/admin/delete/{{$user->id}}">Delete</a>
+                                                        <a class="btn btn-danger admin-btn"
+                                                            onclick="return confirm('Please Click OK to Confirm.')"
+                                                            href="/admin/delete/{{$user->id}}">Delete</a>
 
-                                                </td>
-                                            </tr>
-                                            @endforeach
+                                                    </td>
+                                                </tr>
+                                                @endforeach
                                             @endforeach
                                         </tbody>
                                     </table>
+
+                                    <div>{{ $users->links() }}</div>
+
                                 </div>
+
                             </div>
+
                         </div>
                 </div>
 
@@ -98,8 +103,8 @@
                             @foreach($notify as $notif)
                             <div class="alert alert-success notif" role="alert">
                                 Please Assign: {{$notif->data['name']}} {{$notif->data['email']}}
-                                <a href="{{ route('markAsRead')}}" class="float-right mark-as-read"
-                                    data-id="{{ $notif->id }}"> Mark as Read </a>
+                                <button href="{{ route('markAsRead')}}" class="float-right mark-as-read"
+                                    data-id="{{ $notif->id }}"> &times;</button>
                             </div>
                             @endforeach
 

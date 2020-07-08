@@ -2,77 +2,119 @@
 
 namespace App\Http\Controllers;
 
-use App\UserMessage;
-use App\Events\MessageSent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
 use App\User;
-use App\Student;
+use App\Message;
+use App\Events\NewMessage;
+use Illuminate\Support\Facades\Crypt;
 
 class ChatController extends Controller
 {
-    //
+    public $id;
 
-    public function __construct()
-    {
-        $this->middleware('auth');
+    public function StaffChat(Request $request){
+        return view('staff-pages.staffChat');
     }
 
-    /**
-     * Show chat interface
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function staffChat(Request $request)
-    {
+    public function StudentChat(){
 
-        $currentUser = Auth::user()->id;
-        $students = User::where('id', $request->studentid)->get();
+        return view('student-pages.studentChat');
+    }
 
-        return view('staff-pages.staffChat', [
-           'students' => $students, 'currentUser' => $currentUser
+    public function GetContacts(){
+        $contacts = User::all();
+        $userRoles = Auth::user()->roles->pluck('name');
+
+        if($userRoles->contains('staff')){
+
+            $staff = Auth::user()->staff;
+            $studentUser = User::whereHas('student', function ($query) use ($staff) {
+                $query->whereIn('ast_id', $staff->pluck('id'));
+            })->get();
+
+            $unreadID = Message::select(\DB::raw('`from` as sender_id, count(`from`) as messages_count'))
+            ->where('to', auth()->id())
+            ->where('read', false)
+            ->groupBy('from')
+            ->get();
+
+            $studentUser = $studentUser->map(function($query) use ($unreadID){
+                $UnreadMessage = $unreadID->where('sender_id', $query->id)->first();
+                $query->unread = $UnreadMessage ? $UnreadMessage->messages_count : 0;
+                return $query;
+            });
+
+            return response()->json($studentUser);
+        }
+
+        if($userRoles->contains('student')){
+
+            $studentUser = Auth::user()->student;
+
+            $staff = User::whereHas('staff', function ($query) use ($studentUser) {
+                $query->whereIn('id', $studentUser->pluck('ast_id'));
+            })->get();
+
+            $unreadID = Message::select(\DB::raw('`from` as sender_id, count(`from`) as messages_count'))
+            ->where('to', auth()->id())
+            ->where('read', false)
+            ->groupBy('from')
+            ->get();
+
+            $staff = $staff->map(function($query) use ($unreadID){
+                $UnreadMessage = $unreadID->where('sender_id', $query->id)->first();
+                $query->unread = $UnreadMessage ? $UnreadMessage->messages_count : 0;
+                return $query;
+            });
+
+            return response()->json($staff);
+        }
+
+        $unreadID = Message::select(\DB::raw('`from` as sender_id, count(`from`) as messages_count'))
+            ->where('to', auth()->id())
+            ->where('read', false)
+            ->groupBy('from')
+            ->get();
+
+
+
+        $contacts = $contacts->map(function($query) use ($unreadID){
+            $UnreadMessage = $unreadID->where('sender_id', $query->id)->first();
+            $query->unread = $UnreadMessage ? $UnreadMessage->message_count : 0;
+
+            return $query;
+        });
+
+
+        return response()->json($contacts);
+    }
+
+    public function GetMessages($id){
+
+        Message::where('from', $id)->where('to', Auth::user()->id)->update(['read' => true]);
+
+        $messages = Message::where(function($query) use ($id) {
+            $query->where('from', Auth::user()->id);
+            $query->where('to', $id);
+        })-> orWhere(function($query) use ($id){
+                $query->where('from', $id);
+                $query->where('to', Auth::user()->id);
+        })->get();
+
+        return response()->json($messages);
+    }
+
+    public function SendMessages(Request $request){
+
+        $message = Message::create([
+            'from' => auth()->id(),
+            'to' => $request->contact_id,
+            'content' => $request->text
         ]);
+
+        broadcast(new NewMessage($message));
+
+        return response()->json($message);
     }
-
-    public function studentChat (Request $request)
-    {
-        $currentUser = Auth::user()->id;
-        $staff = User::where('id', $request->staffid)->get();
-
-        return view('student-pages.StudentChat', [
-            'staff' => $staff, 'currentUser' => $currentUser
-         ]);
-    }
-
-    /**
-     * Gets all the messages relational to the user
-     *
-     * @return UserMessage
-     */
-
-    public function GetMessages(){
-        return UserMessage::with('user')->get();
-    }
-
-    /**
-     * Put message into DB
-     *
-     * @param Request $request
-     * @return Response
-     */
-
-     public function PostMessages(Request $request){
-         $user = Auth::user();
-
-         $message = $user->messages()->create([
-             'message' => $request->input('message')
-         ]);
-
-         broadcast(new MessageSent($user, $message))->toOthers();
-
-         return ['status' => 'Message Sent!'];
-
-     }
-
 }

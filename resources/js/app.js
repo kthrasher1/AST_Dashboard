@@ -5,91 +5,42 @@
  */
 
 require('./bootstrap');
-
+require('./slider');
 
 window.Vue = require('vue');
 
-Vue.component('chat-messages', require('./components/chatMessage.vue').default);
-Vue.component('chat-form', require('./components/chatForm.vue').default);
-
-
-import VueChatScroll from 'vue-chat-scroll';
-Vue.use(VueChatScroll);
+Vue.component('chat-app', require('./components/ChatApp.vue').default);
 
 const app = new Vue({
     el: '#app',
-
-    data: {
-        messages: []
-    },
-
-    created() {
-        this.GetMessages();
-
-        Echo.private('chat')
-        .listen('MessageSent', (message) => {
-
-            this.messages.push({
-                message: message.message.message,
-                user: message.user
-                });
-        });
-    },
-
-    methods: {
-        GetMessages() {
-            axios.get('/messages').then(response => {
-                this.messages = response.data;
-            });
-        },
-
-        PostMessage(message) {
-            this.messages.push(message);
-
-            axios.post('/messages', message).then(response => {
-              console.log(response.data);
-            });
-        },
+});
 
 
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-Token': $('meta[name="_token"]').attr('content')
     }
 });
 
-let slider = document.getElementById("slider");
-let img = document.getElementById("emotion-icons");
-let text = document.getElementById("emotion-text");
+$('.load-ajax-modal').click(function(){
+    $.ajax({
+        type : 'GET',
+        url : $(this).data('path'),
 
-slider.oninput = function()
-{
-
-    if(slider.value == 1)
-    {
-        img.src="img/very-sad.svg";
-        text.innerHTML = "Really Bad!";
-
-    }
-    else if(slider.value == 2)
-    {
-        img.src="img/kinda-sad.svg";
-        text.innerHTML = "Not Great";
-    }
-    else if(slider.value == 3){
-        img.src = "img/neutral.svg";
-        text.innerHTML = "Okay";
-    }
-    else if(slider.value == 4){
-
-        img.src = "img/kinda-happy.svg";
-        text.innerHTML = "Pretty Okay";
-    }
-    else if(slider.value == 5){
-        img.src = "img/very-happy.svg";
-        text.innerHTML = "Amazing!";
-    }
-}
-
-window.setTimeout(function() {
-    $(".alert").fadeTo(500, 0).slideUp(500, function(){
-        $(this).remove();
+        success: function(result) {
+            $('#student-quick-view div.modal-body').html(result);
+        }
     });
-}, 3000);
+});
+
+// $('a[data-notif-id]').click(function () {
+
+//     var notif_id   = $(this).data('notifId');
+//     var targetHref = $(this).data('href');
+
+//     $.post('/markedNotification', {'notif_id': notif_id}, function (data) {
+//         data.success ? (window.location.href = targetHref) : false;
+//     }, 'json');
+
+//     return false;
+// });

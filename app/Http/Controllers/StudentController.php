@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\FinishedCheckup;
 use Illuminate\Http\Request;
 use App\User;
 use App\ModuleData;
 use App\Student;
 use App\Staff;
 use App\StudentData;
-use Auth;
+use App\Message;
+use App\Notifications\SendFinishedNofity;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Collection;
 
 class StudentController extends Controller
@@ -20,6 +23,18 @@ class StudentController extends Controller
         $staff = User::whereHas('staff', function ($query) use ($studentUser) {
             $query->whereIn('id', $studentUser->pluck('ast_id'));
         })->get();
+
+        $unreadID = Message::select(\DB::raw('`from` as sender_id, count(`from`) as messages_count'))
+        ->where('to', auth()->id())
+        ->where('read', false)
+        ->groupBy('from')
+        ->get();
+
+        $staff = $staff->map(function($query) use ($unreadID){
+            $UnreadMessage = $unreadID->where('sender_id', $query->id)->first();
+            $query->unread = $UnreadMessage ? $UnreadMessage->messages_count : 0;
+            return $query;
+        });
 
         return view('student', [
             'staff' => $staff
@@ -82,7 +97,7 @@ class StudentController extends Controller
         $tra = $request->checkboxSelect5;
         $other = $request->checkboxSelect6;
 
-        $vals = implode("," , [$home, $uni, $rel, $fri, $tra ,$other]);
+        $vals = implode(" " , array_filter([$home, $uni, $rel, $fri, $tra ,$other]));
 
         $request->session()->push('studentData.emotionSelection', $vals);
 
@@ -124,7 +139,7 @@ class StudentController extends Controller
         $modTwo = $request->modSelect2;
         $modThree = $request->modSelect3;
 
-        $vals = implode("," , [$modOne, $modTwo, $modThree]);
+        $vals = implode(" " , array_filter([$modOne, $modTwo, $modThree]));
         $request->session()->put('studentData.moduleSelection',$vals);
 
         return view("student-pages.modules-issues");
@@ -152,9 +167,8 @@ class StudentController extends Controller
     }
 
     public function OtherIssuesSubmit(Request $request){
+
         $studentUser = $request->user()->student;
-
-
 
         $otherIssuesSubmit = $request->issues;
         $request->session()->put('studentData.otherIssuesExpand',$otherIssuesSubmit);
@@ -174,11 +188,20 @@ class StudentController extends Controller
         $studentDataSubmit->module_expand = $request->session()->get('studentData.moduleExpandBool');
         $studentDataSubmit->module_detail= $request->session()->get('studentData.moduleExpandSubmit');
         $studentDataSubmit->other_issues = $request->session()->get('studentData.otherIssuesExpand.0');
+        $studentDataSubmit->completed = true;
         $studentDataSubmit->risk_level = 1;
-
-
+        $studentDataSubmit->created_at = NOW();
+        $studentDataSubmit->updated_at = NOW();
         $studentDataSubmit->save();
 
+
+
+        $user = $request->user();
+        $studentDataObj = StudentData::where('student_id', $user->id)->latest()->first();
+        $student = Student::where('student_id', $user->id)->first();
+
+        $notifyStaff = Staff::where('id', $student->ast_id)->first();
+        User::find($notifyStaff->staff_id)->notify(new SendFinishedNofity($studentDataObj, $user));
 
         return view("student-pages.feedback-complete", [
             'staff' => $staff
@@ -187,6 +210,8 @@ class StudentController extends Controller
 
 
     public function CompletedSubmit(Request $request){
+
+
 
         return view("student");
     }

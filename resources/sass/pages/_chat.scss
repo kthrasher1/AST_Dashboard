@@ -2,15 +2,24 @@
     margin-top: 10px;
     height: auto;
 
-    .row {
+    .chat-content {
+        background: darken(whitesmoke, $amount: 3);
         align-items: center;
         justify-content: center;
+        padding: 25px;
+        position: relative;
+        border-radius: 5px;
       }
 
       .chat {
         list-style: none;
         margin: 0;
         padding: 0;
+      }
+
+      .card{
+        border-radius: 5px;
+        border: 2px solid darken(whitesmoke, $amount: 10);
       }
 
       .card-header{
@@ -50,7 +59,7 @@
 
     ::-webkit-scrollbar
     {
-        width: 12px;
+        width: 10px;
         background-color: #F5F5F5;
     }
 

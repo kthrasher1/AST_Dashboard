@@ -30,31 +30,15 @@
 
 @endsection
 
+
+@include('partials.shapes')
 @section('content')
 
 <div class="container" id="chat">
-    <div class="row">
-        <div class="col-md-8 ">
+    <div class="chat-content">
+        <div>
             <div class="card">
-                @foreach($students as $student)
-
-                <div class="card-header">
-                    <img class="user-image" src="/uploads/avatars/{{ $student->avatar }}" alt="Picture of the user you are talking to" srcset="">
-                    {{ $student->name }}
-
-                </div>
-
-                <div class="card-body scroll" v-chat-scroll>
-
-                    <chat-messages :messages="messages" :user="{{ $currentUser }}" :otheruser="{{ $student->id }}">
-                    </chat-messages>
-
-                </div>
-                <div class="card-footer">
-                    <chat-form v-on:messagesent="PostMessage" :user="{{ Auth::user() }}"></chat-form>
-                </div>
-
-                @endforeach
+                <chat-app :user = "{{auth()->user()}}"> </chat-app>
             </div>
             <div class="link">
                 <a class="btn btn-secondary back-button" href="{{ url()->previous() }}"> Back </a>

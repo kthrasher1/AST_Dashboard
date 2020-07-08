@@ -25,6 +25,7 @@ class StudentDataSeeder extends Seeder
                 'module_expand' => 0,
                 'module_detail' => null,
                 'other_issues' => null,
+                'completed' => 1,
 
                 'risk_level' => 2,
 
@@ -43,6 +44,8 @@ class StudentDataSeeder extends Seeder
                 'module_expand' => 0,
                 'module_detail' => null,
                 'other_issues' => null,
+
+                'completed' => 1,
 
                 'risk_level' => 3,
 

@@ -1,3 +1,47 @@
+
+
+@desktop
+
+
+@section('styling')
+
+<style>
+
+    body, html{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav {
+        display: none !important;
+    }
+
+    #mobile-only{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+</style>
+@endsection
+
+@include('partials.shapes')
+
+@section('content')
+<div id="mobile-only">
+    <div class="card">
+        <div class="card-body">
+            <h1> You need a mobile phone </h1>
+            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed harum ratione porro eum, tempore culpa dolore perferendis ipsam cumque optio eius. Qui quis quidem dolore modi eveniet hic molestias minus.</p>
+        </div>
+    </div>
+<div>
+@endsection
+
+@elsedesktop
+
 @extends('layouts.app')
 
 @section('styling')
@@ -18,7 +62,6 @@
 </style>
 @endsection
 
-@mobile
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -46,7 +89,13 @@
 
                     <div class="chat-container">
                         <div class="chat">
-                            <a class="btn btn-primary  student-btn" href="{{ route('studentChat', ['staffid' => $ast->id] ) }}" >Chat</a>
+                        <a class="btn btn-primary  student-btn" href="{{ route('studentChat') }}" >
+                            <span class="text-chat">Chat</span>
+
+                            @if($ast->unread != 0)
+                            <span class="unread">{{ $ast->unread}}</span>
+                            @endif
+                        </a>
                         </div>
                     </div>
 
@@ -55,6 +104,8 @@
         </div>
 
             <div class="card" id="student-cards">
+
+
 
                 <div class="card-header"> <h4> How was your week? </h4> </div>
                 <div class="card-body">
@@ -66,10 +117,5 @@
     </div>
 </div>
 @endsection
-@elsemobile
-<div class="card">
-    <div class="card-body">
-        <h1> You need a mobile phone </h1>
-    </div>
-</div>
-@endmobile
+
+@enddesktop

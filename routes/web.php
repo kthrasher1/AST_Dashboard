@@ -14,12 +14,18 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
+
 Route::get('/', function () {
-    return view('welcome');
+    $user = Auth::user();
+
+    if($user == null){
+        return view('welcome');
+    }
+    else{
+        return redirect()->back();
+    }
+
 });
-
-
-
 
 Route::get('student-page-home', function()
 {
@@ -48,10 +54,11 @@ Route::group(['middleware' => ['auth']], function() {
     Route::group(['middleware' => ['staff']], function(){
 
 
-        Route::get('/staffchat','ChatController@staffChat')->name('staffchat');
+        Route::get('/staffchat','ChatController@StaffChat')->name('staffchat');
         Route::get('/staff', 'PermissionController@staff')->name('staff');
         Route::get('/staff', 'StaffController@index')->name('staff');
         Route::get('/student-profile', 'StaffController@studentProfile')->name('student-profile');
+        Route::get('/quick-view', 'StaffController@QuickView')->name('quick-view');
 
 
     });
@@ -77,7 +84,7 @@ Route::group(['middleware' => ['auth']], function() {
 
         Route::get('/student-back/{pageid}','StudentController@PreviousPage');
 
-        Route::get('/studentChat', 'ChatController@studentChat')->name('studentChat');
+        Route::get('/studentChat', 'ChatController@StudentChat')->name('studentChat');
 
 
 
@@ -87,12 +94,20 @@ Route::group(['middleware' => ['auth']], function() {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@home')->name('home');
 
 Route::get('messages', 'ChatController@GetMessages');
 Route::post('messages','ChatController@PostMessages');
+
+Route::get('/contact','ChatController@GetContacts');
+Route::get('/conversation/{id}', 'ChatController@GetMessages');
+Route::post('/conversation/send', 'ChatController@SendMessages');
+Route::get('/studentID', 'ChatController@StudentID');
 
 
 Route::get('profile', 'UserController@profile')->name('profile');
 Route::post('/UpdatePassword','UserController@UpdatePassword')->name('UpdatePassword');
 Route::post('profile', 'UserController@ImageUpdate');
+
+
+Route::post('markedNotification', 'NotificaitonController@MarkedRead')->name('markedNotification');

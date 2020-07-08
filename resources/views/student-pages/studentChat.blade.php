@@ -33,33 +33,14 @@
 @section('content')
 
 <div class="container" id="chat">
-    <div class="row">
-        <div class="col-md-8 ">
+    <div class="chat-content">
+        <div>
             <div class="card">
-                @foreach($staff as $ast)
-
-                <div class="card-header">
-                    <img class="user-image" src="/uploads/avatars/{{ $ast->avatar }}" alt="Picture of the user you are talking to" srcset="">
-                    {{ $ast->name }}
-
-                </div>
-
-                <div class="card-body scroll" v-chat-scroll>
-
-                    <chat-messages :messages="messages" :user="{{ $currentUser }}" :otheruser="{{ $ast->id }}">
-                    </chat-messages>
-
-                </div>
-                <div class="card-footer">
-                    <chat-form v-on:messagesent="PostMessage" :user="{{ Auth::user() }}"></chat-form>
-                </div>
-
-                @endforeach
+                <chat-app :user = "{{auth()->user()}}"> </chat-app>
             </div>
             <div class="link">
                 <a class="btn btn-secondary back-button" href="{{ url()->previous() }}"> Back </a>
             </div>
-
         </div>
     </div>
     @endsection

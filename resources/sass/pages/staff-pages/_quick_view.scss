@@ -1,0 +1,58 @@
+#student-quick-view-container{
+    width: 100%;
+    display: flex;
+    .student-content{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+
+        .student-quick-info{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            grid-area: 1 / 1 / 2 / 2;
+        }
+
+        .student-data-container{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            #risk-level{
+                width: 20%;
+
+                .risk-level{
+
+                }
+
+            }
+
+            #issues{
+                width: 100%;
+
+            }
+
+            #module-issues{
+                width: 100%;
+
+            }
+
+            #other-issues{
+                width: 100%;
+
+            }
+
+            #total-attendance{
+                width: 100%;
+
+            }
+
+
+        }
+
+    }
+
+}

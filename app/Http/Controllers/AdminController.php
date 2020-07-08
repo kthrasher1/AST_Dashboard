@@ -13,7 +13,7 @@ class AdminController extends Controller
 
    public function index()
     {
-        $users = User::with('roles')->get();
+        $users = User::with('roles')->paginate(5);
         $notif = auth()->user()->unreadNotifications;
 
         return view('admin', [
@@ -22,23 +22,11 @@ class AdminController extends Controller
         ]);
     }
 
-    public function markedAsRead(Request $request)
-    {
-        auth()->user()
-            ->unreadNotifications
-            ->when($request->input('id'), function ($query) use ($request) {
-                return $query->where('id', $request->input('id'));
-            }) ->markAsRead();
-
-        return redirect('/admin');
-    }
-
-
 
     public function giveAdmin(User $user)
     {
         if (Auth::id() == $user->id) {
-            return redirect('/admin') -> with('warning', 'you are already admin, silly');
+            return redirect('/admin') -> with('warning', 'you are already admin');
         }
 
         $adminRole = Role::where('name', 'admin')->firstOrFail();
@@ -50,7 +38,7 @@ class AdminController extends Controller
     public function removeRole(User $user)
     {
         if (Auth::id() == $user->id) {
-            return redirect('/admin')->with('warning', 'you can\'t remove your own permissions, silly');
+            return redirect('/admin')->with('warning', 'you can\'t remove your own permissions');
         }
 
         $removeRole = Role::where('name', 'unassigned')->firstOrFail();
@@ -62,7 +50,7 @@ class AdminController extends Controller
     public function makeStudent(User $user)
     {
         if (Auth::id() ==$user->id) {
-            return redirect('/admin')->with('warning', 'you can\'t update your own permissions, silly');
+            return redirect('/admin')->with('warning', 'you can\'t update your own permissions');
         }
             $studentRole = Role::where('name', 'student')->firstOrFail();
             $user->roles()->sync($studentRole->id);
@@ -73,7 +61,7 @@ class AdminController extends Controller
     public function makeStaff(User $user)
     {
         if (Auth::id()== $user->id) {
-            return redirect('/admin')->with('warning', 'you can\'t update your own permissions, silly');
+            return redirect('/admin')->with('warning', 'you can\'t update your own permissions');
         }
 
             $staffRole = Role::where('name', 'staff')->firstOrFail();
@@ -84,9 +72,20 @@ class AdminController extends Controller
 
     public function deleteUser(User $user)
     {
-        $user = User::findOrFail($user);
-        $user->delete();
+        if(Auth::user()->id == $user->id){
+            return redirect('/admin')->with('warning', 'You cannot delete yourself');
+        }
 
-        return redirect('/admin')->with('deleted', 'User has been deleted');
+        $id = User::find($user->id);
+
+        if($id){
+            $id->roles()->detach();
+            $id->delete();
+
+            return redirect('/admin')->with('deleted', 'User has been deleted');
+        }
+
+        return redirect('/admin')->with('warning', 'User has not been deleted');
+
     }
 }
