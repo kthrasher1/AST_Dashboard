@@ -1,3 +1,12 @@
+.big-circle-welcome-page {
+    top: -400px;
+    left: -350px;
+    border-radius: 100%;
+    width: 900px;
+    height: 900px;
+    opacity: 0.4;
+}
+
 #welcome-screen {
     .welcome-button {
         background: $buttons !important;
@@ -36,11 +45,13 @@
                 max-width: 900px;
                 font-size: 18px;
             }
-
-            .welcome-image{
-                margin-top: 20px;
-                margin-bottom: 20px;
-                box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+            .welcome-image-container{
+                .welcome-image{
+                    max-width: 1500px;
+                    margin-top: 50px;
+                    margin-bottom: 20px;
+                    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+                }
             }
         }
     }
@@ -211,6 +222,12 @@
 }
 
 @media only screen and (max-width : 450px) {
+    .big-circle-welcome-page{
+        transform: translate(-50%, -115%);
+        top: 12%;
+        left: 50%;
+        opacity: 0.6;
+    }
 
     #welcome-screen{
         .welcome-section{
@@ -228,10 +245,13 @@
                     text-align: center;
                 }
 
-                .welcome-image{
-                    max-width: 400px;
-                    margin-top: 10px;
-                    margin-bottom: 10px;
+                .welcome-image-container{
+                    .welcome-image{
+                        max-width: 400px;
+                        max-height: 400px;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                    }
                 }
             }
         }

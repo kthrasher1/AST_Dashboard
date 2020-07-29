@@ -69,45 +69,32 @@
                 color: white;
             }
         }
-    }
 
-    #module-info-panel {
-        width: 20%;
+        .module-list{
+            margin: 10px;
 
-        .card-header {
-            display: grid;
-            grid-template-columns: 1fr 0.25fr;
-            grid-template-rows: 1fr;
-            grid-column-gap: 0px;
-            grid-row-gap: 0px;
+            .modules {
+                background: white;
+                margin: 5px;
+                list-style-type: none;
+                border-radius: 5px;
+                padding: 10px;
+                text-align: center;
 
-            .module-header {
-                font-size: 1.75em;
-                margin: none;
-                grid-area: 1 / 1 / 2 / 2;
-            }
+                h1 {
+                    font-size: 1.25em;
+                }
 
-            i {
-                grid-area: 1 / 2 / 2 / 3;
-            }
-        }
-
-
-        .modules {
-            background: white;
-            margin: 5px;
-            list-style-type: none;
-            border-radius: 5px;
-            padding: 10px;
-            text-align: center;
-
-            h1 {
-                font-size: 1.25em;
+                p{
+                    margin: 0px;
+                    padding: 0px;
+                }
             }
         }
 
-
     }
+
+
 
     #attendance-info-panel {
         width: 55%;

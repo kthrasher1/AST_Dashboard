@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-
-
 <div class=" justify-content-center">
     <div class="card" id="admin-dashboard">
         <div class="card-body" id="admin-body">
@@ -100,6 +97,10 @@
                         <h1 class="card-header">Notice Board</h1>
                         <div class="card-body">
 
+                            @if(count($notify) == 0)
+                                <p class="no-notifs">You have no notifications!</p>
+                            @else
+
                             @foreach($notify as $notif)
                             <div class="alert alert-success notif" role="alert">
                                 Please Assign: {{$notif->data['name']}} {{$notif->data['email']}}
@@ -107,6 +108,8 @@
                                     data-id="{{ $notif->id }}"> &times;</button>
                             </div>
                             @endforeach
+
+                            @endif
 
                             @include('partials.alerts')
 
@@ -131,4 +134,4 @@
 
             </script>
 
-            @endsection
+@endsection

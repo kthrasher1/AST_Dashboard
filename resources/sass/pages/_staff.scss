@@ -136,6 +136,20 @@
                 overflow-y: auto;
 
             }
+            .no-notif{
+                text-align: center;
+            }
+            .notif{
+                color: #00214d;
+                background-color: $card-color;
+                border: none;
+                button{
+                    background: $secondary;
+                    color: white;
+                    border: none;
+                }
+
+            }
             .notifications{
                 text-decoration: none;
                 background: $card-color;
@@ -153,12 +167,16 @@
         width: 100%;
         min-height: 400px;
 
-        #chart{
+        #attendance-chart{
             max-width: 400px;
 
             .card-body{
                 max-width: 400px;
             }
+        }
+
+        #weekly-chart{
+
         }
     }
 

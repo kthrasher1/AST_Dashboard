@@ -13,5 +13,7 @@
 
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    @yield('graph-script')
+
 </body>
 </html>

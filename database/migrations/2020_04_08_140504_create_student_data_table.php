@@ -16,14 +16,26 @@ class CreateStudentDataTable extends Migration
         Schema::create('student_data', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('student_id');
+
             $table->integer('emotion_slider');
-            $table->string('issue_selector');
+
+            $table->string('issue_selector_1')->nullable();
+            $table->string('issue_selector_2')->nullable();
+            $table->string('issue_selector_3')->nullable();
+            $table->string('issue_selector_4')->nullable();
+            $table->string('issue_selector_5')->nullable();
+            $table->string('issue_selector_6')->nullable();
             $table->string('other_selector')->nullable();
+
             $table->boolean('module_issues_bool');
-            $table->string('module_selector')->nullable();
+            $table->string('module_selector_1')->nullable();
+            $table->string('module_selector_2')->nullable();
+            $table->string('module_selector_3')->nullable();
             $table->boolean('module_expand_bool')->nullable();
             $table->string('module_detail')->nullable();
+
             $table->string('other_issues')->nullable();
+
             $table->integer('completed');
             $table->integer('risk_level');
 

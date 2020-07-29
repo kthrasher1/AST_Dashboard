@@ -32,7 +32,7 @@
                 <div class="card-body">
                     <form method="POST" action="/student-other-selection">
                         @csrf
-                        <h1> Here you can enter the other contributers to your day </h1>
+                        <h1> Here you can enter the other contributers to your week </h1>
                         <div class="checkbox-block">
                             <label class="selection-label">
 

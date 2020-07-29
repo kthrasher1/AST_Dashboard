@@ -27,7 +27,7 @@
 </style>
 @endsection
 
-@include('partials.shapes')
+
 
 @section('content')
 <div id="mobile-only">
@@ -52,18 +52,20 @@
     }
 
     main {
-        margin-top: 10px;
         height: calc(100vh - 6rem);
         align-items: center;
         justify-content: center;
-
     }
 
 </style>
 @endsection
 
+
 @section('content')
-<div class="container">
+<div id="student-notifs">
+    @include('partials.alerts')
+</div>
+<div class="container" id="student-page">
     <div class="row justify-content-center">
         <div class="col-sm-6">
             <div class="student-info">

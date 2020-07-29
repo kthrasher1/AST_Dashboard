@@ -110,4 +110,4 @@ Route::post('/UpdatePassword','UserController@UpdatePassword')->name('UpdatePass
 Route::post('profile', 'UserController@ImageUpdate');
 
 
-Route::post('markedNotification', 'NotificaitonController@MarkedRead')->name('markedNotification');
+Route::get('markedNotification', 'NotificationController@MarkedRead')->name('markedNotification');

@@ -21,6 +21,7 @@
 
 @section('content')
 @mobile
+
 <div class="container" id="student-start-page">
     <div class="row justify-content-center">
         <div class="col-md-12">

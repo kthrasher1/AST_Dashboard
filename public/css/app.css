@@ -10949,7 +10949,7 @@ header {
 
 @media (min-width: 576px) {
   .modal-dialog {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 1.75rem auto;
   }
 }
@@ -11047,6 +11047,15 @@ header {
   }
 }
 
+.big-circle-welcome-page {
+  top: -400px;
+  left: -350px;
+  border-radius: 100%;
+  width: 900px;
+  height: 900px;
+  opacity: 0.4;
+}
+
 #welcome-screen .welcome-button {
   background: #00ebc7 !important;
   color: #00214d;
@@ -11087,8 +11096,9 @@ header {
   font-size: 18px;
 }
 
-#welcome-screen .welcome-section .welcome-text-container .welcome-image {
-  margin-top: 20px;
+#welcome-screen .welcome-section .welcome-text-container .welcome-image-container .welcome-image {
+  max-width: 1500px;
+  margin-top: 50px;
   margin-bottom: 20px;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 }
@@ -11250,6 +11260,13 @@ header {
 }
 
 @media only screen and (max-width: 450px) {
+  .big-circle-welcome-page {
+    transform: translate(-50%, -115%);
+    top: 12%;
+    left: 50%;
+    opacity: 0.6;
+  }
+
   #welcome-screen .welcome-section .welcome-text-container {
     margin: 5em;
   }
@@ -11266,8 +11283,9 @@ header {
     text-align: center;
   }
 
-  #welcome-screen .welcome-section .welcome-text-container .welcome-image {
+  #welcome-screen .welcome-section .welcome-text-container .welcome-image-container .welcome-image {
     max-width: 400px;
+    max-height: 400px;
     margin-top: 10px;
     margin-bottom: 10px;
   }
@@ -11578,23 +11596,36 @@ header {
   border-radius: 5px;
 }
 
-.student-name {
+#student-notifs .alert-warning {
+  background-color: rgba(253, 226, 79, 0.8);
+  border: #fde24f;
+  color: inherit;
+  text-align: center;
+}
+
+#student-notifs .alert {
+  position: fixed;
+  z-index: 999;
+  box-shadow: 0px 10px 11px -2px rgba(0, 0, 0, 0.05);
+}
+
+#student-page .student-name {
   text-transform: capitalize;
 }
 
-#student-cards {
+#student-page #student-cards {
   margin-bottom: 15px;
   margin-top: 15px;
   border: none;
   background-color: #f2f4f6;
 }
 
-#student-cards .card-header {
+#student-page #student-cards .card-header {
   border: none;
   background-color: #e3e7ec;
 }
 
-#student-cards a {
+#student-page #student-cards a {
   width: 100px;
   height: 40px;
   background: #00ebc7;
@@ -11602,56 +11633,56 @@ header {
   color: #00214d;
 }
 
-#student-cards a:hover {
+#student-page #student-cards a:hover {
   color: white;
 }
 
-.student-button {
+#student-page .student-button {
   margin: 30px;
   width: 100px;
 }
 
-.student-info {
+#student-page .student-info {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.student-info .student-header {
+#student-page .student-info .student-header {
   width: 100%;
 }
 
-.student-info .user-image {
+#student-page .student-info .user-image {
+  margin-top: 25px;
   width: 100px;
   height: 100px;
   border-radius: 100%;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
 }
 
-.student-info a {
-  color: #00ebc7;
+#student-page .student-info a {
   text-decoration: underline;
 }
 
-#staff-info {
+#student-page #staff-info {
   width: 100%;
   display: flex;
   margin-bottom: 10px;
 }
 
-#staff-info .staff-info {
+#student-page #staff-info .staff-info {
   width: 100%;
   display: flex;
 }
 
-#staff-info .staff-info .staff-profile {
+#student-page #staff-info .staff-info .staff-profile {
   width: 65%;
   border-right: 1px solid rgba(0, 0, 0, 0.09);
   display: flex;
 }
 
-#staff-info .staff-info .staff-profile .staff-image {
+#student-page #staff-info .staff-info .staff-profile .staff-image {
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
   margin-top: 5px;
   width: 50px;
@@ -11662,7 +11693,7 @@ header {
      object-fit: contain;
 }
 
-#staff-info .staff-info .staff-profile .info {
+#student-page #staff-info .staff-info .staff-profile .info {
   max-width: 150px;
   flex: 1 1 auto;
   display: inline-block;
@@ -11670,11 +11701,11 @@ header {
   overflow-wrap: break-word;
 }
 
-#staff-info .staff-info .staff-profile .info p {
+#student-page #staff-info .staff-info .staff-profile .info p {
   margin-bottom: 0.3em;
 }
 
-#staff-info .chat-container {
+#student-page #staff-info .chat-container {
   width: 35%;
   height: auto;
   margin-left: auto;
@@ -11684,7 +11715,7 @@ header {
   margin-left: 10px;
 }
 
-#staff-info .chat-container a {
+#student-page #staff-info .chat-container a {
   position: relative;
   top: 50%;
   display: flex;
@@ -11692,11 +11723,11 @@ header {
   align-items: center;
 }
 
-#staff-info .chat-container a .text-chat {
+#student-page #staff-info .chat-container a .text-chat {
   padding: 0;
 }
 
-#staff-info .chat-container a .unread {
+#student-page #staff-info .chat-container a .unread {
   bottom: 22px;
   margin: 0px;
   position: absolute;
@@ -11844,6 +11875,22 @@ header {
   overflow-y: auto;
 }
 
+#staff-dashboard .student-content #notice-board .no-notif {
+  text-align: center;
+}
+
+#staff-dashboard .student-content #notice-board .notif {
+  color: #00214d;
+  background-color: #f2f4f6;
+  border: none;
+}
+
+#staff-dashboard .student-content #notice-board .notif button {
+  background: #ff5470;
+  color: white;
+  border: none;
+}
+
 #staff-dashboard .student-content #notice-board .notifications {
   text-decoration: none;
   background: #f2f4f6;
@@ -11858,11 +11905,11 @@ header {
   min-height: 400px;
 }
 
-#staff-dashboard .graphs #chart {
+#staff-dashboard .graphs #attendance-chart {
   max-width: 400px;
 }
 
-#staff-dashboard .graphs #chart .card-body {
+#staff-dashboard .graphs #attendance-chart .card-body {
   max-width: 400px;
 }
 
@@ -11988,7 +12035,7 @@ header {
 #student-start-page .card {
   border: none;
   text-align: center;
-  height: 100%;
+  min-height: 250px;
   background-color: whitesmoke;
   border-radius: 5px;
 }
@@ -12000,7 +12047,7 @@ header {
 #student-start-page .icon {
   width: 150px;
   height: 150px;
-  margin: 20px;
+  margin: 5em;
   margin-bottom: 35px;
   align-self: center;
   text-align: center;
@@ -12258,7 +12305,7 @@ header {
   grid-area: 2/3/3/4;
 }
 
-#student-selection-page .friends {
+#student-selection-page .finance {
   grid-area: 2/4/3/5;
 }
 
@@ -12766,29 +12813,11 @@ header {
   color: white;
 }
 
-#student-profile #module-info-panel {
-  width: 20%;
+#student-profile #student-info-panel .module-list {
+  margin: 10px;
 }
 
-#student-profile #module-info-panel .card-header {
-  display: grid;
-  grid-template-columns: 1fr 0.25fr;
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-}
-
-#student-profile #module-info-panel .card-header .module-header {
-  font-size: 1.75em;
-  margin: none;
-  grid-area: 1/1/2/2;
-}
-
-#student-profile #module-info-panel .card-header i {
-  grid-area: 1/2/2/3;
-}
-
-#student-profile #module-info-panel .modules {
+#student-profile #student-info-panel .module-list .modules {
   background: white;
   margin: 5px;
   list-style-type: none;
@@ -12797,8 +12826,13 @@ header {
   text-align: center;
 }
 
-#student-profile #module-info-panel .modules h1 {
+#student-profile #student-info-panel .module-list .modules h1 {
   font-size: 1.25em;
+}
+
+#student-profile #student-info-panel .module-list .modules p {
+  margin: 0px;
+  padding: 0px;
 }
 
 #student-profile #attendance-info-panel {
@@ -12824,44 +12858,137 @@ header {
 
 #student-quick-view-container .student-content {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  display: flex;
 }
 
 #student-quick-view-container .student-content .student-quick-info {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  grid-area: 1/1/2/2;
+  width: 40%;
+  background: #f8f9fa;
+  border-radius: 5px;
+  margin-right: 20px;
+  border: 2px solid #e9ecef;
+}
+
+#student-quick-view-container .student-content .student-quick-info .profile-picture-container {
+  justify-self: center;
+  align-self: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+#student-quick-view-container .student-content .student-quick-info .profile-picture-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+#student-quick-view-container .student-content .student-quick-info .student-name {
+  justify-self: center;
+  align-self: center;
+}
+
+#student-quick-view-container .student-content .student-quick-info .student-email {
+  justify-self: center;
+  align-self: center;
+}
+
+#student-quick-view-container .student-content .student-quick-info .module-list {
+  margin-top: 20px;
+  justify-self: center;
+  align-self: center;
+}
+
+#student-quick-view-container .student-content .student-quick-info .module-list p {
+  text-align: center;
 }
 
 #student-quick-view-container .student-content .student-data-container {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: #f8f9fa;
+  border-radius: 5px;
+  border: 2px solid #e9ecef;
 }
 
 #student-quick-view-container .student-content .student-data-container #risk-level {
-  width: 20%;
+  width: 45%;
+  margin: 10px;
+}
+
+#student-quick-view-container .student-content .student-data-container #risk-level .title .tool-tip {
+  display: flex;
+  float: right;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background: #cdcdcd;
+  font-family: times new roman;
+  font-style: italic;
+  color: white;
+  border-radius: 100%;
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+#student-quick-view-container .student-content .student-data-container #risk-level .bad {
+  background: rgba(243, 20, 49, 0.9);
+  color: white;
+}
+
+#student-quick-view-container .student-content .student-data-container #risk-level .okay {
+  background: rgba(255, 191, 0, 0.9);
+  color: white;
+}
+
+#student-quick-view-container .student-content .student-data-container #risk-level .good {
+  background: rgba(0, 142, 9, 0.9);
+  color: white;
 }
 
 #student-quick-view-container .student-content .student-data-container #issues {
-  width: 100%;
+  margin: 10px;
+  width: 45%;
 }
 
-#student-quick-view-container .student-content .student-data-container #module-issues {
-  width: 100%;
+#student-quick-view-container .student-content .student-data-container #issues p {
+  margin: 0;
+  padding: 0;
 }
 
 #student-quick-view-container .student-content .student-data-container #other-issues {
-  width: 100%;
+  width: 45%;
+  margin: 10px;
+}
+
+#student-quick-view-container .student-content .student-data-container #module-issues {
+  width: 45%;
+  margin: 10px;
+}
+
+#student-quick-view-container .student-content .student-data-container #module-issues p {
+  margin: 0;
+  padding: 0;
+}
+
+#student-quick-view-container .student-content .student-data-container #module-issues .expand {
+  margin-top: 20px;
+}
+
+#student-quick-view-container .student-content .student-data-container #module-issues .expand h4 {
+  font-size: 18px;
 }
 
 #student-quick-view-container .student-content .student-data-container #total-attendance {
-  width: 100%;
+  width: 95%;
+  margin: 10px;
 }
 
 .navbar {
@@ -12959,7 +13086,7 @@ header {
 
   .big-circle {
     transform: translate(-50%, -115%);
-    top: 12%;
+    top: 40%;
     left: 50%;
     opacity: 0.6;
   }

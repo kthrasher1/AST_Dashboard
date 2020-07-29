@@ -65,9 +65,13 @@
                         <div class="card-header"><h1> Notice Board </h1></div>
 
                         <div class="card-body">
+                            @if(count($notify) == 0)
+                                <p class="no-notif">You have no notifications!</p>
+                            @else
+
                             @foreach($notify as $notif)
                                 <div class="alert alert-success notif" role="alert">
-                                    <a type="button" href="{{ route('markedNotification', ['notifID' => $notif->id]) }}">
+                                    <a type="button" class="close" href="{{ route('markedNotification', ['notifID' => $notif->id]) }}">
                                         <span aria-hidden="true">&times;</span>
                                     </a>
 
@@ -81,6 +85,7 @@
                                      </button>
                                 </div>
                             @endforeach
+                            @endif
                         </div>
                         <div>
 
@@ -92,21 +97,28 @@
             </div>
             <div class="graphs">
                 <div class="card">
-                    <h1 class="card-header" id="student-title">Quick Overview</h2>
+                    <h2 class="card-header" id="student-title">Quick Overview</h2>
                         <div class="card-body">
 
-                            <div class="card" id="chart">
+                            {{--  <div class="card" id="attendance-chart">
                                 <div class="card-body">
                                     <div class="chart">
-                                        {{--  {{ $linechart->container() }}
-                                        {{ $linechart->script() }}  --}}
+
+                                        {!! $attendanceChart->container() !!}
+                                        {!! $attendanceChart->script() !!}
 
                                     </div>
                                 </div>
+                            </div>  --}}
+
+                            <div class="card" id="weekly-chart">
+                                <div class="card-body">
+                                    <div class="chart">
+                                        {!! $weeklyChart->container() !!}
+                                    </div>
+                                </div>
                             </div>
-
-
-                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -125,16 +137,24 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
             <div class="modal-body">
+                <div class="chart">
 
+                </div>
             </div>
         </div>
+
         </div>
+
     </div>
 
 
 </div>
 
+
 @include('partials.footer')
+@endsection
+
+@section('graph-script')
+    {!! $weeklyChart->script() !!}
 @endsection

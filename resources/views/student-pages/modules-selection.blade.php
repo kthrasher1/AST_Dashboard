@@ -34,21 +34,20 @@
                         @csrf
                         <h1> Which modules are you having issues with? </h1>
                         <div class="checkbox-block">
-                            @foreach($studentData as $student)
 
-                            @if($student->semester == 1)
+                            @if($studentData->semester == 1)
                             <div class="selection-label">
                                 <input type="checkbox" name="modSelect1" id="mod"
-                                    value="{{$student->module_1_name}}" class="checkbox checkbox-round">
-                                <label class="mod-p"> {{$student->module_1_name}} </label>
+                                    value="{{$studentData->module_1_name}}" class="checkbox checkbox-round">
+                                <label class="mod-p"> {{$studentData->module_1_name}} </label>
                             </div>
 
 
 
                             <div class="selection-label">
                                 <input type="checkbox" name="modSelect2" id="mod"
-                                    value="{{$student->module_2_name}}" class="checkbox checkbox-round">
-                                <label class="mod-p"> {{$student->module_2_name}} </label>
+                                    value="{{$studentData->module_2_name}}" class="checkbox checkbox-round">
+                                <label class="mod-p"> {{$studentData->module_2_name}} </label>
                             </div>
 
 
@@ -56,38 +55,36 @@
                             <div class="selection-label">
 
                                 <input type="checkbox" name="modSelect3" id="mod"
-                                    value="{{$student->module_3_name}}" class="checkbox checkbox-round">
+                                    value="{{$studentData->module_3_name}}" class="checkbox checkbox-round">
 
-                                <label class="mod-p"> {{$student->module_3_name}} </label >
+                                <label class="mod-p"> {{$studentData->module_3_name}} </label >
                             </div>
 
-                            @elseif($student->semester == 2)
+                            @elseif($studentData->semester == 2)
 
                             <div class="selection-label">
                                 <input type="checkbox" name="modSelect4" id="mod"
-                                    value="{{$student->module_4_name}}" class="checkbox checkbox-round">
-                                    <label class="mod-p">{{$student->module_4_name}} </label>
+                                    value="{{$studentData->module_4_name}}" class="checkbox checkbox-round">
+                                    <label class="mod-p">{{$studentData->module_4_name}} </label>
                             </div>
 
 
 
                             <div class="selection-label">
                                 <input type="checkbox" name="modSelect5" id="mod"
-                                    value="{{$student->module_5_name}}" class="checkbox checkbox-round">
-                                    <label class="mod-p">{{$student->module_5_name}} </label>
+                                    value="{{$studentData->module_5_name}}" class="checkbox checkbox-round">
+                                    <label class="mod-p">{{$studentData->module_5_name}} </label>
                             </div>
 
 
                             <div class="selection-label">
                                 <input type="checkbox" name="modSelect6" id="mod"
-                                    value="{{$student->module_6_name}}" class="checkbox checkbox-round">
-                                <label class="mod-p"> {{$student->module_6_name}} </label>
+                                    value="{{$studentData->module_6_name}}" class="checkbox checkbox-round">
+                                <label class="mod-p"> {{$studentData->module_6_name}} </label>
                             </div>
 
                             @endif
 
-
-                            @endforeach
                         </div>
 
                         <input type="hidden" name="_page-num" value="4">

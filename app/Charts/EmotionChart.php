@@ -4,7 +4,7 @@ namespace App\Charts;
 
 use ConsoleTVs\Charts\Classes\Chartjs\Chart;
 
-class Graphs extends Chart
+class EmotionChart extends Chart
 {
     /**
      * Initializes the chart.

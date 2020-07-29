@@ -1,6 +1,14 @@
 @extends('layouts.app')
 
+
+@mobile
+<div class="bg-obj big-circle-welcome-page"></div>
+
+@endmobile
+
+@desktop
 @include('partials.shapes')
+@enddesktop
 
 @section('content')
 <div id="welcome-screen">
@@ -40,7 +48,7 @@
                             </div>
 
                             <div class="welcome-image-container">
-                                <img class="welcome-image" src="https://via.placeholder.com/1000x500" alt="Placeholder Image">
+                                <img class="welcome-image" src="{{URL::asset('/img/staff-side.png')}}" alt="Image of staff dashboard">
                             </div>
 
                         </div>

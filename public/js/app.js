@@ -60942,8 +60942,6 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ./slider */ "./resources/js/slider.js");
-
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 Vue.component('chat-app', __webpack_require__(/*! ./components/ChatApp.vue */ "./resources/js/components/ChatApp.vue")["default"]);
 var app = new Vue({
@@ -60962,14 +60960,31 @@ $('.load-ajax-modal').click(function () {
       $('#student-quick-view div.modal-body').html(result);
     }
   });
-}); // $('a[data-notif-id]').click(function () {
-//     var notif_id   = $(this).data('notifId');
-//     var targetHref = $(this).data('href');
-//     $.post('/markedNotification', {'notif_id': notif_id}, function (data) {
-//         data.success ? (window.location.href = targetHref) : false;
-//     }, 'json');
-//     return false;
-// });
+});
+var slider = document.getElementById("slider");
+var img = document.getElementById("emotion-icons");
+var text = document.getElementById("emotion-text");
+
+if (slider != null) {
+  slider.oninput = function () {
+    if (slider.value == 1) {
+      img.src = "img/very-sad.svg";
+      text.innerHTML = "Really Bad!";
+    } else if (slider.value == 2) {
+      img.src = "img/kinda-sad.svg";
+      text.innerHTML = "Not Great";
+    } else if (slider.value == 3) {
+      img.src = "img/neutral.svg";
+      text.innerHTML = "Okay";
+    } else if (slider.value == 4) {
+      img.src = "img/kinda-happy.svg";
+      text.innerHTML = "Pretty Okay";
+    } else if (slider.value == 5) {
+      img.src = "img/very-happy.svg";
+      text.innerHTML = "Amazing!";
+    }
+  };
+}
 
 /***/ }),
 
@@ -61454,40 +61469,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MessageInput_vue_vue_type_template_id_d519e324_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
-
-/***/ }),
-
-/***/ "./resources/js/slider.js":
-/*!********************************!*\
-  !*** ./resources/js/slider.js ***!
-  \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var slider = document.getElementById("slider");
-var img = document.getElementById("emotion-icons");
-var text = document.getElementById("emotion-text");
-
-if (slider != null) {
-  slider.oninput = function () {
-    if (slider.value == 1) {
-      img.src = "img/very-sad.svg";
-      text.innerHTML = "Really Bad!";
-    } else if (slider.value == 2) {
-      img.src = "img/kinda-sad.svg";
-      text.innerHTML = "Not Great";
-    } else if (slider.value == 3) {
-      img.src = "img/neutral.svg";
-      text.innerHTML = "Okay";
-    } else if (slider.value == 4) {
-      img.src = "img/kinda-happy.svg";
-      text.innerHTML = "Pretty Okay";
-    } else if (slider.value == 5) {
-      img.src = "img/very-happy.svg";
-      text.innerHTML = "Amazing!";
-    }
-  };
-}
 
 /***/ }),
 

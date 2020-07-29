@@ -5,7 +5,6 @@
  */
 
 require('./bootstrap');
-require('./slider');
 
 window.Vue = require('vue');
 
@@ -14,6 +13,13 @@ Vue.component('chat-app', require('./components/ChatApp.vue').default);
 const app = new Vue({
     el: '#app',
 });
+
+
+
+
+
+
+
 
 
 $.ajaxSetup({
@@ -33,14 +39,38 @@ $('.load-ajax-modal').click(function(){
     });
 });
 
-// $('a[data-notif-id]').click(function () {
 
-//     var notif_id   = $(this).data('notifId');
-//     var targetHref = $(this).data('href');
+let slider = document.getElementById("slider");
+let img = document.getElementById("emotion-icons");
+let text = document.getElementById("emotion-text");
 
-//     $.post('/markedNotification', {'notif_id': notif_id}, function (data) {
-//         data.success ? (window.location.href = targetHref) : false;
-//     }, 'json');
+if(slider != null){
+    slider.oninput = function()
+    {
 
-//     return false;
-// });
+        if(slider.value == 1)
+        {
+            img.src="img/very-sad.svg";
+            text.innerHTML = "Really Bad!";
+
+        }
+        else if(slider.value == 2)
+        {
+            img.src="img/kinda-sad.svg";
+            text.innerHTML = "Not Great";
+        }
+        else if(slider.value == 3){
+            img.src = "img/neutral.svg";
+            text.innerHTML = "Okay";
+        }
+        else if(slider.value == 4){
+
+            img.src = "img/kinda-happy.svg";
+            text.innerHTML = "Pretty Okay";
+        }
+        else if(slider.value == 5){
+            img.src = "img/very-happy.svg";
+            text.innerHTML = "Amazing!";
+        }
+    }
+}

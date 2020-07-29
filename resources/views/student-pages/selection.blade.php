@@ -53,22 +53,22 @@
                             <div class="image-container">
                                 <img class="icon" src="{{URL::asset('/img/neutral.svg')}}" alt="">
                             </div>
-                            <h2>Okay - What made your day okay?</h2>
+                            <h2>Okay - What made your week okay?</h2>
                             @elseif($rangeSlider == 4)
                             <div class="image-container">
                                 <img class="icon" src="{{URL::asset('/img/kinda-happy.svg')}}" alt="">
                             </div>
-                            <h2>Awesome - What made your day good?</h2>
+                            <h2>Awesome - What made your week good?</h2>
                             @elseif($rangeSlider == 5)
                             <div class="image-container">
                                 <img class="icon" src="{{URL::asset('/img/very-happy.svg')}}" alt="">
                             </div>
-                            <h2>Great - What made your day amazing?</h2>
+                            <h2>Great - What made your week amazing?</h2>
                             @endif
 
                         <div class="checkbox-block">
                                 <div class="home">
-                                    <input type="checkbox" name="checkboxSelect1" id="home" value="homelife" class="checkbox checkbox-round">
+                                    <input type="checkbox" name="checkboxSelect1" id="home" value="Homelife" class="checkbox checkbox-round">
                                     <label for="home"><i class="fas fa-home"></i></label>
                                     <p> Home Life</p>
                                 </div>
@@ -77,7 +77,7 @@
 
 
                                 <div class="uni">
-                                    <input type="checkbox" name="checkboxSelect2" id="uni" value="university" class="checkbox checkbox-round">
+                                    <input type="checkbox" name="checkboxSelect2" id="uni" value="University" class="checkbox checkbox-round">
                                     <label for="uni"><i class="fas fa-university"></i></label>
                                     <p> University </p>
                                 </div>
@@ -85,29 +85,29 @@
 
 
                                 <div class="rel">
-                                    <input type="checkbox" name="checkboxSelect3" id="rel" value="relationship" class="checkbox checkbox-round">
-                                    <label for="rel"><i class="fas fa-heart"></i></label>
-                                    <p> Relationship </p>
+                                    <input type="checkbox" name="checkboxSelect3" id="rel" value="Relationship" class="checkbox checkbox-round">
+                                    <label for="rel"><i class="fas fa-user-friends"></i></label>
+                                    <p> Relationships </p>
                                 </div>
 
 
 
-                                <div class="friends">
-                                    <input type="checkbox" name="checkboxSelect4" id="friends" value="friends" class="checkbox checkbox-round">
-                                    <label for="friends"><i class="fas fa-user-friends"></i></label>
-                                    <p> Friends </p>
+                                <div class="finance">
+                                    <input type="checkbox" name="checkboxSelect4" id="finance" value="Finance" class="checkbox checkbox-round">
+                                    <label for="finance"><i class="fas fa-wallet"></i></label>
+                                    <p> Finance </p>
                                 </div>
 
 
 
                                 <div class="travel">
-                                    <input type="checkbox" name="checkboxSelect5" id="travel" value="travel" class="checkbox checkbox-round">
+                                    <input type="checkbox" name="checkboxSelect5" id="travel" value="Travel" class="checkbox checkbox-round">
                                     <label for="travel"><i class="fas fa-route"></i></label>
                                     <p> Travel </p>
                                 </div>
 
                                 <label class="other">
-                                    <input type="checkbox" name="checkboxSelect6" id="other" value="other" class="checkbox checkbox-round">
+                                    <input type="checkbox" name="checkboxSelect6" id="other" value="Other" class="checkbox checkbox-round">
                                     <label for="other"><i class="fas fa-plus"></i></label>
                                     <p> Other </p>
                                 </label>
