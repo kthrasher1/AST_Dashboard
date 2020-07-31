@@ -1,0 +1,23 @@
+.navbar {
+    z-index: 1;
+    box-shadow: 0 9px 68px 0 rgba(62, 57, 107, .1);
+    color: inherit;
+
+}
+
+.navbar .navbar-toggler{
+    border: none;
+    stroke: #3556cd;
+}
+
+.navbar .nav-link {
+    color: inherit !important;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.home{
+    margin-right: 1px;
+}

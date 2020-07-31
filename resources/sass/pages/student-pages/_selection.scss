@@ -1,0 +1,190 @@
+#student-selection-page {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-top: 15px;
+        margin-bottom: 35px;
+    }
+
+    .card {
+        border: none;
+        text-align: center;
+        height: 100%;
+        background-color: whitesmoke;
+        border-radius: 5px;
+    }
+
+    .icon {
+        width: 150px;
+        height: 150px;
+        align-self: center;
+        text-align: center;
+    }
+
+    h1 {
+        font-weight: 700;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin: 10px;
+        margin-bottom: 35px;
+    }
+
+    .btn {
+        width: 100px;
+        height: 40px;
+        margin-top: 30px;
+        margin: 10px;
+        border: none;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    .links{
+        margin: 10px;
+    }
+
+    .back-button {
+        background: $secondary;
+        color: white;
+
+    }
+
+    .next-button {
+        background-color: $buttons;
+        color: $button-text;
+        border: none;
+
+    }
+
+    /*.checkbox {
+        -webkit-appearance: none;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .checkbox:before {
+        content: "";
+
+        height: 2.5em;
+        width: 2.5rem;
+
+        background:;
+    }
+
+    .checkbox:checked {
+        position: relative;
+    }
+
+    .checkbox:after {
+        content: "";
+
+        position: absolute;
+
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #ff4081;
+    }
+
+    .checkbox:checked:after {
+
+        color: white;
+    }
+
+    .checkbox:focus {
+        outline: none;
+    }
+
+    .checkbox:checked:before {
+        background-color: #039be5;
+    }
+
+    .checkbox-round:before {
+        border-radius: 100%;
+    }*/
+
+    .checkbox-block{
+        display: grid;
+        grid-template-columns: 0fr repeat(3, 1fr) 0fr;
+        grid-template-rows: 0fr repeat(2, 1fr) repeat(2, 0fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    .home {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+
+    .uni {
+        grid-area: 2 / 3 / 3 / 4;
+    }
+
+    .finance{
+        grid-area: 2 / 4 / 3 / 5;
+    }
+
+    .travel{
+        grid-area: 3 / 3 / 4 / 4;
+    }
+
+    .rel {
+        grid-area: 3 / 2 / 4 / 3;
+    }
+
+    .other{
+
+        grid-area: 3 / 4 / 4 / 5;
+    }
+    .selection-label {
+        margin: 15px;
+        -webkit-appearance: none;
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        p{
+            display: block;
+        }
+    }
+
+    input[type=checkbox] {
+        display: none;
+    }
+
+    input[type=checkbox]+label {
+
+        background: #bdbdbd;
+        position: relative;
+        font-size: 20px;
+        height: 2em;
+        width: 2em;
+        display: inline-block;
+        padding: 0 0 0 0px;
+        border-radius: 100%;
+
+        i {
+            transform: translateY(30%);
+            font-size: 1em;
+        }
+    }
+
+    input[type=checkbox]:checked+label {
+        background: $buttons;
+        height: 2em;
+        width: 2em;
+        display: inline-block;
+        padding: 0 0 0 0px;
+    }
+
+}

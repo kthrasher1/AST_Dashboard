@@ -1,0 +1,152 @@
+#student-module-selector {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-top: 15px;
+        margin-bottom: 35px;
+    }
+
+    .card {
+        border: none;
+        text-align: center;
+        height: 100%;
+        background-color: whitesmoke;
+        border-radius: 5px;
+    }
+
+    .icon {
+        width: 150px;
+        height: 150px;
+        align-self: center;
+        text-align: center;
+    }
+
+    h1 {
+        font-weight: 400;
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin: 10px;
+        margin-bottom: 35px;
+    }
+
+    .links {
+        text-align: center;
+    }
+
+    .btn {
+        width: 100px;
+        height: 40px;
+        margin-top: 30px;
+        margin: 10px;
+        border: none;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    .links {
+        margin: 10px;
+    }
+
+    .back-button {
+        background: $secondary;
+        color: white;
+
+    }
+
+    .next-button {
+        background-color: $buttons;
+        color: $button-text;
+        border: none;
+
+    }
+
+    .selection-label {
+        display: grid;
+        grid-template-columns: 0.3fr 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        margin-top: 20px;
+
+        text-align: left;
+
+        #mod {
+            grid-area: 1 / 1 / 2 / 2;
+
+            .mod-p {
+                grid-area: 2 / 2 / 3 / 3;
+
+
+            }
+        }
+    }
+
+    .checkbox-block {
+        margin: 15px;
+        padding: 15px;
+        display: grid;
+    }
+
+
+
+    .checkbox {
+        -webkit-appearance: none;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .checkbox:before {
+        content: "";
+
+        height: 2rem;
+        width: 2rem;
+
+        background: #bdbdbd;
+    }
+
+    .checkbox:checked {
+        position: relative;
+    }
+
+    .checkbox:after {
+        content: "";
+
+        position: absolute;
+
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #ff4081;
+    }
+
+    .checkbox:checked:after {
+        content: "\f00c";
+        font-size: 16px;
+        font-family: 'FontAwesome';
+        color: white;
+    }
+
+    .checkbox:focus {
+        outline: none;
+    }
+
+    .checkbox:checked:before {
+        background-color: $buttons;
+    }
+
+    .checkbox-round:before {
+        border-radius: 100%;
+    }
+
+}

@@ -1,0 +1,133 @@
+footer {
+    display: flex;
+    width: 100%;
+    min-height: 250px;
+    background: darken($color: $paragraph, $amount: 7);
+    color: whitesmoke !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p{
+        color: whitesmoke;
+    }
+
+
+    .footer-container{
+        margin: 30px;
+        padding: 30px;
+        width: 100%;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .created-by-container{
+            color: whitesmoke !important;
+            .footer-header{
+                color: whitesmoke;
+            }
+
+            .created-by{
+                color:whitesmoke;
+                font-size: 18px;
+            }
+        }
+
+
+        .footer-desc{
+            color: whitesmoke;
+            font-size: 18px;
+            max-width: 400px;
+            margin-left: 6em;
+            margin-right: 6em;
+        }
+
+        .links-container{
+            color: whitesmoke !important;
+
+            ul{
+                text-emphasis: none;
+                text-decoration: none;
+                font-size: 18px;
+            }
+
+            h3{
+                color: whitesmoke;
+            }
+            a{
+                color: whitesmoke;
+            }
+        }
+    }
+
+    .brand-image-container{
+        .brand-image{
+            margin-left: 1em;
+            margin-right: 1em;
+        }
+        .hull {
+            height: auto;
+            max-width: 350px;
+        }
+
+        .logo{
+            max-width: 55px;
+            height: auto;
+        }
+    }
+
+    .copy-right{
+        font-size: 14px;
+    }
+
+}
+
+
+@media only screen and (max-width : 450px) {
+    footer {
+        max-height: 250px;
+        p{
+            color: whitesmoke;
+        }
+
+        .footer-container{
+            display: none;
+
+            .created-by-container{
+                display: none;
+                .created-by{
+                    color:whitesmoke;
+                    font-size: 16px;
+                }
+            }
+            .footer-desc{
+                display: none;
+            }
+
+            .links-container{
+                display: none;
+                ul{
+                    font-size: 16px;
+                }
+
+            }
+        }
+
+        .brand-image-container{
+            .brand-image{
+                margin-left: 1em;
+                margin-right: 1em;
+            }
+            .hull {
+                height: auto;
+                max-width: 250px;
+            }
+
+            .logo{
+                max-width: 55px;
+                height: auto;
+            }
+        }
+    }
+}

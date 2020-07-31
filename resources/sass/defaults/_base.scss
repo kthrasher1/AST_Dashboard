@@ -1,0 +1,21 @@
+body {
+    background: $body-bg !important;
+    font-family: $primary-font;
+    color: #1b2d45;
+}
+
+header {
+        position: relative;
+    }
+
+@media (min-width: 576px){
+    .modal-dialog {
+        max-width: 1200px;
+        margin: 1.75rem auto;
+    }
+}
+
+@media only screen and (max-width : 450px) {
+
+
+}

@@ -1,0 +1,34 @@
+.blob-shape {
+    position: fixed;
+    top: 0;
+    left: 0;
+    fill: #ff5470;
+}
+
+.blob {
+    width: 50vmax;
+    z-index: 0;
+    transform: translate(-10%, -40%) scale(0.4);
+    opacity: 0.4;
+}
+
+.rotate-blob {
+    width: 50vmax;
+    z-index: 0;
+    transform: translate(-30%, -50%) scale(0.8) rotate(46deg);
+    opacity: 0.6;
+}
+
+.upside-blob {
+    width: 50vmax;
+    z-index: 0;
+    transform: translate(20%, 50%) scale(0.4);
+    opacity: 0.4;
+}
+
+.big-upside-blob {
+    width: 50vmax;
+    z-index: 0;
+    transform: translate(30%, 60%) scale(0.8) rotate(46deg);
+    opacity: 0.6;
+}

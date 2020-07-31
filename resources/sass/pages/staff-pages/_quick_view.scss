@@ -1,0 +1,153 @@
+#student-quick-view-container{
+    width: 100%;
+    display: flex;
+    .student-content{
+        width: 100%;
+        display: flex;
+
+
+        .student-quick-info{
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            background: #f8f9fa;
+            border-radius: 5px;
+            margin-right: 20px;
+
+            border: 2px solid darken(#f8f9fa , $amount: 5);
+
+            .profile-picture-container{
+                justify-self: center;
+                align-self: center;
+                margin-top: 20px;
+                margin-bottom: 10px;
+
+                img{
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 100%;
+                    box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
+                }
+
+            }
+
+            .student-name{
+                justify-self: center;
+                align-self: center;
+            }
+
+            .student-email{
+                justify-self: center;
+                align-self: center;
+            }
+
+            .module-list{
+                margin-top: 20px;
+                justify-self: center;
+                align-self: center;
+
+                p{
+                    text-align: center;
+                }
+            }
+
+        }
+
+        .student-data-container{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border: 2px solid darken(#f8f9fa , $amount: 5);
+
+            #risk-level{
+                width: 45%;
+                margin: 10px;
+                .title{
+                    .tool-tip{
+                        display: flex;
+                        float: right;
+                        position: relative;
+                        justify-content: center;
+                        align-items: center;
+                        background: lighten(grey, $amount: 30);
+                        font-family: times new roman;
+                        font-style: italic;
+                        color: white;
+                        border-radius: 100%;
+                        width: 25px;
+                        height: 25px;
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+                .risk-level{
+
+                }
+
+                .bad{
+                    background: rgba($color: #F31431, $alpha: 0.9);
+                    color: white;
+                }
+
+                .okay {
+                    background: rgba($color: #FFBF00, $alpha: 0.9);
+                    color: white;
+                }
+
+                .good {
+                    background: rgba($color: #008E09, $alpha: 0.9);
+                    color: white;
+                }
+
+            }
+
+            #issues{
+                margin: 10px;
+                width: 45%;
+
+                p{
+                    margin: 0;
+                    padding: 0;
+                }
+
+            }
+
+            #other-issues{
+                width: 45%;
+                margin: 10px;
+
+            }
+
+            #module-issues{
+                width: 45%;
+                margin: 10px;
+
+                p{
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .expand{
+                    margin-top: 20px;
+                    h4{
+                        font-size: 18px;
+                    }
+                }
+
+            }
+
+            #total-attendance{
+                width: 95%;
+                margin: 10px;
+            }
+
+
+        }
+
+    }
+
+}

@@ -1,0 +1,185 @@
+#staff-dashboard {
+    border: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+
+    .container {
+        margin: none;
+    }
+
+    .staff-welcome {
+        text-transform: capitalize;
+        margin-bottom: 10px;
+    }
+
+    .card-header {
+        border: none;
+        background: $card-color;
+    }
+
+    h1{
+        font-size: 2em !important;
+    }
+
+    #staff-body {
+        margin: 50px;
+        background-color: lighten($card-color, $amount: 2%);
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dashboard-message {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .profile-picture {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+    }
+
+    .student-content {
+        display: flex;
+
+        #student-display {
+            width: 75%;
+
+            .card-body{
+                overflow-y: auto;
+                max-height: 300px;
+            }
+
+
+
+            table {
+
+                border-collapse: collapse;
+
+                tr,
+                td {
+                    border: 1px solid darken($card-color, $amount: 5%);
+                    padding: 1em;
+                    margin: 1em;
+                }
+
+                tbody {
+
+                        background-color: $card-color;
+
+
+
+                }
+
+                .chart {
+                    display: inline-block;
+                    max-height: 100px;
+                }
+
+            }
+
+            a {
+                background: $buttons;
+                border: none;
+                color: $button-text;
+
+                &:hover {
+                    color: white;
+                }
+            }
+
+            .chat-btn {
+                width: auto;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+
+                .text-chat{
+                    padding: 0;
+                    position: absolute;
+                }
+
+                .unread{
+                    bottom: 17px;
+                    margin: 0px;
+                    position: relative;
+                    display: flex;
+                    left: 55px;
+                    justify-content: center;
+                    align-items: center;
+                    background: #ff5470;
+                    color: white;
+                    width: 25px;
+                    height: 25px;
+                    padding: 10px;
+                    border-radius: 100%;
+                }
+            }
+
+            .view-btn {
+                height: 40px;
+                width: auto;
+            }
+        }
+
+        #notice-board {
+            margin-left: 30px;
+            width: 25%;
+
+            .card-body {
+                max-height: 500px;
+                min-height: 500px;
+                overflow-y: auto;
+
+            }
+            .no-notif{
+                text-align: center;
+            }
+            .notif{
+                color: #00214d;
+                background-color: $card-color;
+                border: none;
+                button{
+                    background: $secondary;
+                    color: white;
+                    border: none;
+                }
+
+            }
+            .notifications{
+                text-decoration: none;
+                background: $card-color;
+                list-style-type: none;
+                padding: 15px;
+                border-radius: 5px;
+            }
+        }
+
+
+    }
+
+    .graphs{
+        margin-top: 30px;
+        width: 100%;
+        min-height: 400px;
+
+        #attendance-chart{
+            max-width: 400px;
+
+            .card-body{
+                max-width: 400px;
+            }
+        }
+
+        #weekly-chart{
+
+        }
+    }
+
+
+
+}

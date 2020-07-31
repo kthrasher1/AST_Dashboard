@@ -1,0 +1,119 @@
+#admin-dashboard {
+    border: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+
+    .container {
+        margin: none;
+    }
+
+    .card-header {
+        border: none;
+        background: $card-color;
+    }
+
+    h1{
+        font-size: 2em !important;
+    }
+
+    #admin-body {
+        margin: 50px;
+        background-color: lighten($card-color, $amount: 2%);
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dashboard-message {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .profile-picture {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+    }
+
+    .user-content {
+        display: flex;
+
+        #user-display {
+            width: 80%;
+
+            .card-body{
+                overflow-y: auto;
+            }
+
+            table {
+
+                border-collapse: collapse;
+
+                tr,
+                td {
+                    border: 1px solid darken($card-color, $amount: 5%);
+                    padding: 1em;
+                    vertical-align: baseline;
+                    margin: 1em;
+                }
+
+                tbody {
+
+                        background-color: $card-color;
+
+
+
+                }
+
+            }
+
+            .admin-btn {
+                background: $buttons;
+                border: none;
+                color: $button-text;
+
+                &:hover {
+                    color: white;
+                }
+            }
+
+            .view-btn {
+                height: 40px;
+                width: auto;
+            }
+
+            .page-item{
+                .page-link{
+                    color: inherit;
+                }
+                .active{
+                    background-color: green !important;
+                }
+
+            }
+        }
+
+        #notice-board {
+            margin-left: 30px;
+            width: 20%;
+
+            .card-body {
+                max-height: auto;
+                min-height: 550px;
+                overflow-y: auto;
+
+            }
+            .notifications{
+                text-decoration: none;
+                background: $card-color;
+                list-style-type: none;
+                padding: 15px;
+                border-radius: 5px;
+            }
+        }
+
+
+    }
+
+}

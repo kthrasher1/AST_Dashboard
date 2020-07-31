@@ -1,0 +1,36 @@
+
+
+@import '~bootstrap/scss/bootstrap';
+
+
+@import "defaults/normalize";
+@import "defaults/variables";
+@import "defaults/typography";
+@import "defaults/base";
+
+@import "pages/auth";
+@import "pages/welcome";
+@import "pages/profile";
+@import "pages/admin";
+@import "pages/student";
+@import "pages/staff";
+@import "pages/chat";
+
+@import "pages/student-pages/starting";
+@import "pages/student-pages/range";
+@import "pages/student-pages/selection";
+@import "pages/student-pages/modules";
+@import "pages/student-pages/module_selection";
+@import "pages/student-pages/module_detail";
+@import "pages/student-pages/finished";
+
+
+@import "pages/staff-pages/student_profile";
+@import "pages/staff-pages/quick_view";
+
+
+@import "componets/navbar";
+@import "componets/shapes";
+@import "componets/blob";
+@import "componets/tables";
+@import "componets/footer";

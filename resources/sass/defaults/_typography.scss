@@ -1,0 +1,61 @@
+
+// Typography
+$primary-font: 'Nunito', sans-serif;
+$secondary-font: 'Open Sans', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+//Typography Colors
+
+$headline: #00214d;
+$paragraph: #1b2d45;
+$button-text: #00214d;
+
+
+h1{
+    font-family: $primary-font;
+    color: $headline;
+    font-weight: 700;
+}
+
+h2{
+    font-family: $secondary-font;
+    color: $headline;
+}
+
+h3{
+    font-family: $primary-font;
+    color: $headline;
+}
+
+h4{
+    font-family: $primary-font;
+    color: $headline;
+}
+
+h5{
+    font-family: $secondary-font;
+    color: $headline;
+}
+
+p{
+    color: $paragraph;
+
+}
+
+a{
+    font-family: $primary-font;
+    color: $paragraph;
+}
+
+button{
+    font-family: $primary-font;
+    color: $button-text;
+}
+
+//Specific Typography
+
+.welcome-header {
+    font-size: 4em;
+
+}
