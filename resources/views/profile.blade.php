@@ -35,11 +35,12 @@
                         <div class="file-upload">
                             <input type="file" name="avatar" />
                             <i class="fas fa-camera"></i>
-                          </div>
+                        </div>
 
-                        {{--  <button type="submit" class="btn btn-primary profile-button"> Save </button>  --}}
+                        <button type="submit" class="btn btn-primary profile-button"> Update Image </button>
                     </div>
                 </form>
+            <hr>
                 <form class="update-password" method="POST" action="{{ route('UpdatePassword') }}">
                     <h4>Update Password</h4>
                     @csrf
@@ -47,7 +48,7 @@
                         <label for="new-password" class="control-label">Current Password</label>
 
                         <input id="current-password" type="password" class="form-control" name="current-password"
-                            required>
+                            >
 
                         @if ($errors->has('current-password'))
                         <span class="help-block">
@@ -61,7 +62,7 @@
                         <label for="new-password" class="control-label">New Password</label>
 
 
-                        <input id="new-password" type="password" class="form-control" name="new-password" required>
+                        <input id="new-password" type="password" class="form-control" name="new-password" >
 
                         @if ($errors->has('new-password'))
                         <span class="help-block">
@@ -75,11 +76,11 @@
                         <label for="new-password-confirm" class="control-label">Confirm New Password</label>
 
                         <input id="new-password-confirm" type="password" class="form-control"
-                            name="new-password_confirmation" required>
+                            name="new-password_confirmation" >
 
                     </div>
 
-                    <div class="">
+                    <div>
                         <button type="submit" class="btn btn-primary">
                             Save
                         </button>

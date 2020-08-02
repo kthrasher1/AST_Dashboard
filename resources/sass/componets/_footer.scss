@@ -34,14 +34,22 @@ footer {
             }
         }
 
+        .footer-desc-container{
 
-        .footer-desc{
-            color: whitesmoke;
-            font-size: 18px;
-            max-width: 400px;
-            margin-left: 6em;
-            margin-right: 6em;
+
+            .footer-desc{
+                border-radius: 5px;
+                background: $secondary;
+                text-align: center;
+                padding: 10px;
+                color: whitesmoke;
+                font-size: 18px;
+                max-width: 400px;
+                margin-left: 6em;
+                margin-right: 6em;
+            }
         }
+
 
         .links-container{
             color: whitesmoke !important;
@@ -100,9 +108,6 @@ footer {
                     color:whitesmoke;
                     font-size: 16px;
                 }
-            }
-            .footer-desc{
-                display: none;
             }
 
             .links-container{

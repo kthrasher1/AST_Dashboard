@@ -1,0 +1,45 @@
+#waiting {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $card-color;
+    padding: 100px;
+
+
+    .card {
+        background: lighten($card-color, $amount: 10);
+        margin-top: 100px;
+        padding: 50px;
+    }
+    .card-body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .loader{
+        width: 32px;
+        height: 32px;
+        clear: both;
+        margin: 20px auto;
+    }
+
+    .loader-circle{
+        border: 4px rgba(black,0.25) solid;
+        border-top: 4px rgba(black,1) solid;
+        border-radius: 50%;
+        -webkit-animation: rotateCircle .6s infinite linear;
+        animation: rotateCircle .6s infinite linear;
+    }
+    @-webkit-keyframes rotateCircle {
+        from { -webkit-transform: rotate(0deg); }
+        to { -webkit-transform: rotate(359deg); }
+    }
+    @keyframes rotateCircle {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(359deg); }
+    }
+}

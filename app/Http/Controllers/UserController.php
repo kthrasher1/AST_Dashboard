@@ -14,11 +14,10 @@ class UserController extends Controller
 {
 
     public function profile() {
-        return view('profile', array('user' => Auth::user()) );
+        return view('profile', array('user' => Auth::user()));
     }
 
     public function ImageUpdate(Request $request){
-
 
         if($request->hasFile('avatar')){
             $avatar = $request->file('avatar');

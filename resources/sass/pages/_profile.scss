@@ -60,6 +60,12 @@
         }
     }
 
+    .profile-button{
+        color: inherit;
+        background: $buttons;
+        border: none;
+    }
+
     .update-password{
         margin-top: 10px;
         width: 350px;

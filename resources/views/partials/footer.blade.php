@@ -7,21 +7,9 @@
 
         <div class="footer-desc-container">
             <p class="footer-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ab consequuntur repudiandae reiciendis
+               This is a prototype application made for 600091 Honours Project.
             </p>
         </div>
-
-        <div class="links-container">
-            <h3 class="important-links">Important links</h3>
-            <ul class="links">
-                <li><a href="">lorem</a></li>
-                <li><a href="">lorem</a></li>
-                <li><a href="">lorem</a></li>
-                <li><a href="">lorem</a></li>
-                <li><a href="">lorem</a></li>
-            </ul>
-        </div>
-
 
     </div>
 

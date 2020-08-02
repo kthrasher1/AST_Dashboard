@@ -11047,15 +11047,6 @@ header {
   }
 }
 
-.big-circle-welcome-page {
-  top: -400px;
-  left: -350px;
-  border-radius: 100%;
-  width: 900px;
-  height: 900px;
-  opacity: 0.4;
-}
-
 #welcome-screen .welcome-button {
   background: #00ebc7 !important;
   color: #00214d;
@@ -11260,15 +11251,12 @@ header {
 }
 
 @media only screen and (max-width: 450px) {
-  .big-circle-welcome-page {
-    transform: translate(-50%, -115%);
-    top: 12%;
-    left: 50%;
-    opacity: 0.6;
+  .welcome {
+    display: none;
   }
 
   #welcome-screen .welcome-section .welcome-text-container {
-    margin: 5em;
+    margin: 3em;
   }
 
   #welcome-screen .welcome-section .welcome-text-container .welcome-header {
@@ -11443,6 +11431,12 @@ header {
     right: 330px;
     top: 230px;
   }
+}
+
+#user-profile .profile-button {
+  color: inherit;
+  background: #00ebc7;
+  border: none;
 }
 
 #user-profile .update-password {
@@ -12028,6 +12022,64 @@ header {
     background-color: whitesmoke;
     padding: 30px;
     border-radius: 5px;
+  }
+}
+
+#waiting {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f2f4f6;
+  padding: 100px;
+}
+
+#waiting .card {
+  background: white;
+  margin-top: 100px;
+  padding: 50px;
+}
+
+#waiting .card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#waiting .loader {
+  width: 32px;
+  height: 32px;
+  clear: both;
+  margin: 20px auto;
+}
+
+#waiting .loader-circle {
+  border: 4px rgba(0, 0, 0, 0.25) solid;
+  border-top: 4px black solid;
+  border-radius: 50%;
+  -webkit-animation: rotateCircle 0.6s infinite linear;
+  animation: rotateCircle 0.6s infinite linear;
+}
+
+@-webkit-keyframes rotateCircle {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes rotateCircle {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
   }
 }
 
@@ -13193,7 +13245,11 @@ footer .footer-container .created-by-container .created-by {
   font-size: 18px;
 }
 
-footer .footer-container .footer-desc {
+footer .footer-container .footer-desc-container .footer-desc {
+  border-radius: 5px;
+  background: #ff5470;
+  text-align: center;
+  padding: 10px;
   color: whitesmoke;
   font-size: 18px;
   max-width: 400px;
@@ -13259,10 +13315,6 @@ footer .copy-right {
   footer .footer-container .created-by-container .created-by {
     color: whitesmoke;
     font-size: 16px;
-  }
-
-  footer .footer-container .footer-desc {
-    display: none;
   }
 
   footer .footer-container .links-container {

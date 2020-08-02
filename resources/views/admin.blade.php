@@ -51,9 +51,6 @@
                                                     </td>
                                                     <td class="cap-first"> {{ $role->name }} </td>
                                                     <td>
-                                                        <a class="btn btn-primary admin-btn"
-                                                            href="/admin/update/{{$user->id}}">Update</a>
-
                                                         @if($user->hasRole('admin') || ($user->hasRole('staff') ||
                                                         ($user->hasRole('student'))))
                                                         <a class="btn btn-secondary admin-btn"

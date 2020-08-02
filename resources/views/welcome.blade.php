@@ -1,14 +1,10 @@
 @extends('layouts.app')
 
-
-@mobile
-<div class="bg-obj big-circle-welcome-page"></div>
-
-@endmobile
-
-@desktop
-@include('partials.shapes')
-@enddesktop
+<div class="bg-obj shape welcome"></div>
+<div class="bg-obj left-side-shape welcome"></div>
+<div class="bg-obj big-circle welcome"></div>
+<div class="bg-obj small-circle welcome"></div>
+<div class="bg-obj right-side-circle welcome"></div>
 
 @section('content')
 <div id="welcome-screen">
@@ -102,10 +98,10 @@
                         <h1 class="mobile-section-header">What are you waiting for! </h1>
                         <div class="mobile-section-desc">
                             <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe est soluta voluptatem, maxime,
-                            voluptas rerum iusto sapiente eveniet exercitationem ex reprehenderit voluptate aliquam dolore hic nihil ea. Ea, magnam libero!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo eos maxime omnis maiores repudiandae ipsa magnam alias quae officiis
-                            laborum expedita nesciunt reprehenderit, architecto aut id nostrum dicta, excepturi nobis!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod repellendus voluptatem, maxime ducimus perferendis,
+                                iusto suscipit deserunt architecto placeat modi doloremque deleniti nihil corrupti maiores dolorem praesentium dicta doloribus? Laborum.
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                Blanditiis minus quam eius dolorem adipisci tenetur voluptates sed, animi natus veritatis cum nesciunt id repellendus itaque sapiente architecto, sequi esse perspiciatis!
                             </p>
 
                             <div class="login-links">
