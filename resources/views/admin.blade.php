@@ -103,9 +103,8 @@
 
                             @foreach($notify as $notif)
                             <div class="alert alert-success notif" role="alert">
+                                <a type="button" href="{{ route('markedNotification', ['notifID' => $notif->id]) }}" class="close"> &times;</a>
                                 Please Assign: {{$notif->data['name']}} {{$notif->data['email']}}
-                                <button href="{{ route('markAsRead')}}" class="float-right mark-as-read"
-                                    data-id="{{ $notif->id }}"> &times;</button>
                             </div>
                             @endforeach
 
@@ -120,18 +119,4 @@
                     </div>
                 </div>
             </div>
-            @endsection
-
-
-            @section('script') <script type="text/javascript">
-                $('.marked-as-read').click(function () {
-                    let request = sendMarked($(this).data('id'));
-
-                    request.done(() => {
-                        $(this).parents('div.notif').remove();
-                    });
-                });
-
-            </script>
-
 @endsection

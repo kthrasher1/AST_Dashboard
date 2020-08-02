@@ -27,6 +27,7 @@ class StaffController extends Controller
             $query->whereIn('ast_id', $staff->pluck('id'));
         })->get();
 
+        $studentData = StudentData::whereIn('student_id', $studentUser->pluck('id'))->get();
 
         //unread Messages
         $unreadID = Message::select(\DB::raw('`from` as sender_id, count(`from`) as messages_count'))
@@ -44,26 +45,6 @@ class StaffController extends Controller
         //notfications
 
         $notif = auth()->user()->unreadNotifications;
-
-        // Data stuff
-
-        //Attendance Graph
-
-        // $moduleData = ModuleData::whereIn("student_id", $studentUser->pluck("id"))->latest()->first();
-        // $attendance = 0;
-
-        // if($moduleData != null) {
-        //     $attendance = $moduleData->weekly_attendance_semester_1;
-        // }
-
-        // $attendanceChart = new AttendanceChart;
-        // $attendanceChart->labels(['Attended', 'Absent']);
-        // $attendanceChart->dataset('Weekly Attendance in percentage', 'pie', [$attendance, 100-$attendance])
-        //     ->color(["red","blue"])
-        //     ->backgroundcolor(["red","blue"])
-        //     ->fill(true);
-        // $attendanceChart->minimalist(true);
-        // $attendanceChart->displayLegend(true);
 
         //weekly Graph
 
@@ -83,7 +64,7 @@ class StaffController extends Controller
 
         return view('staff', [
             'students' => $studentUser,
-            // 'linechart' => $attendanceGraph,
+            'studentData' => $studentData,
             'notify' => $notif,
             // 'attendanceChart' => $attendanceChart,
             'weeklyChart' =>  $weeklyAttendance

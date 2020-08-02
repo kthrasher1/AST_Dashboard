@@ -8,7 +8,8 @@ class ModuleData extends Model
 {
     protected $guarded = [];
 
-    public function studentData(){
+    public function studentData()
+    {
         return $this->belongsTo(Student::class, 'student_id');
     }
 }

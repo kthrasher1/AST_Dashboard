@@ -74,14 +74,6 @@
         </div>
     </div>
 
-    <div class="card" id="unknown2-info-panel" draggable="true">
-        <div class="card-header"> <h1></h1><p><i class="fas fa-arrows-alt"></i></p> </div>
-        <div class="card-body">
-            <div class="">
-
-            </div>
-        </div>
-    </div>
 </div>
 @endsection
 

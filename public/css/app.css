@@ -11811,6 +11811,18 @@ header {
   margin: 1em;
 }
 
+#staff-dashboard .student-content #student-display table .bad {
+  background-color: #ffa1b0;
+}
+
+#staff-dashboard .student-content #student-display table .okay {
+  background-color: #feea81;
+}
+
+#staff-dashboard .student-content #student-display table .good {
+  background-color: #abe7c4;
+}
+
 #staff-dashboard .student-content #student-display table tbody {
   background-color: #f2f4f6;
 }
@@ -12961,6 +12973,14 @@ header {
 #student-quick-view-container .student-content .student-data-container #issues p {
   margin: 0;
   padding: 0;
+}
+
+#student-quick-view-container .student-content .student-data-container #issues .expand {
+  margin-top: 20px;
+}
+
+#student-quick-view-container .student-content .student-data-container #issues .expand h4 {
+  font-size: 18px;
 }
 
 #student-quick-view-container .student-content .student-data-container #other-issues {

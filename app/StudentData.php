@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class StudentData extends Model
 {
     //
-    public function studentData(){
+    public function studentData()
+    {
         return $this->belongsTo(Student::class, 'student_id');
     }
 }

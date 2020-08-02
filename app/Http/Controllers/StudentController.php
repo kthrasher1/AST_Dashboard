@@ -238,13 +238,13 @@ class StudentController extends Controller
         if($previousEntries != null){
             $risk_factor = $previousEntries->risk_level;
 
-            if($previousEntries->risk_level >= 0 && $previousEntries->risk_level <= 2){
+            if($previousEntries->risk_level >= 0 && $previousEntries->risk_level <= 3){
 
-                $risk_level -= 15;
+                $risk_level -= 20;
             }
-            else if($previousEntries->risk_level > 2 && $previousEntries->risk_level <= 4){
+            else if($previousEntries->risk_level > 3 && $previousEntries->risk_level <= 4){
 
-                $risk_level -= 5;
+                $risk_level -= 10;
 
             }
         }
@@ -252,10 +252,49 @@ class StudentController extends Controller
         if($emotion_slider != null ){
 
             if($emotion_slider >= 1 && $emotion_slider <= 2){
-                $risk_level -= 15;
+                $risk_level -= 20;
             }
             else if($emotion_slider >= 3 && $emotion_slider <= 4){
-                $risk_level -= 5;
+                $risk_level -= 10;
+            }
+        }
+
+
+        $issue_counter = 0;
+
+        if($issue_selector != null ){
+
+            for ($i=0; $i < count($issue_selector); $i++) {
+                    $issue_counter++;
+            }
+
+            if($emotion_slider >= 1 && $emotion_slider <= 2){
+                if($issue_counter  == 1){
+                    $risk_level -= 5;
+                }
+                else if($issue_counter == 2){
+                    $risk_level -= 10;
+                }
+                else if($issue_counter == 3){
+                    $risk_level -= 15;
+                }
+                else if($issue_selector >= 4){
+                    $risk_level -= 20;
+                }
+            }
+            else if($emotion_slider == 3){
+                if($issue_counter  == 1){
+                    $risk_level -= 2.5;
+                }
+                else if($issue_counter == 2){
+                    $risk_level -= 5;
+                }
+                else if($issue_counter == 3){
+                    $risk_level -= 7.5;
+                }
+                else if($issue_selector >= 4){
+                    $risk_level -= 10;
+                }
             }
         }
 
@@ -278,7 +317,7 @@ class StudentController extends Controller
                 }
 
             }
-            else{
+            else if($moduleData->semester == 2){
                 if( $moduleData->weekly_attendance_semester_2 >= 1 &&  $moduleData->weekly_attendance_semester_2 <= 35 ){
                     $risk_level -= 15;
                 }
@@ -298,8 +337,8 @@ class StudentController extends Controller
         $module_counter = 0;
 
         if($module_issue_bool == true ){
-            for ($i=0; $i < count($module_selector) ; $i++) {
-                if($module_selector[$i]->value() != null){
+            for ($i=0; $i < count($module_selector); $i++) {
+                if($module_selector[$i] != null){
                     $module_counter++;
                 }
             }
@@ -315,9 +354,13 @@ class StudentController extends Controller
             }
 
             if($module_expand_bool == false){
+                $risk_level -= 15;
+            }
+            else{
                 $risk_level -= 10;
             }
         }
+
 
         $total_risk_level = $risk_level / 20;
 
@@ -340,34 +383,15 @@ class StudentController extends Controller
         $studentDataSubmit->module_selector_3 = $request->session()->get('studentData.moduleSelection_3');
         $studentDataSubmit->module_expand_bool = $request->session()->get('studentData.moduleExpandBool');
         $studentDataSubmit->module_detail= $request->session()->get('studentData.moduleExpandSubmit');
-
         $studentDataSubmit->other_issues = $request->session()->get('studentData.otherIssuesExpand');
 
         $studentDataSubmit->completed = true;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        $studentDataSubmit->risk_level = 1;
+        $studentDataSubmit->risk_level = $total_risk_level;
         $studentDataSubmit->created_at = NOW();
         $studentDataSubmit->updated_at = NOW();
 
         $studentDataSubmit->save();
-
-
 
 
         $user = $request->user();

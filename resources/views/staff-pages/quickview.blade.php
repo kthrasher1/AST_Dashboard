@@ -53,7 +53,13 @@
                             <p> {{ $studentData->issue_selector_4 }} </p>
                             <p> {{ $studentData->issue_selector_5 }} </p>
 
-                            <p> {{$studentData->other_selector}} </p>
+                            <div class="expand">
+                                @if($studentData->other_selector != null)
+                                <hr>
+                                    <h4 class="expand-header">They added another issue(s): </h4>
+                                    <p> {{$studentData->other_selector}} </p>
+                                @endif
+                            </div>
                         </div>
                     </div>
 
@@ -83,7 +89,7 @@
 
                                 <hr>
                                 <div class="expand">
-                                    @if($studentData->module_expand != null)
+                                    @if($studentData->module_expand_bool == true)
                                         <h4 class="expand-header">They expanded on module issues: </h4>
                                         <p> {{$studentData->module_detail}} </p>
                                     @else

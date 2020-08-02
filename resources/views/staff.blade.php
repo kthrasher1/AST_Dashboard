@@ -11,15 +11,32 @@
                     <h1 class="card-header" id="student-title">Your Students</h2>
                         <div class="card-body">
 
+
                             <div class="table-responsive">
                                 <table class="table table-hover center scroll">
+                                    @foreach ($students as $student)
                                     <tbody>
-                                        @foreach ($students as $student)
-                                        <tr>
+
+                                        <tr
+                                        @foreach($studentData as $data)
+                                            @if($data->student_id == $student->id)
+                                                @if($data->risk_level >= 0 && $data->risk_level <= 2)
+                                                    class="bad"
+                                                @endif
+                                                @if($data->risk_level > 2 && $data->risk_level <= 4)
+                                                    class="okay"
+                                                @endif
+                                                @if($data->risk_level == 5 )
+                                                    class="good"
+                                                @endif
+                                            @endif
+                                        @endforeach
+                                        >
+
                                             <td><img class="profile-picture"
                                                     src="/uploads/avatars/{{ $student->avatar }}" alt="" srcset=""></td>
                                             <td class="cap-first"> {{ $student->name}} </td>
-                                            <td> {{ $student->email }} </td>
+                                            <td> {{ $student->email }}
                                             <td>
                                                 <a class="btn btn-primary chat-btn" href="{{ route('staffchat') }}">
                                                     <span class="text-chat">Chat</span>
@@ -43,20 +60,19 @@
 
                                                 @else
 
-                                                <li class="text-muted" style="list-style-type: circle;"> Offline </li>
+                                                <li style="list-style-type: circle;"> Offline </li>
 
                                                 @endif
 
                                             </td>
                                         </tr>
+
                                     </tbody>
                                     @endforeach
                                 </table>
 
 
                             </div>
-
-
                         </div>
                 </div>
 
@@ -77,7 +93,7 @@
 
                                     <p> {{$notif->data['name']}} has finished their weekly checkup ({{$notif->created_at->format('Y-m-d')}}), their risk level is: {{$notif->data['risk_level']}}. </p>
 
-                                    <button data-path="{{ route('quick-view', ['checkup_id' => $notif->data['checkup_id']]) }}"
+                                     <button data-path="{{ route('quick-view', ['checkup_id' => $notif->data['checkup_id']]) }}"
                                         class="btn btn-primary load-ajax-modal"
                                         role="button"
                                         data-toggle="modal" data-target="#student-quick-view">

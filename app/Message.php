@@ -9,7 +9,8 @@ class Message extends Model
 
     protected $guarded = [];
 
-    public function Contact(){
+    public function Contact()
+    {
         return $this->hasOne(User::class, 'id', 'from' );
     }
 }
